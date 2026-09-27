@@ -29,7 +29,11 @@ title: Home
 <section class="highlights">
   {%- for item in p.highlights %}
   <div class="hl-item">
+    {%- if item.image %}
+    <img class="hl-img" src="{{ item.image | relative_url }}" alt="" width="56" height="56">
+    {%- else %}
     <span class="icon-circle">{% include icon.html name=item.icon %}</span>
+    {%- endif %}
     <div>
       <h3>{{ item.title }}</h3>
       <p>{{ item.text }}</p>

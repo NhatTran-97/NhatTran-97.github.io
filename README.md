@@ -154,10 +154,14 @@ hero:
 ### 4.3. Bốn ô dưới banner — `highlights`
 ```yaml
 highlights:
-  - icon: map-pin
+  - icon: map-pin                                               # icon đơn giản (dự phòng)
+    image: /assets/img/highlights/localization.svg              # hình minh hoạ — có thì dùng thay icon
     title: Localization & SLAM                                   # ≤ 28 ký tự, 1 dòng
     text: Sensor fusion and Visual SLAM for robots and drones.  # 45–60 ký tự → đúng 2 dòng
 ```
+- **Hình minh hoạ** có sẵn trong `assets/img/highlights/`: `localization.svg`, `navigation.svg`, `embedded.svg`, `teaching.svg`.
+  Muốn dùng hình của bạn: ảnh **vuông, nền trong suốt** (SVG hoặc PNG ~256×256px), nét đơn giản (hiển thị cỡ 56px)
+  → upload vào thư mục đó → sửa `image:`. Xoá dòng `image:` để quay về icon đơn giản.
 - Luôn hiển thị **đúng 2 dòng** và các ô cao bằng nhau; viết quá dài sẽ bị cắt bằng "…".
 - Có thể để 2, 3 hoặc 4 ô.
 
@@ -473,6 +477,7 @@ math: true                  # bật nếu có công thức toán
 | Ảnh thẻ project | `assets/img/projects/` | 16:9, ~1280px |
 | Ảnh trang chi tiết project | `assets/img/projects/<tên-project>/` | rộng ~1400–1600px |
 | Ảnh workshop (bìa + ảnh lớp) | `assets/img/projects/workshops/` | bìa vuông hoặc PNG nền trong suốt; ảnh lớp ~1600px |
+| Hình minh hoạ 4 ô dưới banner | `assets/img/highlights/` | vuông, nền trong suốt, SVG hoặc PNG ~256px |
 | Ảnh bài viết | `assets/img/notes/` | 16:9, ~1000px |
 | CV PDF | `assets/files/cv.pdf` | tự tạo nếu `pdf_auto: true` |
 | PDF bài báo | `assets/files/papers/` | — |
@@ -586,7 +591,7 @@ cùng một dòng (phần đó sẽ bị bỏ qua). `check_site.py` sẽ báo l�
 
 ### 13.1. Kiểm tra tự động (Check site)
 Mỗi lần commit, GitHub chạy **Check site** (`_scripts/check_site.py`):
-- **ERROR** (phải sửa): lỗi cú pháp YAML (kèm số dòng), ảnh / PDF không tồn tại, icon sai tên, project thiếu `title` / `group` / `description`, `group` không có trong `groups`, `detail` trỏ tới trang không tồn tại, tên file bài viết sai dạng, trùng tên project, CSS viết sau chú thích `//` trong file `.scss` (sẽ bị bỏ qua), link hỏng sau khi build.
+- **ERROR** (phải sửa): lỗi cú pháp YAML (kèm số dòng), ảnh / PDF không tồn tại (kể cả `image` của 4 ô dưới banner), icon sai tên, project thiếu `title` / `group` / `description`, `group` không có trong `groups`, `detail` trỏ tới trang không tồn tại, tên file bài viết sai dạng, trùng tên project, CSS viết sau chú thích `//` trong file `.scss` (sẽ bị bỏ qua), link hỏng sau khi build.
 - **WARNING** (nên xem): link liên hệ còn là mẫu, ô giới thiệu quá dài, lĩnh vực viết khác danh sách chuẩn, tên bạn không có trong danh sách tác giả, trang project còn *Details coming soon*.
 - Chạy trên máy: `python3 _scripts/check_site.py` (cần `pip install pyyaml`); thêm thư mục đã build để kiểm tra link: `python3 _scripts/check_site.py _site`.
 

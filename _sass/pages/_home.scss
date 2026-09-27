@@ -29,6 +29,7 @@
 .hl-item + .hl-item { border-left: 1px solid var(--border); }
 .hl-item > div { min-width: 0; }
 .hl-item .icon-circle { width: 42px; height: 42px; font-size: 1.2rem; }
+.hl-img { width: 56px; height: 56px; flex-shrink: 0; margin-top: -4px; }   // illustration (highlights[].image)
 .hl-item h3 {
   font-size: .95rem; font-weight: 600; margin-bottom: 2px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;

@@ -47,17 +47,22 @@ hero:
 
 # ----- 4 ô giới thiệu ngắn dưới banner -----
 # Mỗi ô: title ngắn (≤ 28 ký tự) + text khoảng 45–60 ký tự → tự hiển thị đúng 2 dòng cân đều.
+# image: hình minh hoạ (SVG/PNG nền trong suốt, vuông) — có "image" thì dùng ảnh, không thì dùng "icon".
 highlights:
   - icon: map-pin
+    image: /assets/img/highlights/localization.svg
     title: Localization & SLAM
     text: Sensor fusion and Visual SLAM for robots and drones.
   - icon: bot
+    image: /assets/img/highlights/navigation.svg
     title: ROS 2 & Navigation
     text: Putting localization to work with ROS 2 navigation.
   - icon: cpu
+    image: /assets/img/highlights/embedded.svg
     title: Embedded Software
     text: Firmware and drivers on RTOS — SPI, I2C, CAN, Modbus.
   - icon: users
+    image: /assets/img/highlights/teaching.svg
     title: Teaching & Mentoring
     text: Weekly workshops and student teams in competitions.
 

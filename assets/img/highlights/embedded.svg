@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Embedded software">
+  <defs>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d4f96"/><stop offset="1" stop-color="#13295b"/></linearGradient>
+  </defs>
+  <g fill="none" stroke="#3b82f6" stroke-width="1.6" stroke-linecap="round">
+    <path d="M32 14V5M27 14v-3l-3-3M37 14v-3l3-3"/>
+    <path d="M32 50v9M27 50v3l-3 3M37 50v3l3 3"/>
+    <path d="M14 32H5M14 27h-3l-3-3M14 37h-3l-3 3"/>
+    <path d="M50 32h9M50 27h3l3-3M50 37h3l3 3"/>
+  </g>
+  <g fill="#dbeafe" stroke="#1f5fd6" stroke-width="1.4">
+    <circle cx="32" cy="4.5" r="2.3"/><circle cx="23.5" cy="7.5" r="1.7"/><circle cx="40.5" cy="7.5" r="1.7"/>
+    <circle cx="32" cy="59.5" r="2.3"/><circle cx="23.5" cy="56.5" r="1.7"/><circle cx="40.5" cy="56.5" r="1.7"/>
+    <circle cx="4.5" cy="32" r="2.3"/><circle cx="7.5" cy="23.5" r="1.7"/><circle cx="7.5" cy="40.5" r="1.7"/>
+    <circle cx="59.5" cy="32" r="2.3"/><circle cx="56.5" cy="23.5" r="1.7"/><circle cx="56.5" cy="40.5" r="1.7"/>
+  </g>
+  <g fill="#93c5fd" stroke="#3b82f6" stroke-width=".6">
+    <rect x="24" y="12" width="2.6" height="4" rx=".6"/><rect x="30.7" y="12" width="2.6" height="4" rx=".6"/><rect x="37.4" y="12" width="2.6" height="4" rx=".6"/>
+    <rect x="24" y="48" width="2.6" height="4" rx=".6"/><rect x="30.7" y="48" width="2.6" height="4" rx=".6"/><rect x="37.4" y="48" width="2.6" height="4" rx=".6"/>
+    <rect x="12" y="24" width="4" height="2.6" rx=".6"/><rect x="12" y="30.7" width="4" height="2.6" rx=".6"/><rect x="12" y="37.4" width="4" height="2.6" rx=".6"/>
+    <rect x="48" y="24" width="4" height="2.6" rx=".6"/><rect x="48" y="30.7" width="4" height="2.6" rx=".6"/><rect x="48" y="37.4" width="4" height="2.6" rx=".6"/>
+  </g>
+  <rect x="15.5" y="15.5" width="33" height="33" rx="5" fill="url(#chip)" stroke="#3b82f6" stroke-width="1.6"/>
+  <rect x="21" y="21" width="22" height="22" rx="3" fill="#13295b" stroke="#93c5fd" stroke-width="1.4"/>
+  <g fill="#93c5fd"><circle cx="23.6" cy="23.6" r=".9"/><circle cx="40.4" cy="23.6" r=".9"/><circle cx="23.6" cy="40.4" r=".9"/><circle cx="40.4" cy="40.4" r=".9"/></g>
+  <path d="M28 28.5 L24.8 32 L28 35.5 M36 28.5 L39.2 32 L36 35.5 M33.4 27.5 L30.6 36.5" fill="none" stroke="#60a5fa" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

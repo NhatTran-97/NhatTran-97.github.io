@@ -103,7 +103,10 @@ def check_profile():
     for i, h in enumerate(p.get("highlights") or [], 1):
         ww = f"{w} highlights #{i}"
         require(ww, h, "title", "text")
-        check_icon(ww, h.get("icon"))
+        if h.get("image"):
+            check_file(ww + " image", h.get("image"), "image")
+        else:
+            check_icon(ww, h.get("icon"))
         if len(str(h.get("text", ""))) > 65:
             warn(ww, f"text is {len(h['text'])} characters; keep it around 45-60 so it fits in 2 lines")
     for c in p.get("contacts") or []:
