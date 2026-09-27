@@ -14,13 +14,13 @@ layout: default
     <div class="project-hero-text">
       {% if page.category %}<span class="chip chip-primary">{{ page.category }}</span>{% endif %}
       <h1>{{ page.title }}</h1>
-      {% if page.summary %}<p class="project-summary">{{ page.summary }}</p>{% endif %}
+      {% if page.summary %}<p class="project-summary">{{ page.summary | markdownify | remove: "<p>" | remove: "</p>" | strip }}</p>{% endif %}
 
       <dl class="project-meta">
-        {% if page.role %}<div><dt>{% include icon.html name="user" %} Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
-        {% if page.period %}<div><dt>{% include icon.html name="calendar" %} Period</dt><dd>{{ page.period }}</dd></div>{% endif %}
-        {% if page.partners %}<div><dt>{% include icon.html name="users" %} Partners</dt><dd>{{ page.partners }}</dd></div>{% endif %}
-        {% if page.status %}<div><dt>{% include icon.html name="clock" %} Status</dt><dd>{{ page.status }}</dd></div>{% endif %}
+        {% if page.role and page.role != "" %}<div><dt>{% include icon.html name="user" %} Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+        {% if page.period and page.period != "" %}<div><dt>{% include icon.html name="calendar" %} Period</dt><dd>{{ page.period }}</dd></div>{% endif %}
+        {% if page.partners and page.partners != "" %}<div><dt>{% include icon.html name="users" %} Partners</dt><dd>{{ page.partners }}</dd></div>{% endif %}
+        {% if page.status and page.status != "" %}<div><dt>{% include icon.html name="clock" %} Status</dt><dd>{{ page.status }}</dd></div>{% endif %}
       </dl>
 
       {% if page.tags.size > 0 %}<div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}

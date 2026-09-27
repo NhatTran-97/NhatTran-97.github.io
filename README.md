@@ -369,10 +369,14 @@ items:
 
 ---
 
-### 5.3. Trang chi tiết project (bấm vào thẻ → mở trang riêng)
+### 5.3. Trang chi tiết project (bấm vào ảnh hoặc tiêu đề thẻ → mở trang riêng)
+
+**Đã có sẵn trang chi tiết (dạng khung) cho mọi project Professional** trong thư mục `_projects/` — mỗi trang đang ghi *Details coming soon*. Khi muốn trình bày: mở file tương ứng, điền `role` / `status` nếu còn trống, rồi thay các đoạn *Details coming soon* bằng nội dung thật (xem ví dụ hoàn chỉnh `_projects/vda5050-open-rmf.md`).
+
+Tạo trang cho project mới:
 1. Copy `_templates/new-project-page.md` vào thư mục **`_projects/`**, đặt tên không dấu, ví dụ `_projects/agv-docking.md` → trang có địa chỉ `/projects/agv-docking/`.
 2. Sửa phần đầu (tên, vai trò, thời gian, đối tác, trạng thái, ảnh bìa, tag, các nút link) và viết nội dung Markdown bên dưới.
-3. Trong `_data/projects.yml`, thêm vào project đó dòng `detail: /projects/agv-docking/` → thẻ project có nút **Details**, bấm ảnh hoặc tiêu đề cũng mở trang chi tiết; ô tìm kiếm cũng dẫn tới trang này.
+3. Trong `_data/projects.yml`, thêm vào project đó dòng `detail: /projects/agv-docking/` → bấm ảnh hoặc tiêu đề thẻ sẽ mở trang chi tiết; ô tìm kiếm cũng dẫn tới trang này.
 
 Các khối trình bày có sẵn trong mẫu (chỉ sửa chữ): **sơ đồ kiến trúc 2 cột** (`arch`), **lưới tính năng** (`feature-grid`), **ảnh có chú thích** (`figure`), **lưới ảnh** (`gallery`), **danh sách video** (`video-list`), bảng Markdown. Ví dụ hoàn chỉnh: `_projects/vda5050-open-rmf.md`.
 

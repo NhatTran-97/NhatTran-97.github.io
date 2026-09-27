@@ -626,3 +626,6 @@ p, li { text-wrap: pretty; }
 .project-card h3 a:hover { color: var(--primary); }
 .card-links a.details-link { color: var(--primary); }
 .project-thumb > a { display: block; width: 100%; height: 100%; }
+/* Clickable card title (links to detail page) */
+.project-card h3 a { text-decoration: none; }
+.project-card h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
