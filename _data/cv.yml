@@ -16,18 +16,15 @@ sections:
     title: Education
     icon: graduation-cap
     items:
-      - title: M.Sc. in Mechatronics Engineering
+      # Chỉ ghi tên ngành (không ghi "B.Eng." / "Graduated") — xem README mục 4.3
+      - title: Control Engineering and Automation
         org: University Name, Vietnam
-        period: 2022 – 2024
+        period: 2015 – 2022
         details:
-          - "**Thesis:** Visual-inertial SLAM for indoor mobile robots"
-          - "**GPA:** 3.8 / 4.0"
-      - title: B.Eng. in Mechatronics Engineering
-        org: University Name, Vietnam
-        period: 2015 – 2020
-        details:
-          - "**Relevant coursework:** Control Systems, Robotics, Computer Vision, Embedded Systems"
-          - Graduated with Distinction
+          - Completed full program coursework
+          - "**Focus:** control systems, embedded systems, robotics"
+          - "**Relevant coursework:** Automatic Control, Microcontrollers, Power Electronics, PLC & Industrial Automation, Digital Signal Processing"
+          # - "**Capstone project:** Tên đồ án tốt nghiệp của bạn"
 
   - id: experience
     title: Experience

@@ -104,6 +104,6 @@ items:
     tags: [C++, CUDA, VIO, SLAM]
     description: >-
       Real-time visual-inertial odometry at 30 Hz on Jetson Orin with a
-      sliding-window optimizer. Part of my M.Sc. thesis.
+      sliding-window optimizer.
     github: https://github.com/NhatTran-97
     paper: /publications/

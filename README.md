@@ -259,6 +259,21 @@ sections:
 ```
 > Section có `id: education` cũng được dùng cho khung **Education** trên trang Home (hiện 3 mục đầu).
 
+### 4.3. Ghi học vấn khi đã học xong nhưng chưa nhận bằng
+Cách trình bày trung thực, dễ đọc — thường dùng trong CV quốc tế:
+```yaml
+      - title: Control Engineering and Automation   # chỉ tên ngành, KHÔNG ghi "B.Eng." / "Bachelor"
+        org: University Name, Vietnam
+        period: 2015 – 2022
+        details:
+          - Completed full program coursework         # đúng sự thật, cho thấy đã học đủ chương trình
+          - "**Focus:** control systems, embedded systems, robotics"
+          - "**Capstone project:** ..."
+```
+- **Không** ghi "Graduated", "B.Eng." hay "Bachelor of…" khi chưa được cấp bằng (nhiều nơi xác minh bằng cấp).
+- Khi được hỏi: *"I completed the full program; the degree will be issued once I submit my English certificate."*
+- Khi đã nhận bằng: đổi `title` thành `B.Eng. in Control Engineering and Automation` và bỏ dòng "Completed full program coursework".
+
 ---
 
 ## 5. Projects — `projects.yml`
