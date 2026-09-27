@@ -20,7 +20,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   {% endif %}
 </head>
-<body>
+<body{% if site.typography.text_align == "justify" %} class="text-justify"{% endif %}>
   {% include header.html %}
   <main class="container main">
     {{ content }}

@@ -11,6 +11,13 @@ baseurl: ""
 lang: en
 timezone: Asia/Ho_Chi_Minh
 
+# Căn chữ (xem README mục 15):
+#   left    = căn trái (khuyên dùng cho web: dễ đọc, không hở chữ)
+#   justify = căn đều hai bên (tự ngắt từ; điện thoại nhỏ vẫn căn trái)
+typography:
+  text_align: left          # toàn bộ website
+  post_text_align: left     # nội dung bài viết trong Notes
+
 # ----- Không cần sửa phần dưới -----
 markdown: kramdown
 kramdown:

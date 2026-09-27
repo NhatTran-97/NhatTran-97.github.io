@@ -547,9 +547,18 @@ bundle exec jekyll serve
 
 ---
 
-## 15. Căn chữ tự động (không cần làm gì)
-- Mọi **đoạn văn** và **gạch đầu dòng** trong nội dung (About, CV, Projects, Publications, Notes, trang mới…) tự **căn đều hai bên**, có ngắt từ tự động để tránh khoảng trắng lớn. Dòng cuối mỗi đoạn căn trái như sách.
-- Tiêu đề tự cân độ dài giữa các dòng; tiêu đề thẻ project / bài viết luôn chiếm 2 dòng để các thẻ thẳng hàng.
+## 15. Căn chữ — template có sẵn (chỉ đổi công tắc, không sửa CSS)
+
+| Công tắc | Ở đâu | Giá trị | Mặc định (khuyên dùng) |
+|---|---|---|---|
+| `typography.text_align` | `_config.yml` | `left` / `justify` | `left` — căn trái cho toàn website (dễ đọc, không hở chữ) |
+| `typography.post_text_align` | `_config.yml` | `left` / `justify` | `left` — nội dung bài viết Notes |
+| `pdf_text_align` | `_data/cv.yml` | `justify` / `left` | `justify` — CV PDF căn đều hai bên như tài liệu in |
+
+**Luôn tự động, cho mọi nội dung thêm sau này:**
+- Tiêu đề tự cân độ dài giữa các dòng, đoạn văn không để một chữ lẻ ở dòng cuối.
+- Tiêu đề thẻ project / bài viết luôn chiếm 2 dòng → các thẻ cạnh nhau thẳng hàng; mô tả thẻ bài viết cố định 3 dòng.
 - 4 ô dưới banner luôn đúng 2 dòng (viết khoảng 45–60 ký tự).
-- Ô quá hẹp, nhãn, nút, danh sách liên hệ giữ căn trái; trên điện thoại nhỏ (< 420px) mọi chữ căn trái để dễ đọc.
-- Quy tắc nằm ở cuối `assets/css/style.css` (mục *TEMPLATE RULE*) — chỉ cần sửa nếu muốn đổi cách căn.
+- Khi bật `justify`: tự ngắt từ bằng gạch nối; ô hẹp, nhãn, danh sách liên hệ vẫn căn trái; điện thoại nhỏ (< 420px) tự về căn trái.
+
+Quy tắc CSS nằm ở cuối `assets/css/style.css` (mục *TYPOGRAPHY TEMPLATE*).

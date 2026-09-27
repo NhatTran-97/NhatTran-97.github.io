@@ -15,7 +15,7 @@ layout: default
     {% if page.tags.size > 0 %}<div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
   </header>
   {% if page.image %}<img class="post-cover" src="{{ page.image | relative_url }}" alt="">{% endif %}
-  <div class="card post-content prose">
+  <div class="card post-content prose{% if site.typography.post_text_align == "justify" %} text-justify{% endif %}">
     {{ content }}
   </div>
   <nav class="post-nav">

@@ -12,6 +12,7 @@ pdf: /assets/files/cv.pdf                    # nút "Download PDF" (để trốn
 pdf_auto: true      # true  = GitHub tự tạo cv.pdf (LaTeX) từ dữ liệu website mỗi khi bạn sửa CV
                     # false = tự upload file PDF của bạn vào assets/files/cv.pdf (không bị ghi đè)
 pdf_max_pages: 2    # PDF tự thu nhỏ chữ/khoảng cách (tối đa ~90%) để vừa số trang này; 0 = không giới hạn
+pdf_text_align: justify   # justify = căn đều hai bên (chuẩn tài liệu in) | left = căn trái
 github: https://github.com/NhatTran-97        # nút "View on GitHub" (để trống để ẩn)
 
 sections:

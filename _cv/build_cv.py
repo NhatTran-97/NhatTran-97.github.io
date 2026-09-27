@@ -146,8 +146,10 @@ def main():
             body += section_publications(pubs, profile.get("publication_names"))
 
     template = (ROOT / "_cv" / "template.tex").read_text(encoding="utf-8")
+    align = str(cv.get("pdf_text_align", "justify")).lower()
     template = template.replace("%%BODY%%", "\n".join(body)).replace(
-        "%%UPDATED%%", datetime.date.today().strftime("%B %Y"))
+        "%%UPDATED%%", datetime.date.today().strftime("%B %Y")).replace(
+        "%%ALIGN%%", "% justified text (pdf_text_align: justify)" if align == "justify" else r"\raggedright")
 
     if "--compile" not in sys.argv:
         write_tex(template, FIT_LEVELS[0])

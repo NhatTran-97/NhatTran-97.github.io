@@ -518,27 +518,14 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; a
 @media (max-width: 1080px) { .hl-item { padding: 6px 20px; } }
 
 /* =====================================================================
-   Typography rules applied site-wide
-   - Body text / descriptions: justified (both edges aligned) with
-     automatic hyphenation so justified lines don't get large gaps.
-   - Headings / titles: balanced line lengths, no orphan words.
+   TYPOGRAPHY TEMPLATE
+   Switches (no CSS editing needed):
+     _config.yml → typography.text_align       : left | justify   (whole site)
+     _config.yml → typography.post_text_align  : left | justify   (Notes posts)
+     _data/cv.yml → pdf_text_align             : justify | left   (CV PDF)
+   Always on: balanced headings, no orphan words, card titles use 2 lines,
+   highlight boxes use exactly 2 lines.
    ===================================================================== */
-.prose p, .prose li,
-.hero-intro,
-.about-mini > div > p,
-.about-text .prose p,
-.hl-item p,
-.project-desc, .project-desc p,
-.note-body p,
-.tl-details li,
-.group-head p,
-.pub-venue {
-  text-align: justify;
-  text-align-last: left;
-  -webkit-hyphens: auto; hyphens: auto;
-  hyphenate-limit-chars: 7 3 3;
-}
-.hl-item p { text-wrap: wrap; }            /* balance and justify don't mix */
 h1, h2, h3, .pub-title, .tl-title, .sr-title { text-wrap: balance; }
 p, li { text-wrap: pretty; }
 
@@ -552,39 +539,24 @@ p, li { text-wrap: pretty; }
   min-height: calc(3 * 1.65em);
 }
 
-/* On very narrow screens justified text gets gappy — fall back to left aligned */
-@media (max-width: 420px) {
-  .prose p, .prose li, .hero-intro, .about-mini > div > p, .hl-item p, .project-desc, .project-desc p,
-  .note-body p, .tl-details li, .group-head p, .pub-venue { text-align: left; }
-}
-/* Too narrow to justify nicely (big word gaps) — keep these left aligned */
-.hl-item p, .mini-projects .project-desc, .mini-projects .project-desc p { text-align: left; }
-
-/* =====================================================================
-   TEMPLATE RULE — every paragraph and list item inside the page content
-   is justified automatically (new pages, notes and data included).
-   Add a selector to the exception list below only for UI pieces that
-   are too narrow or are not running text.
-   ===================================================================== */
-main p, main li {
+/* Justified mode — only inside an element with class "text-justify"
+   (added to <body> or to a post by the switches above). */
+.text-justify p, .text-justify li {
   text-align: justify;
   text-align-last: left;
   -webkit-hyphens: auto; hyphens: auto;
   hyphenate-limit-chars: 7 3 3;
 }
-/* Exceptions: short labels, lists of links/contacts, narrow boxes, containers */
-main .hl-item p,
-main .mini-projects p,
-main .empty,
-main .page-head .subtitle,
-main .contact-grid li,
-main .info-list li,
-main .pub-item,
-main .tl-item,
-main .search-results li,
-main .not-found p { text-align: left; }
-main .not-found p, main .empty { text-align: center; }
-/* Running text inside those containers is justified again */
-main .tl-item .tl-details li { text-align: justify; }
-
-@media (max-width: 420px) { main p, main li { text-align: left; } }
+/* Exceptions: short labels, contact lists, narrow boxes, containers */
+.text-justify .hl-item p,
+.text-justify .mini-projects p,
+.text-justify .page-head .subtitle,
+.text-justify .contact-grid li,
+.text-justify .info-list li,
+.text-justify .pub-item,
+.text-justify .tl-item,
+.text-justify .search-results li { text-align: left; }
+.text-justify .tl-item .tl-details li { text-align: justify; }
+.empty, .not-found p { text-align: center; }
+/* Narrow phones: justified text gets gappy — always left aligned */
+@media (max-width: 420px) { .text-justify p, .text-justify li { text-align: left; } }
