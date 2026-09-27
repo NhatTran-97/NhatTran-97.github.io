@@ -59,7 +59,7 @@ the same robot used in our [weekly workshop](/projects/weekly-robotics-workshop-
 ## Hardware platform
 
 <figure class="figure-narrow figure-large">
-  <img src="/assets/img/projects/workshops/stm32-robot-platform.jpg" alt="Overview of the robot platform: mechanical design, sensing and actuation, electronics and firmware, technical specifications">
+  <img src="/assets/img/projects/dc-motor/platform.jpg" alt="Overview of the robot platform: mechanical design, sensing and actuation, electronics and firmware, technical specifications">
   <figcaption>Test platform: two N20 gear motors with Hall encoders, STM32L476 controller board, ESP32-C3 telemetry to a TCP dashboard.</figcaption>
 </figure>
 

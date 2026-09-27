@@ -69,8 +69,8 @@ The workshop is built around a small two-wheeled self-balancing robot with a cus
 STM32 controller board, so every module can be tried directly on real hardware.
 
 <figure class="figure-narrow figure-large">
-  <img src="/assets/img/projects/workshops/stm32-robot-platform.jpg" alt="Overview of the self-balancing robot: mechanical design, sensing and actuation, electronics and firmware, technical specifications">
-  <figcaption>The robot platform: 3D-printed frame, IMU and encoder motors, STM32L476 board with an ESP32-C3 co-processor.</figcaption>
+  <img src="/assets/img/projects/workshops/stm32-balancing-platform.jpg" alt="Overview of the self-balancing robot: mechanical design, sensing and actuation, electronics and firmware, technical specifications">
+  <figcaption>The robot platform: 3D-printed frame, IMU and encoder motors, STM32L476 board with an ESP32-C3 co-processor; a 200 Hz loop with attitude estimation and LQR.</figcaption>
 </figure>
 
 #### Learning path
