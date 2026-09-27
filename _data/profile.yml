@@ -22,7 +22,7 @@ publication_names:
 # ----- Banner lớn ở trang Home -----
 hero:
   greeting: Hello, I'm
-  tagline: Robotics software engineer — learning by building.
+  tagline: Robotics enthusiast — learning by building.
   intro: >-
     I work on the software side of robots and drones, mainly localization, sensor
     fusion and Visual SLAM, along with navigation in ROS 2 and embedded programming.
