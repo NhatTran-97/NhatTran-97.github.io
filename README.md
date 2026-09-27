@@ -475,6 +475,17 @@ Sửa `hero.background` trong `profile.yml`. Có sẵn trong `assets/img/hero/`:
 ### 10.5. Màu chủ đạo
 `_sass/base/_tokens.scss` → dòng `--primary: #1f5fd6;` (bảng màu sáng) và `--primary` trong `dark-palette` (bảng màu tối). Ví dụ `#0f766e` xanh ngọc, `#7c3aed` tím.
 
+### 10.6. Độ rộng trang
+`_sass/base/_tokens.scss` → 3 dòng đầu mục *Page widths*:
+
+| Biến | Mặc định | Áp dụng cho |
+|---|---|---|
+| `$container-width` | `1320px` | Header, footer, Home, Projects, CV, Publications, Notes, About |
+| `$detail-width` | `1160px` | Trang chi tiết project |
+| `$reading-width` | `820px` | Bài viết Notes (giữ hẹp để dòng chữ dễ đọc) |
+
+Màn hình nhỏ hơn các số này thì trang tự co theo màn hình. Không nên để quá ~1440px vì dòng chữ sẽ quá dài.
+
 ---
 
 ## 11. Nguyên tắc nội dung (cách viết cho nhất quán)
@@ -556,7 +567,7 @@ CSS được chia theo thành phần trong `_sass/`, **mỗi file chứa toàn b
 
 | File | Phụ trách |
 |---|---|
-| `base/_tokens.scss` | **Màu sắc** (sáng + tối), font, bo góc, các mốc màn hình (`$bp-lg/md/sm/xs`) |
+| `base/_tokens.scss` | **Màu sắc** (sáng + tối), font, bo góc, **độ rộng trang**, các mốc màn hình (`$bp-lg/md/sm/xs`) |
 | `base/_base.scss`, `_fonts.scss` | Nền tảng trang, font Inter |
 | `base/_typography.scss` | Căn chữ, công tắc `justify` (nạp cuối cùng) |
 | `components/*` | Nút, nhãn, thẻ card, timeline CV, thẻ project, thẻ bài viết, bài báo, màu icon liên hệ |

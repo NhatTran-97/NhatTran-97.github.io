@@ -39,6 +39,11 @@
   :root:not([data-theme="light"]) { @include dark-palette; }
 }
 
+// Page widths — change here to make the whole site wider / narrower
+$container-width: 1320px;   // header, footer and all pages (Home, Projects, CV ...)
+$detail-width: 1160px;      // project detail pages
+$reading-width: 820px;      // notes / blog posts (long text reads best ~70–80 characters per line)
+
 // Breakpoints used across the partials
 $bp-lg: 1080px;   // highlights 2 columns, About 2 columns
 $bp-md: 960px;    // home grid 1 column, card grids 2 columns

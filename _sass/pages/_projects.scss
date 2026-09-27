@@ -6,7 +6,7 @@
 .group-head p { margin: 6px 0 0; color: var(--muted); font-size: .92rem; }
 
 // ----- Detail page -----
-.project-page { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.project-page { max-width: $detail-width; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
 .project-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; padding: 28px; align-items: center; }
 .project-hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .project-hero h1 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); font-weight: 700; letter-spacing: -.02em; }
