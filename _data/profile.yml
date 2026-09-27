@@ -41,19 +41,20 @@ hero:
       style: ghost
 
 # ----- 4 ô giới thiệu ngắn dưới banner -----
+# Mỗi ô: title ngắn (≤ 28 ký tự) + text khoảng 45–60 ký tự → tự hiển thị đúng 2 dòng cân đều.
 highlights:
-  - icon: cpu
-    title: Embedded & Hardware
-    text: Firmware, sensor drivers, motor control and real-time systems.
-  - icon: brain
-    title: Perception & AI
-    text: Computer vision and deep learning, optimized for edge devices.
+  - icon: map-pin
+    title: Localization & SLAM
+    text: Sensor fusion and Visual SLAM for robots and drones.
   - icon: bot
-    title: Autonomy
-    text: SLAM, localization, motion planning and control with ROS 2.
+    title: ROS 2 & Navigation
+    text: Putting localization to work with ROS 2 navigation.
+  - icon: cpu
+    title: Embedded Software
+    text: Firmware and drivers on RTOS — SPI, I2C, CAN, Modbus.
   - icon: users
     title: Teaching & Mentoring
-    text: Workshops, competition teams and student research — AUTO RACE 2025 prizes, EIUSC 2025 Best Paper Award (Student Session).
+    text: Weekly workshops and student teams in competitions.
 
 # ----- Thông tin liên hệ (trang About, Home và footer) -----
 # Xoá mục nào không dùng. "url" là link khi bấm vào.
