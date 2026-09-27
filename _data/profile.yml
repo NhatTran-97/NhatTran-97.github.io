@@ -24,8 +24,9 @@ hero:
   greeting: Hello, I'm
   tagline: Robotics enthusiast — learning by building.
   intro: >-
-    I work on the software side of robots and drones, mainly localization, sensor
-    fusion and Visual SLAM, along with navigation in ROS 2 and embedded programming.
+    I work on the software side of robots and drones — localization, sensor fusion
+    and Visual SLAM, the ROS 2 navigation stack (custom planners, controllers and
+    ros2_control), and embedded programming.
     I'm still learning with every project, and I enjoy sharing what I learn with
     students at the EIU FabLab.
   # Ảnh nền banner (ảnh ngang ~2400x900, < 300 KB). Có sẵn 4 lựa chọn:
@@ -54,7 +55,7 @@ highlights:
     text: Sensor fusion and Visual SLAM for robots and drones.
   - icon: route
     title: ROS 2 & Navigation
-    text: Putting localization to work with ROS 2 navigation.
+    text: Custom Nav2 planners, controllers and ros2_control.
   - icon: chip-code
     title: Embedded Software
     text: Firmware and drivers on RTOS — SPI, I2C, CAN, Modbus.
@@ -100,7 +101,7 @@ about:
   summary: >-
     I work on autonomous robots and drones across the full stack — from low-level
     firmware (SPI, I2C, CAN bus, Ethernet, Modbus on RTOS) to Visual SLAM, computer
-    vision and ROS 2 navigation. I also run weekly workshops on robotics and embedded systems.
+    vision and the ROS 2 navigation stack. I also run weekly workshops on robotics and embedded systems.
   # Phần giới thiệu đầy đủ trên trang About (viết Markdown, có thể nhiều đoạn)
   intro: |
     I am a **FabLab Technician** at *Eastern International University (EIU)*, where
@@ -109,7 +110,9 @@ about:
 
     On the **low level**, I write firmware for robot controllers on RTOS — drivers and
     communication over SPI, I2C, UART, CAN bus, Ethernet and Modbus. On the **high level**,
-    I work on autonomous systems with ROS 2: Visual SLAM, computer vision and navigation.
+    I work on autonomous systems with ROS 2: Visual SLAM, computer vision and the Nav2
+    navigation stack, where I write custom planner and controller plugins and
+    ros2_control hardware interfaces for our robots.
     I enjoy connecting these layers — understanding how a timing issue in the firmware
     shows up as drift in SLAM, or how perception changes what the robot can do.
 
