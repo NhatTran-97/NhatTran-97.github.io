@@ -39,6 +39,7 @@
   text-wrap: balance;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
   min-height: calc(2 * 1.5em);
+  max-width: 32ch;   // a 45-60 character text always splits into 2 even lines, even on wide screens
 }
 
 // ----- Dashboard cards -----

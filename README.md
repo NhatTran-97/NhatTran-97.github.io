@@ -154,15 +154,15 @@ hero:
 ### 4.3. Bốn ô dưới banner — `highlights`
 ```yaml
 highlights:
-  - icon: map-pin                                               # icon đơn giản (dự phòng)
-    image: /assets/img/highlights/localization.svg              # hình minh hoạ — có thì dùng thay icon
+  - icon: localization                                          # icon nét (danh sách ở mục 4.7)
     title: Localization & SLAM                                   # ≤ 28 ký tự, 1 dòng
     text: Sensor fusion and Visual SLAM for robots and drones.  # 45–60 ký tự → đúng 2 dòng
 ```
-- **Hình minh hoạ** có sẵn trong `assets/img/highlights/`: `localization.svg`, `navigation.svg`, `embedded.svg`, `teaching.svg`.
-  Muốn dùng hình của bạn: ảnh **vuông, nền trong suốt** (SVG hoặc PNG ~256×256px), nét đơn giản (hiển thị cỡ 56px)
-  → upload vào thư mục đó → sửa `image:`. Xoá dòng `image:` để quay về icon đơn giản.
-- Luôn hiển thị **đúng 2 dòng** và các ô cao bằng nhau; viết quá dài sẽ bị cắt bằng "…".
+- Icon đang dùng: `localization`, `route`, `chip-code`, `presentation` — cùng kiểu nét với mọi icon khác trên web.
+- Tuỳ chọn `image: /assets/img/highlights/<file>.svg` để thay icon bằng hình minh hoạ (vuông, nền trong suốt).
+  Trong thư mục đó có sẵn 4 hình minh hoạ màu (`localization.svg`, `navigation.svg`, `embedded.svg`, `teaching.svg`),
+  hiện **không dùng** vì kiểu icon nét trông formal và đồng bộ hơn.
+- Luôn hiển thị **đúng 2 dòng** (kể cả trên màn hình rộng) và các ô cao bằng nhau; viết quá dài sẽ bị cắt bằng "…".
 - Có thể để 2, 3 hoặc 4 ô.
 
 ### 4.4. Liên hệ — `contacts`
@@ -201,7 +201,7 @@ Dùng cho mọi trường `icon:`:
 
 | Nhóm | Tên icon |
 |---|---|
-| Lĩnh vực | `bot` `brain` `cpu` `code` `file-text` `book-open` `lightbulb` `globe` `users` `user` |
+| Lĩnh vực | `localization` `route` `chip-code` `presentation` `bot` `brain` `cpu` `code` `file-text` `book-open` `lightbulb` `globe` `users` `user` |
 | CV | `graduation-cap` `briefcase` `award` `star` `calendar` `clock` `folder` |
 | Liên hệ | `mail` `phone` `map-pin` `link` |
 | Logo thật (tự tô màu thương hiệu) | `github` `linkedin` `youtube` `scholar` `researchgate` `orcid` `x-twitter` |
@@ -477,7 +477,7 @@ math: true                  # bật nếu có công thức toán
 | Ảnh thẻ project | `assets/img/projects/` | 16:9, ~1280px |
 | Ảnh trang chi tiết project | `assets/img/projects/<tên-project>/` | rộng ~1400–1600px |
 | Ảnh workshop (bìa + ảnh lớp) | `assets/img/projects/workshops/` | bìa vuông hoặc PNG nền trong suốt; ảnh lớp ~1600px |
-| Hình minh hoạ 4 ô dưới banner | `assets/img/highlights/` | vuông, nền trong suốt, SVG hoặc PNG ~256px |
+| Hình minh hoạ 4 ô dưới banner (tuỳ chọn) | `assets/img/highlights/` | vuông, nền trong suốt, SVG hoặc PNG ~256px |
 | Ảnh bài viết | `assets/img/notes/` | 16:9, ~1000px |
 | CV PDF | `assets/files/cv.pdf` | tự tạo nếu `pdf_auto: true` |
 | PDF bài báo | `assets/files/papers/` | — |
