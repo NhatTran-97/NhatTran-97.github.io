@@ -345,6 +345,7 @@ items:
 - Viết mô tả theo công thức: *vấn đề → giải pháp / công nghệ → kết quả có số liệu* (ví dụ "Deployed on 20+ robots").
 - Trang Home hiện các project có `featured: true` (tối đa theo `home.projects` trong `profile.yml`); nếu không có project nào `featured` thì lấy các project đầu tiên.
 - Thứ tự project trong trang = thứ tự trong file → đặt project mạnh nhất lên đầu mỗi nhóm.
+- **Project / cuộc thi đang thực hiện:** vẫn nên ghi, kèm trạng thái rõ ràng — `period: 2026 – Ongoing`, thêm *In progress* trong mô tả. **Chưa** đưa vào CV → Achievements cho tới khi có kết quả; khi có giải thì thêm vào Achievements và cập nhật mô tả.
 
 ---
 

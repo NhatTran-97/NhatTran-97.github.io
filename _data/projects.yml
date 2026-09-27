@@ -84,6 +84,17 @@ items:
       and CAN bus, Ethernet and Modbus communication, bridging sensors and actuators
       to the ROS 2 system.
 
+  - title: Student Drone Competition Team
+    group: professional
+    org: EIU FabLab
+    category: Teaching & Mentoring
+    period: 2026 – Ongoing
+    image: /assets/img/projects/drone.svg
+    tags: [Drones, Mentoring, Competition]
+    description: >-
+      Currently mentoring an EIU student team building an autonomous drone for a
+      student drone competition (November 2026). *In progress.*
+
   - title: AUTO RACE 2025 — Student Teams
     group: professional
     org: EIU FabLab

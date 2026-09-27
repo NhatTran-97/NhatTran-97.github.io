@@ -72,6 +72,11 @@ sections:
     title: Activities
     icon: users
     items:
+      - title: Mentor — Student Drone Competition Team (ongoing)
+        org: EIU FabLab
+        period: 2026 – Present
+        details:
+          - Mentoring an EIU student team developing an autonomous drone for a student drone competition (finals in November 2026).
       - title: Weekly Robotics Workshop Series — Organizer & Instructor
         org: EIU FabLab
         details:
