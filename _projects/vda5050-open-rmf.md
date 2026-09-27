@@ -41,6 +41,11 @@ fleet dashboard — and prepared the milestone demos on real robots and in simul
 
 ## System architecture
 
+<figure>
+  <img src="/assets/img/projects/vda5050/overview.jpg" alt="Master control sends VDA5050 orders over MQTT to the robot; the robot reports state back">
+  <figcaption>Master control (Open-RMF + EIU Fleet Command Center) sends VDA5050 <em>orders</em> over MQTT; the on-robot ROS 2 stack reports <em>state</em> back.</figcaption>
+</figure>
+
 <div class="arch">
   <div class="arch-col">
     <strong>Ground station · one Docker container</strong>
