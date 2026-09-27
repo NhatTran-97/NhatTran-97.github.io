@@ -544,3 +544,12 @@ bundle exec jekyll serve
 └── index.html, about.html, cv.html, projects.html, publications.html, notes.html
                            #   các trang (không cần sửa)
 ```
+
+---
+
+## 15. Căn chữ tự động (không cần làm gì)
+- Mọi **đoạn văn** và **gạch đầu dòng** trong nội dung (About, CV, Projects, Publications, Notes, trang mới…) tự **căn đều hai bên**, có ngắt từ tự động để tránh khoảng trắng lớn. Dòng cuối mỗi đoạn căn trái như sách.
+- Tiêu đề tự cân độ dài giữa các dòng; tiêu đề thẻ project / bài viết luôn chiếm 2 dòng để các thẻ thẳng hàng.
+- 4 ô dưới banner luôn đúng 2 dòng (viết khoảng 45–60 ký tự).
+- Ô quá hẹp, nhãn, nút, danh sách liên hệ giữ căn trái; trên điện thoại nhỏ (< 420px) mọi chữ căn trái để dễ đọc.
+- Quy tắc nằm ở cuối `assets/css/style.css` (mục *TEMPLATE RULE*) — chỉ cần sửa nếu muốn đổi cách căn.

@@ -559,3 +559,32 @@ p, li { text-wrap: pretty; }
 }
 /* Too narrow to justify nicely (big word gaps) — keep these left aligned */
 .hl-item p, .mini-projects .project-desc, .mini-projects .project-desc p { text-align: left; }
+
+/* =====================================================================
+   TEMPLATE RULE — every paragraph and list item inside the page content
+   is justified automatically (new pages, notes and data included).
+   Add a selector to the exception list below only for UI pieces that
+   are too narrow or are not running text.
+   ===================================================================== */
+main p, main li {
+  text-align: justify;
+  text-align-last: left;
+  -webkit-hyphens: auto; hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+/* Exceptions: short labels, lists of links/contacts, narrow boxes, containers */
+main .hl-item p,
+main .mini-projects p,
+main .empty,
+main .page-head .subtitle,
+main .contact-grid li,
+main .info-list li,
+main .pub-item,
+main .tl-item,
+main .search-results li,
+main .not-found p { text-align: left; }
+main .not-found p, main .empty { text-align: center; }
+/* Running text inside those containers is justified again */
+main .tl-item .tl-details li { text-align: justify; }
+
+@media (max-width: 420px) { main p, main li { text-align: left; } }
