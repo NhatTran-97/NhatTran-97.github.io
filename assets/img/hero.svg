@@ -1,36 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+  <!-- Dawn climb: a robot trajectory up the mountain. Visited waypoints glow; the
+       current pose shows a covariance ellipse and heading, like a SLAM/RViz view. -->
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2a3b55"/><stop offset=".55" stop-color="#6f86a3"/><stop offset="1" stop-color="#b8c6d6"/>
+      <stop offset="0" stop-color="#0d1834"/><stop offset=".42" stop-color="#27305e"/>
+      <stop offset=".66" stop-color="#6b4f7c"/><stop offset=".84" stop-color="#d98a6a"/><stop offset="1" stop-color="#f4b77a"/>
     </linearGradient>
-    <radialGradient id="glow" cx=".72" cy=".38" r=".35">
-      <stop offset="0" stop-color="#f4e7d0" stop-opacity=".55"/><stop offset="1" stop-color="#f4e7d0" stop-opacity="0"/>
+    <radialGradient id="glow" cx="1080" cy="215" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe0a8" stop-opacity=".95"/><stop offset=".18" stop-color="#ffc07a" stop-opacity=".55"/>
+      <stop offset=".5" stop-color="#e98a6a" stop-opacity=".18"/><stop offset="1" stop-color="#e98a6a" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#c9d4e0" stop-opacity="0"/><stop offset="1" stop-color="#c9d4e0" stop-opacity=".7"/>
-    </linearGradient>
-    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#7d93ad"/><stop offset="1" stop-color="#2a3a50"/>
-    </linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a78a8"/><stop offset="1" stop-color="#5b5688"/></linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b4a7e"/><stop offset="1" stop-color="#2e3161"/></linearGradient>
+    <linearGradient id="main" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3c6e"/><stop offset=".55" stop-color="#232852"/><stop offset="1" stop-color="#171b3a"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151934"/><stop offset="1" stop-color="#0c0f22"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
   </defs>
+
   <rect width="1600" height="600" fill="url(#sky)"/>
+  <circle cx="620" cy="40" r="1.6" fill="#fff" opacity="0.7"/><circle cx="760" cy="90" r="1.2" fill="#fff" opacity="0.5"/><circle cx="880" cy="30" r="1.4" fill="#fff" opacity="0.6"/><circle cx="1010" cy="70" r="1.1" fill="#fff" opacity="0.45"/><circle cx="1180" cy="40" r="1.5" fill="#fff" opacity="0.55"/><circle cx="1330" cy="95" r="1.2" fill="#fff" opacity="0.4"/><circle cx="1450" cy="35" r="1.6" fill="#fff" opacity="0.5"/><circle cx="1540" cy="120" r="1.1" fill="#fff" opacity="0.35"/><circle cx="520" cy="120" r="1.2" fill="#fff" opacity="0.4"/><circle cx="420" cy="50" r="1.4" fill="#fff" opacity="0.5"/><circle cx="300" cy="100" r="1.1" fill="#fff" opacity="0.35"/><circle cx="180" cy="40" r="1.5" fill="#fff" opacity="0.45"/>
   <rect width="1600" height="600" fill="url(#glow)"/>
-  <!-- far snowy peaks -->
-  <path d="M0 330 L120 250 L210 290 L330 170 L420 240 L520 150 L610 230 L720 120 L800 200 L880 140 L990 230 L1090 110 L1180 200 L1290 150 L1400 240 L1500 180 L1600 230 V600 H0Z" fill="#9aabc0"/>
-  <path d="M330 170 L360 205 L345 205 L372 228 L300 200Z M720 120 L752 160 L735 158 L765 190 L690 150Z M1090 110 L1125 150 L1105 150 L1140 185 L1060 140Z M520 150 L548 185 L530 183 L556 210 L495 175Z" fill="#e9eef4" opacity=".85"/>
-  <rect y="200" width="1600" height="200" fill="url(#mist)"/>
-  <!-- mid ridge -->
-  <path d="M0 380 L90 330 L200 360 L310 300 L420 350 L540 290 L660 345 L780 300 L900 350 L1010 305 L1130 355 L1250 300 L1380 350 L1490 310 L1600 340 V600 H0Z" fill="#5f7390"/>
-  <rect y="300" width="1600" height="160" fill="url(#mist)" opacity=".6"/>
-  <!-- near forest ridge -->
-  <path d="M0 440 L60 410 L140 430 L230 395 L330 425 L450 390 L560 420 L690 385 L800 415 L930 392 L1050 422 L1170 390 L1300 418 L1420 395 L1520 420 L1600 405 V600 H0Z" fill="#34465e"/>
-  <g fill="#26364b">
-    <path d="M40 450 l12-38 12 38Z M80 452 l10-30 10 30Z M180 445 l14-44 14 44Z M260 448 l11-34 11 34Z M1330 446 l13-40 13 40Z M1380 450 l10-32 10 32Z M1460 444 l14-44 14 44Z M1530 450 l11-34 11 34Z"/>
+  <circle cx="1080" cy="228" r="62" fill="#ffe3b0"/>
+  <circle cx="1080" cy="228" r="80" fill="#ffd490" opacity=".25" filter="url(#soft)"/>
+
+  <!-- far range -->
+  <path d="M0 330 L110 270 L210 305 L330 215 L430 285 L540 240 L650 300 L760 250 L860 300 L1180 330 L1300 250 L1400 290 L1500 230 L1600 280 V600 H0Z" fill="url(#far)" opacity=".75"/>
+  <!-- mid range -->
+  <path d="M0 400 L120 350 L240 385 L360 320 L470 370 L560 345 L640 380 L1250 400 L1340 340 L1450 375 L1600 330 V600 H0Z" fill="url(#mid)"/>
+  <!-- main peak -->
+  <path d="M520 600 L700 430 L790 380 L880 300 L960 250 L1030 196 L1080 168 L1130 200 L1200 262 L1290 300 L1380 360 L1470 395 L1600 430 V600Z" fill="url(#main)"/>
+  <path d="M1080 168 L1130 200 L1200 262 L1290 300 L1380 360 L1470 395 L1600 430" fill="none" stroke="#ffc995" stroke-opacity=".55" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M1080 168 L1103 184 L1092 186 L1112 201 L1070 190 L1058 181Z" fill="#f3e6e9" opacity=".85"/>
+  <!-- foreground hills -->
+  <path d="M0 520 C150 480 300 500 420 470 C540 440 600 520 700 540 C820 565 900 520 1000 545 C1120 575 1250 520 1400 540 C1500 552 1560 540 1600 530 V600 H0Z" fill="url(#front)"/>
+
+  <!-- trajectory: travelled part (bright) and path ahead (faint) -->
+  <path d="M940,318 C947.5,308.7 968.3,279.7 985,262 C1001.7,244.3 1024.2,226.3 1040,212 C1055.8,197.7 1073.3,182.0 1080,176" fill="none" stroke="#e8ecff" stroke-opacity=".45" stroke-width="2.5" stroke-dasharray="4 10" stroke-linecap="round"/>
+  <path d="M690,640 C695.0,626.7 720.0,583.3 720,560 C720.0,536.7 681.7,517.5 690,500 C698.3,482.5 740.0,468.3 770,455 C800.0,441.7 855.0,435.8 870,420 C885.0,404.2 848.3,377.0 860,360 C871.7,343.0 926.7,325.0 940,318" fill="none" stroke="#ffd9a0" stroke-opacity=".35" stroke-width="10" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M690,640 C695.0,626.7 720.0,583.3 720,560 C720.0,536.7 681.7,517.5 690,500 C698.3,482.5 740.0,468.3 770,455 C800.0,441.7 855.0,435.8 870,420 C885.0,404.2 848.3,377.0 860,360 C871.7,343.0 926.7,325.0 940,318" fill="none" stroke="#ffe2b5" stroke-width="3" stroke-dasharray="12 9" stroke-linecap="round"/>
+  <circle cx="720" cy="560" r="5" fill="#ffd9a0"/><circle cx="720" cy="560" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="690" cy="500" r="5" fill="#ffd9a0"/><circle cx="690" cy="500" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="770" cy="455" r="5" fill="#ffd9a0"/><circle cx="770" cy="455" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="870" cy="420" r="5" fill="#ffd9a0"/><circle cx="870" cy="420" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="860" cy="360" r="5" fill="#ffd9a0"/><circle cx="860" cy="360" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="985" cy="262" r="4.5" fill="none" stroke="#e8ecff" stroke-opacity=".55" stroke-width="2"/><circle cx="1040" cy="212" r="4.5" fill="none" stroke="#e8ecff" stroke-opacity=".55" stroke-width="2"/>
+
+  <!-- current pose: covariance ellipse + heading arrow -->
+  <g transform="translate(940 318) rotate(-51.2)">
+    <ellipse rx="30" ry="17" fill="#7fd6ff" fill-opacity=".14" stroke="#7fd6ff" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="3 4"/>
+    <circle r="7" fill="#7fd6ff"/><circle r="13" fill="#7fd6ff" opacity=".25"/>
+    <path d="M10 -7 L28 0 L10 7Z" fill="#7fd6ff"/>
   </g>
-  <!-- lake -->
-  <rect y="455" width="1600" height="145" fill="url(#lake)"/>
-  <path d="M0 455 H1600" stroke="#c9d4e0" stroke-opacity=".5" stroke-width="2"/>
-  <g stroke="#dfe7f0" stroke-opacity=".25" stroke-width="2">
-    <path d="M200 490 h140 M620 510 h220 M1050 485 h160 M380 540 h120 M900 560 h200 M1300 530 h140"/>
+
+  <!-- goal flag at the summit -->
+  <g transform="translate(1080 168)">
+    <line x1="0" y1="0" x2="0" y2="-40" stroke="#fff" stroke-width="2.5"/>
+    <path d="M0 -40 L26 -32 L0 -24Z" fill="#ff7a59"/>
   </g>
 </svg>
