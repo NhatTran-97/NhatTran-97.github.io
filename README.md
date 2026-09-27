@@ -7,8 +7,10 @@ Website portfolio cá nhân chạy trên **GitHub Pages + Jekyll**.
 > Bạn **không cần sửa HTML/CSS/JS**. Sửa file → Commit → 1–2 phút sau website tự cập nhật.
 
 ## Mục lục
+0. [Bắt đầu nhanh — checklist lần đầu](#0-bắt-đầu-nhanh--checklist-lần-đầu)
 1. [Cách sửa file trực tiếp trên GitHub](#1-cách-sửa-file-trực-tiếp-trên-github)
 2. [Bản đồ: muốn sửa gì thì mở file nào](#2-bản-đồ-muốn-sửa-gì-thì-mở-file-nào)
+   - [Cách tổ chức nội dung: theo robot pipeline](#cách-tổ-chức-nội-dung-theo-robot-pipeline)
 3. [Thông tin cá nhân & trang Home / About — `profile.yml`](#3-thông-tin-cá-nhân--trang-home--about--profileyml)
 4. [CV — `cv.yml`](#4-cv--cvyml)
 5. [Projects — `projects.yml`](#5-projects--projectsyml)
@@ -21,6 +23,25 @@ Website portfolio cá nhân chạy trên **GitHub Pages + Jekyll**.
 12. [Tính năng có sẵn](#12-tính-năng-có-sẵn)
 13. [Chạy thử trên máy (tuỳ chọn)](#13-chạy-thử-trên-máy-tuỳ-chọn)
 14. [Cấu trúc thư mục](#14-cấu-trúc-thư-mục)
+
+---
+
+## 0. Bắt đầu nhanh — checklist lần đầu
+
+Website đang chứa **dữ liệu mẫu** (tên công ty, project, bài báo, số liệu đều là giả). Làm lần lượt:
+
+- [ ] **Thông tin cơ bản** — `_data/profile.yml`: `name`, `short_name`, `role`, `hero.tagline`, `hero.intro`.
+- [ ] **Liên hệ** — `_data/profile.yml` → `contacts`: email, LinkedIn, GitHub, Google Scholar… (xoá mục không dùng).
+- [ ] **Giới thiệu** — `_data/profile.yml` → `about.summary`, `about.intro`, `about.interests`.
+- [ ] **Ảnh đại diện** — upload vào `assets/img/`, sửa `avatar:`.
+- [ ] **Ảnh banner** (tuỳ chọn) — upload vào `assets/img/`, sửa `hero.background`.
+- [ ] **CV** — `_data/cv.yml`: học vấn, kinh nghiệm, kỹ năng, giải thưởng, hoạt động.
+- [ ] **CV PDF** — upload file vào `assets/files/` với tên `cv.pdf` (nếu chưa có, để `pdf: ""` để ẩn nút).
+- [ ] **Projects** — `_data/projects.yml`: thay các project mẫu bằng project thật, đánh dấu 3 project tốt nhất `featured: true`.
+- [ ] **Publications** — `_data/publications.yml`: thay bằng bài thật (chưa có bài nào → xoá dòng `Publications` trong `_data/navigation.yml` và đặt `home.publications: 0`).
+- [ ] **Notes** — xoá 3 bài mẫu trong `_posts/` (hoặc giữ làm tham khảo), viết bài đầu tiên theo [mục 7](#7-notes--viết-bài-chia-sẻ-kiến-thức).
+- [ ] **Tiêu đề trên Google** — `_config.yml`: `title`, `description`.
+- [ ] Mở web trên điện thoại kiểm tra lần cuối → gửi link cho mọi người 🎉
 
 ---
 
@@ -60,6 +81,27 @@ Không cần cài gì, làm ngay trên trình duyệt:
 | Tiêu đề web trên Google / tab trình duyệt | `_config.yml` |
 | File CV PDF | `assets/files/cv.pdf` |
 
+### Cách tổ chức nội dung: theo robot pipeline
+
+Website được sắp xếp quanh một thông điệp: **làm robot từ phần cứng tới thuật toán**. Dùng chung 3 lĩnh vực — tương ứng các tầng của robot — ở mọi nơi để người xem nhìn đâu cũng thấy cùng một bức tranh:
+
+```
+Cảm biến ─► Embedded & Hardware ─► Perception & AI ─► Autonomy ─► Embedded & Hardware ─► Động cơ
+            (firmware, driver,      (computer vision,   (SLAM, planning,  (motor control,
+             CAN, RTOS)              deep learning)      control, ROS 2)   PID, CAN)
+```
+
+| Ở đâu | Dùng thế nào |
+|---|---|
+| 4 ô dưới banner (`profile.yml → highlights`) | 3 tầng + Research & Publication |
+| Project (`projects.yml → category`) | chọn **1 tầng chính**, các mảng phụ ghi vào `tags` |
+| Bài viết (`category` trong bài) | `Embedded & Hardware` · `Perception & AI` · `Autonomy` · `Tools & Tips` · `Research` |
+| CV → Skills (`cv.yml`) | nhóm kỹ năng theo tầng: Embedded & Hardware · Perception & AI · Autonomy · Programming · Tools |
+
+> Viết **đúng chính tả và chữ hoa/thường** các tên lĩnh vực ở mọi nơi (vd. luôn là `Perception & AI`), nếu không sẽ bị tách thành 2 nhóm khác nhau.
+>
+> 💡 Điểm mạnh nhất của portfolio: một project **xuyên cả 3 tầng** (vd. robot tự hành: board STM32 điều khiển motor + Jetson chạy model vision + ROS 2 navigation). Đặt nó lên đầu và `featured: true`.
+
 ---
 
 ## 3. Thông tin cá nhân & trang Home / About — `profile.yml`
@@ -68,7 +110,7 @@ Không cần cài gì, làm ngay trên trình duyệt:
 ```yaml
 name: Nhat Tran                 # Tên đầy đủ (hiện ở banner, About, footer)
 short_name: N. Tran             # Tên ngắn ở góc trái menu
-role: Robotics & AI Engineer    # Chức danh (trang About)
+role: Robotics Engineer — Embedded, Perception & Autonomy   # Chức danh (trang About)
 avatar: /assets/img/avatar.jpg  # Ảnh đại diện, ảnh dọc tỉ lệ 4:5
 
 publication_names:              # Tên bạn trong danh sách tác giả → tự in đậm
@@ -100,9 +142,18 @@ hero:
 ### 3.3. Bốn ô giới thiệu — `highlights`
 ```yaml
 highlights:
+  - icon: cpu
+    title: Embedded & Hardware
+    text: Firmware, sensor drivers, motor control and real-time systems.
+  - icon: brain
+    title: Perception & AI
+    text: Computer vision and deep learning, optimized for edge devices.
   - icon: bot
-    title: Robotics & Autonomy
-    text: SLAM, navigation and control for mobile robots.
+    title: Autonomy
+    text: SLAM, localization, motion planning and control with ROS 2.
+  - icon: file-text
+    title: Research & Publication
+    text: Explore and share knowledge through academic work.
 ```
 Có thể để 2, 3 hoặc 4 ô. Xoá hết phần `highlights` nếu không muốn hiện.
 
@@ -180,14 +231,20 @@ sections:
           - "**Key result:** reduced drift by 40%"
 ```
 
-**Dạng kỹ năng**:
+**Dạng kỹ năng** (nhóm theo tầng robot):
 ```yaml
   - id: skills
     title: Skills
     type: skills                # ← bắt buộc để hiển thị dạng thẻ
     items:
+      - group: Embedded & Hardware
+        items: [STM32, ESP32, FreeRTOS, CAN, UART / SPI / I2C]
+      - group: Perception & AI
+        items: [PyTorch, OpenCV, TensorRT, YOLO]
+      - group: Autonomy
+        items: [ROS 2, Nav2, SLAM, MPC / PID]
       - group: Programming
-        items: [C++, Python, MATLAB]
+        items: [C / C++, Python, CUDA]
 ```
 
 **Ví dụ thêm mục mới** — Certifications:
@@ -313,7 +370,8 @@ items:
 ```yaml
 ---
 title: "PID Controller — From Theory to Code"
-category: Control               # 1 chủ đề → tạo mục lọc ở cột trái trang Notes
+category: Autonomy              # 1 chủ đề → tạo mục lọc ở cột trái trang Notes
+                                # gợi ý: Embedded & Hardware / Perception & AI / Autonomy / Tools & Tips / Research
 tags: [PID, Control, Python]
 description: "Một câu tóm tắt, hiện trên thẻ bài viết và khi chia sẻ link."
 image: /assets/img/notes/pid.jpg   # ảnh bìa 16:9 (tuỳ chọn; bỏ → bìa màu mặc định)
