@@ -55,7 +55,7 @@ highlights:
     text: Sensor fusion and Visual SLAM for robots and drones.
   - icon: route
     title: ROS 2 & Navigation
-    text: Full robot pipeline on ROS 2 — custom Nav2, ros2_control.
+    text: Deploying robot pipelines on ROS 2 — Nav2, ros2_control.
   - icon: chip-code
     title: Embedded Software
     text: Firmware and drivers on RTOS — SPI, I2C, CAN, Modbus.
