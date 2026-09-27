@@ -1,0 +1,41 @@
+# Mỗi project: title, period, role, description (markdown), tags, image, links
+- title: Autonomous Warehouse Robot
+  period: 2024 – Present
+  role: Lead developer
+  image: /assets/img/project-placeholder.svg
+  description: >-
+    End-to-end navigation system for an autonomous mobile robot (AMR):
+    2D LiDAR SLAM, localization with AMCL, path planning with Nav2 and a
+    custom MPC controller. Deployed on 20+ robots in production.
+  tags: [ROS 2, C++, SLAM, Nav2]
+  links:
+    - name: Code
+      url: https://github.com/NhatTran-97
+    - name: Video
+      url: "#"
+
+- title: Visual-Inertial Odometry on Jetson
+  period: 2023
+  role: M.Sc. thesis
+  image: /assets/img/project-placeholder.svg
+  description: >-
+    Real-time visual-inertial odometry running at 30 Hz on NVIDIA Jetson Orin.
+    Tight coupling of feature tracking and IMU pre-integration in a sliding-window optimizer.
+  tags: [C++, CUDA, VIO, Optimization]
+  links:
+    - name: Code
+      url: https://github.com/NhatTran-97
+    - name: Paper
+      url: /publications/
+
+- title: Semantic Segmentation for Field Robots
+  period: 2021 – 2022
+  role: Research assistant
+  image: /assets/img/project-placeholder.svg
+  description: >-
+    Lightweight segmentation network for terrain classification, trained on a
+    self-collected dataset of 10k images and exported to TensorRT for on-board inference.
+  tags: [PyTorch, Computer Vision, TensorRT]
+  links:
+    - name: Dataset
+      url: "#"

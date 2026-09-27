@@ -1,0 +1,46 @@
+---
+title: About
+---
+{% assign a = site.author %}
+<section class="profile">
+  <img src="{{ a.avatar | relative_url }}" alt="Portrait of {{ a.name }}">
+  <div>
+    <h1>{{ a.name }}</h1>
+    <p class="role">{{ a.position }}<br>{{ a.affiliation }} &middot; {{ a.location }}</p>
+    {% include social.html %}
+  </div>
+</section>
+
+<p>
+  I am a <strong>robotics and AI engineer</strong> working on autonomous mobile robots,
+  perception and motion planning. My work sits between research and deployment:
+  turning ideas from papers into software that runs reliably on real hardware.
+</p>
+<p>
+  <em>Replace this paragraph with your own bio: current role, research interests,
+  what you are looking for (PhD position, collaboration, jobs), and a short personal note.</em>
+</p>
+
+<h2>Research Interests</h2>
+<ul>
+  <li>Simultaneous Localization and Mapping (SLAM)</li>
+  <li>Motion planning and control for mobile robots</li>
+  <li>Robot perception with deep learning</li>
+</ul>
+
+<h2>News</h2>
+<ul class="news">
+  {% for item in site.data.news limit: 6 %}
+  <li><span class="date">{{ item.date }}</span><span>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
+  {% endfor %}
+</ul>
+
+<h2>Latest Notes</h2>
+<ul class="note-list">
+  {% for post in site.posts limit: 3 %}
+  <li>
+    <a class="note-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="note-meta">{{ post.date | date: '%b %-d, %Y' }}</div>
+  </li>
+  {% endfor %}
+</ul>

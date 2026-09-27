@@ -1,0 +1,40 @@
+# type phải là 1 trong: "Journal Articles", "Conference Papers", "Preprints & Theses"
+# Tên của bạn trong "authors" phải viết giống hệt author.name trong _config.yml để được gạch chân.
+- type: Journal Articles
+  title: "Robust Visual-Inertial Odometry for Low-Texture Indoor Environments"
+  authors: Nhat Tran, Co Author, Supervisor Name
+  venue: IEEE Robotics and Automation Letters (RA-L)
+  year: 2025
+  doi: 10.0000/example.2025.00001
+  pdf: "#"
+  code: https://github.com/NhatTran-97
+  bibtex: |
+    @article{tran2025robust,
+      title   = {Robust Visual-Inertial Odometry for Low-Texture Indoor Environments},
+      author  = {Tran, Nhat and Author, Co and Name, Supervisor},
+      journal = {IEEE Robotics and Automation Letters},
+      year    = {2025}
+    }
+
+- type: Conference Papers
+  title: "Learning-Based Local Planner for Crowded Warehouses"
+  authors: Nhat Tran, Another Author
+  venue: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+  year: 2026
+  note: Oral
+  pdf: "#"
+  slides: "#"
+
+- type: Conference Papers
+  title: "Lightweight Terrain Segmentation for Field Robots"
+  authors: First Author*, Nhat Tran*, Supervisor Name
+  venue: IEEE International Conference on Robotics and Automation (ICRA)
+  year: 2023
+  pdf: "#"
+
+- type: Preprints & Theses
+  title: "Visual-Inertial SLAM for Indoor Mobile Robots"
+  authors: Nhat Tran
+  venue: M.Sc. Thesis, University Name
+  year: 2024
+  pdf: "#"

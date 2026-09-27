@@ -1,0 +1,41 @@
+---
+title: Notes
+permalink: /notes/
+---
+<h1>Notes</h1>
+<p class="muted">Things I have learned and want to remember — study notes, tutorials and write-ups.</p>
+
+{% assign tags = site.tags | sort %}
+<div class="tag-filter" id="tag-filter">
+  <button type="button" class="on" data-tag="">All ({{ site.posts.size }})</button>
+  {% for t in tags %}<button type="button" data-tag="{{ t[0] }}">{{ t[0] }} ({{ t[1].size }})</button>{% endfor %}
+</div>
+
+<ul class="note-list" id="note-list">
+  {% for post in site.posts %}
+  <li data-tags="|{{ post.tags | join: '|' }}|">
+    <a class="note-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="note-meta">
+      {{ post.date | date: '%b %-d, %Y' }}
+      {% if post.tags.size > 0 %}&middot; {{ post.tags | join: ', ' }}{% endif %}
+    </div>
+    <p class="note-excerpt">{{ post.excerpt | strip_html | truncatewords: 32 }}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('#tag-filter button');
+    var items = document.querySelectorAll('#note-list li');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tag = btn.dataset.tag;
+        buttons.forEach(function (b) { b.classList.toggle('on', b === btn); });
+        items.forEach(function (li) {
+          li.hidden = tag !== '' && li.dataset.tags.indexOf('|' + tag + '|') === -1;
+        });
+      });
+    });
+  })();
+</script>

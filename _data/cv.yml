@@ -1,0 +1,48 @@
+updated: September 2026
+
+education:
+  - degree: M.Sc. in Mechatronics Engineering
+    school: University Name, City, Country
+    period: 2022 – 2024
+    details:
+      - "Thesis: *Visual-inertial SLAM for indoor mobile robots*"
+      - "GPA: 3.8 / 4.0"
+  - degree: B.Eng. in Mechatronics Engineering
+    school: University Name, City, Country
+    period: 2015 – 2020
+    details:
+      - Graduated with Distinction
+
+experience:
+  - role: Robotics Engineer
+    company: Company Name, City
+    period: 2024 – Present
+    details:
+      - Developed navigation stack (ROS 2, Nav2) for a fleet of warehouse AMRs.
+      - Reduced localization drift by 40% by fusing wheel odometry, IMU and LiDAR.
+  - role: Research Assistant
+    company: Lab Name, University Name
+    period: 2021 – 2024
+    details:
+      - Designed learning-based perception pipeline for outdoor robots.
+      - Co-authored 3 peer-reviewed papers.
+
+skills:
+  - group: Programming
+    items: C++, Python, MATLAB, Bash
+  - group: Robotics
+    items: ROS / ROS 2, Nav2, MoveIt, Gazebo, Isaac Sim
+  - group: ML / Vision
+    items: PyTorch, OpenCV, PCL, TensorRT
+  - group: Tools
+    items: Git, Docker, Linux, LaTeX
+  - group: Languages
+    items: Vietnamese (native), English (professional)
+
+awards:
+  - title: Best Paper Award Finalist
+    by: Conference Name
+    year: 2025
+  - title: Graduate Research Scholarship
+    by: University Name
+    year: 2022

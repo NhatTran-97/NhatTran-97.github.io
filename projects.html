@@ -1,0 +1,21 @@
+---
+title: Projects
+permalink: /projects/
+---
+<h1>Projects</h1>
+<p class="muted">Selected research and engineering projects.</p>
+
+{% for p in site.data.projects %}
+<article class="project">
+  <img src="{{ p.image | default: '/assets/img/project-placeholder.svg' | relative_url }}" alt="{{ p.title }}">
+  <div>
+    <h3>{{ p.title }}</h3>
+    <p class="period">{{ p.period }}{% if p.role %} &middot; {{ p.role }}{% endif %}</p>
+    {{ p.description | markdownify }}
+    <div>{% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
+    {% if p.links %}
+    <div class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}</div>
+    {% endif %}
+  </div>
+</article>
+{% endfor %}

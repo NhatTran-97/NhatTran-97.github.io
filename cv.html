@@ -1,0 +1,44 @@
+---
+title: CV
+permalink: /cv/
+---
+{% assign cv = site.data.cv %}
+<h1>Curriculum Vitae</h1>
+<p class="cv-actions">
+  <a class="btn" href="{{ '/assets/files/cv.pdf' | relative_url }}">Download PDF</a>
+  <span class="muted">&nbsp;Last updated: {{ cv.updated }}</span>
+</p>
+
+<h2>Education</h2>
+{% for e in cv.education %}
+<div class="cv-entry">
+  <span class="title">{{ e.degree }}</span><span class="when">{{ e.period }}</span>
+  <span class="where">{{ e.school }}</span>
+  {% if e.details %}<ul>{% for d in e.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}</ul>{% endif %}
+</div>
+{% endfor %}
+
+<h2>Experience</h2>
+{% for e in cv.experience %}
+<div class="cv-entry">
+  <span class="title">{{ e.role }}</span><span class="when">{{ e.period }}</span>
+  <span class="where">{{ e.company }}</span>
+  {% if e.details %}<ul>{% for d in e.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}</ul>{% endif %}
+</div>
+{% endfor %}
+
+<h2>Skills</h2>
+<dl class="skills">
+  {% for s in cv.skills %}<dt>{{ s.group }}</dt><dd>{{ s.items }}</dd>{% endfor %}
+</dl>
+
+<h2>Honors &amp; Awards</h2>
+{% for e in cv.awards %}
+<div class="cv-entry">
+  <span class="title">{{ e.title }}</span><span class="when">{{ e.year }}</span>
+  {% if e.by %}<span class="where">{{ e.by }}</span>{% endif %}
+</div>
+{% endfor %}
+
+<h2>Publications</h2>
+<p>See the <a href="{{ '/publications/' | relative_url }}">Publications</a> page for the full list.</p>
