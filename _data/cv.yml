@@ -38,6 +38,7 @@ sections:
           - "**Autonomy & perception:** Visual SLAM, computer vision, ROS 2 and autonomous navigation (Nav2)."
           - "**Embedded:** low-level robot firmware on RTOS — SPI, I2C, UART, CAN bus, Ethernet and Modbus."
           - Organize and teach a weekly workshop series for students on robotics, ROS 2, drones and embedded systems.
+          - "Mentor student teams in annual robotics competitions — **2nd and 3rd Prize at AUTO RACE 2025** with two teams."
 
   - id: skills
     title: Skills
@@ -60,12 +61,9 @@ sections:
     title: Achievements
     icon: award
     items:
-      - title: Best Paper Award Finalist
-        org: Conference Name
+      - title: 2nd Prize & 3rd Prize — AUTO RACE 2025
+        org: As mentor of two EIU student teams
         period: "2025"
-      - title: Graduate Research Scholarship
-        org: University Name
-        period: "2022"
 
   - id: activities
     title: Activities
@@ -75,3 +73,8 @@ sections:
         org: EIU FabLab
         details:
           - Hands-on sessions for students on robotics, ROS 2, drones and embedded systems.
+      - title: Student Competition Mentor
+        org: EIU FabLab
+        details:
+          - Mentor student teams for annual robotics competitions.
+          - "AUTO RACE 2025: two teams won **2nd Prize** and **3rd Prize**."

@@ -81,10 +81,21 @@ items:
       to the ROS 2 system.
     featured: true
 
+  - title: AUTO RACE 2025 — Student Teams
+    group: professional
+    org: EIU FabLab
+    category: Teaching & Mentoring
+    image: /assets/img/projects/trophy.svg
+    tags: [Mentoring, Autonomous Vehicles, Competition]
+    description: >-
+      Mentored two EIU student teams in the AUTO RACE 2025 competition —
+      the teams won **2nd Prize** and **3rd Prize**.
+
   - title: Weekly Robotics Workshop Series
     group: professional
     org: EIU FabLab
-    category: Teaching
+    category: Teaching & Mentoring
+    image: /assets/img/projects/workshop.svg
     tags: [ROS 2, Drones, Embedded, Robotics]
     description: >-
       Organize and teach weekly hands-on workshops for students on robotics,
