@@ -24,9 +24,9 @@ hero:
   greeting: Hello, I'm
   tagline: Robotics enthusiast — learning by building.
   intro: >-
-    I work on the software side of robots and drones — localization, sensor fusion
-    and Visual SLAM, the ROS 2 navigation stack (custom planners, controllers and
-    ros2_control), and embedded programming.
+    I work on robots and drones — localization, sensor fusion and Visual SLAM, the
+    ROS 2 navigation stack (custom planners, controllers and ros2_control), and
+    embedded systems from PCB design to firmware.
     I'm still learning with every project, and I enjoy sharing what I learn with
     students at the EIU FabLab.
   # Ảnh nền banner (ảnh ngang ~2400x900, < 300 KB). Có sẵn 4 lựa chọn:
@@ -57,8 +57,8 @@ highlights:
     title: ROS 2 & Navigation
     text: Deploying robot pipelines on ROS 2 — Nav2, ros2_control.
   - icon: chip-code
-    title: Embedded Software
-    text: Firmware and drivers on RTOS — SPI, I2C, CAN, Modbus.
+    title: Embedded Systems
+    text: RTOS firmware and PCB design with Altium Designer.
   - icon: presentation
     title: Teaching & Mentoring
     text: Weekly workshops and student teams in competitions.
@@ -99,8 +99,8 @@ about:
   subtitle: A little bit about who I am, my background, and what I'm passionate about.
   # Đoạn ngắn hiện trên trang Home
   summary: >-
-    I work on autonomous robots and drones across the full stack — from low-level
-    firmware (SPI, I2C, CAN bus, Ethernet, Modbus on RTOS) to Visual SLAM, computer
+    I work on autonomous robots and drones across the full stack — from PCB design and
+    low-level firmware (SPI, I2C, CAN bus, Ethernet, Modbus on RTOS) to Visual SLAM, computer
     vision and the ROS 2 navigation stack. I also run weekly workshops on robotics and embedded systems.
   # Phần giới thiệu đầy đủ trên trang About (viết Markdown, có thể nhiều đoạn)
   intro: |
@@ -108,8 +108,9 @@ about:
     since 2018 I have been building autonomous robots and autonomous drones across
     the whole robot pipeline.
 
-    On the **low level**, I write firmware for robot controllers on RTOS — drivers and
-    communication over SPI, I2C, UART, CAN bus, Ethernet and Modbus. On the **high level**,
+    On the **low level**, I design robot controller boards in Altium Designer and write
+    their firmware on RTOS — drivers and communication over SPI, I2C, UART, CAN bus,
+    Ethernet and Modbus. On the **high level**,
     I work on autonomous systems with ROS 2: Visual SLAM, computer vision and the Nav2
     navigation stack, where I write custom planner and controller plugins and
     ros2_control hardware interfaces for our robots.

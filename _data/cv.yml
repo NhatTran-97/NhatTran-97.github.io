@@ -38,10 +38,10 @@ sections:
         org: Eastern International University (EIU)
         period: Oct 2018 – Present
         details:
-          - Develop autonomous robot and autonomous drone platforms, working across the full stack from low-level firmware to high-level autonomy.
+          - Develop autonomous robot and autonomous drone platforms, working across the full stack from PCB design and low-level firmware to high-level autonomy.
           - "**Technical Lead** (Jun–Nov 2026), joint EIU–ARTC (Singapore) project [VDA5050 Support for Open-RMF](https://nhattran-97.github.io/projects/vda5050-open-rmf/): ROS 2 fleet adapters, an MQTT client adapter with a Nav2 bridge, and a fleet dashboard for a mixed AMR / TurtleBot3 fleet."
           - "**Autonomy & perception:** Visual SLAM, computer vision and ROS 2 navigation — custom Nav2 planner and controller plugins, ros2_control hardware interfaces."
-          - "**Embedded:** low-level robot firmware on RTOS — SPI, I2C, UART, CAN bus, Ethernet and Modbus."
+          - "**Embedded:** PCB design for robot controller boards in Altium Designer, and low-level firmware on RTOS — SPI, I2C, UART, CAN bus, Ethernet and Modbus."
           - Organize and teach a weekly workshop series for students on robotics, ROS 2, drones and embedded systems.
           - "Mentor student teams in annual robotics competitions — **2nd and 3rd Prize at AUTO RACE 2025** with two teams."
           - "Supervise student research papers — **Best Paper Award (Student Session)** at the EIUSC International Conference 2025."
@@ -51,7 +51,7 @@ sections:
     type: skills
     items:
       - group: Embedded & Hardware
-        items: [RTOS, SPI, I2C, UART, CAN bus, Ethernet, Modbus]
+        items: [PCB Design (Altium Designer), RTOS, SPI, I2C, UART, CAN bus, Ethernet, Modbus]
       - group: Perception & AI
         items: [PyTorch, OpenCV, TensorRT, ONNX, YOLO, PCL]
       - group: Autonomy
