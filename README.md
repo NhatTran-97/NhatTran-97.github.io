@@ -15,10 +15,10 @@ Website portfolio cá nhân chạy trên **GitHub Pages + Jekyll** → **https:/
 7. [Publications — `publications.yml`](#7-publications--publicationsyml)
 8. [Notes — viết bài chia sẻ kiến thức](#8-notes--viết-bài-chia-sẻ-kiến-thức)
 9. [Ảnh và file](#9-ảnh-và-file)
-10. [Giao diện: menu, màu, căn chữ, ảnh banner](#10-giao-diện-menu-màu-căn-chữ-ảnh-banner)
+10. [Giao diện: menu, màu, căn chữ, ảnh banner, độ rộng](#10-giao-diện-menu-màu-căn-chữ-ảnh-banner-độ-rộng)
 11. [Nguyên tắc nội dung (cách viết cho nhất quán)](#11-nguyên-tắc-nội-dung-cách-viết-cho-nhất-quán)
 12. [Quy tắc viết YAML (tránh lỗi)](#12-quy-tắc-viết-yaml-tránh-lỗi)
-13. [Xử lý sự cố](#13-xử-lý-sự-cố)
+13. [Xử lý sự cố & kiểm tra tự động](#13-xử-lý-sự-cố--kiểm-tra-tự-động)
 14. [Cấu trúc thư mục](#14-cấu-trúc-thư-mục)
 15. [Chạy thử trên máy (tuỳ chọn)](#15-chạy-thử-trên-máy-tuỳ-chọn)
 
@@ -39,7 +39,7 @@ Làm ngay trên trình duyệt, không cần cài gì:
 | Upload ảnh / PDF | Vào thư mục → **Add file → Upload files** → kéo thả → **Commit changes** |
 | Thay ảnh cũ | Upload file **trùng tên** để ghi đè |
 | Xoá file | Mở file → menu **…** → **Delete file** |
-| Theo dõi cập nhật | Tab **Actions**: *pages build and deployment* (website), *Build CV PDF* (CV), *Check site* (kiểm tra lỗi). ✅ xanh = xong, ❌ đỏ = lỗi → [mục 13](#13-xử-lý-sự-cố) |
+| Theo dõi cập nhật | Tab **Actions**: *pages build and deployment* (website), *Build CV PDF* (CV), *Check site* (kiểm tra lỗi). ✅ xanh = xong, ❌ đỏ = lỗi → [mục 13](#13-xử-lý-sự-cố--kiểm-tra-tự-động) |
 
 ---
 
@@ -59,8 +59,10 @@ Làm ngay trên trình duyệt, không cần cài gì:
 | Trang chi tiết của từng project | `_projects/<tên>.md` |
 | Bài báo khoa học | `_data/publications.yml` |
 | Bài viết chia sẻ kiến thức | thư mục `_posts/` |
+| Workshop / khoá học (thẻ bấm mở) | `_projects/weekly-robotics-workshop-series.md` ([mục 6.4](#64-trang-workshop--khoá-học-dạng-thẻ-bấm-mở)) |
 | Menu trên cùng | `_data/navigation.yml` |
 | Tiêu đề web trên Google, căn chữ toàn web | `_config.yml` |
+| Màu chủ đạo, độ rộng trang | `_sass/base/_tokens.scss` ([mục 10.5–10.6](#105-màu-chủ-đạo)) |
 
 ---
 
@@ -80,6 +82,11 @@ Làm ngay trên trình duyệt, không cần cài gì:
 3. Thay các dòng *Details coming soon* bằng nội dung thật: Overview → My role → kiến trúc / tính năng → kết quả → video.
 4. Ảnh riêng của project để trong `assets/img/projects/<tên-project>/`.
 5. Mẫu hoàn chỉnh để làm theo: **`_projects/vda5050-open-rmf.md`**.
+
+### 🎓 Thêm một workshop mới (trang Weekly Robotics Workshop Series)
+1. Upload ảnh bìa vào `assets/img/projects/workshops/` (ảnh PNG nền trong suốt hoặc ảnh chụp, < 300 KB).
+2. Mở `_projects/weekly-robotics-workshop-series.md`, copy nguyên một khối `<section class="workshop-panel" …>` … `</section>`, dán vào trước `### More workshops`.
+3. Sửa `id`, tiêu đề `### Workshop 3 — Tên`, ảnh bìa, mục tiêu, chip, link playlist, các bước học. Thẻ nhỏ **tự xuất hiện** — chi tiết ở [mục 6.4](#64-trang-workshop--khoá-học-dạng-thẻ-bấm-mở).
 
 ### 📝 Thêm bài báo
 1. Mở `_data/publications.yml`, copy một khối có sẵn, sửa `title`, `authors` (đúng thứ tự trong bài), `venue`, `year`.
@@ -128,7 +135,7 @@ hero:
   intro: >-                                              # 2–3 câu: làm gì, mảng nào
     I work on the software side of robots and drones, mainly localization, ...
   background: /assets/img/hero/hero-photo-mountain.jpg   # xem mục 10.4
-  quote: "Passion builds robots; persistence makes them work."   # "" để ẩn
+  quote: "Passion builds robots; persistence makes them work."   # "" để ẩn; mỗi vế tách bằng "; " nằm trên 1 dòng
   buttons:
     - text: View My CV
       url: /cv/
@@ -140,6 +147,9 @@ hero:
       style: ghost               # ghost = nút viền trong suốt
 ```
 > `>-` = gộp các dòng thành 1 đoạn. `|` = giữ nguyên xuống dòng (dùng khi có nhiều đoạn).
+
+- **Câu châm ngôn (`quote`)** hiện ở góc phải banner (ẩn trên điện thoại). Website tách câu tại dấu `; ` và giữ **mỗi vế trên đúng 1 dòng** → viết mỗi vế ngắn (≤ ~30 ký tự), tối đa 2–3 vế.
+- **Ảnh nền** tự co giãn theo màn hình; banner cao thêm một chút trên màn rộng.
 
 ### 4.3. Bốn ô dưới banner — `highlights`
 ```yaml
@@ -191,7 +201,7 @@ Dùng cho mọi trường `icon:`:
 | CV | `graduation-cap` `briefcase` `award` `star` `calendar` `clock` `folder` |
 | Liên hệ | `mail` `phone` `map-pin` `link` |
 | Logo thật (tự tô màu thương hiệu) | `github` `linkedin` `youtube` `scholar` `researchgate` `orcid` `x-twitter` |
-| Khác | `arrow-right` `external-link` `download` `play` |
+| Khác | `arrow-right` `external-link` `download` `play` `quote` |
 
 ---
 
@@ -347,19 +357,50 @@ links:                          # nút đầu tiên màu xanh đậm
 Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`** (project kỹ thuật) và
 **`_projects/weekly-robotics-workshop-series.md`** (chuỗi workshop / khoá học).
 
-**Dạng thẻ bấm mở (trang Weekly Robotics Workshop Series):** mỗi workshop nằm trong một khối
-`<section class="workshop-panel" id="..." markdown="1"> … </section>`. Ở đầu mục Workshops có
-`<div class="workshop-cards" data-workshop-cards></div>` — website **tự tạo một thẻ nhỏ** cho mỗi khối
-(ảnh bìa, dòng "Workshop 0x · …", tên sau dấu "—" của tiêu đề `###`, số bài học, "Lecture videos" nếu có
-link YouTube). Bấm thẻ → nội dung workshop đó mở ra bên dưới; bấm lại → đóng. Link mở thẳng một workshop:
-`/projects/weekly-robotics-workshop-series/#<id>`.
+### 6.4. Trang workshop / khoá học dạng thẻ bấm mở
+Trang **Weekly Robotics Workshop Series** (`_projects/weekly-robotics-workshop-series.md`) hiển thị mỗi workshop
+thành **một thẻ nhỏ**; bấm thẻ → nội dung workshop mở ra bên dưới, bấm lại → đóng. Thẻ được **tạo tự động**:
 
-**Thêm một workshop mới:** mở `_projects/weekly-robotics-workshop-series.md`, copy nguyên một khối
-`<section class="workshop-panel" …>` … `</section>`, dán vào trước `### More workshops` rồi sửa `id`
-(không dấu, không trùng), tên, ảnh bìa (để trong `assets/img/projects/workshops/`), mục tiêu, chip,
-link playlist và các bước học (mỗi bước là một `<li>`). Không cần sửa gì khác — thẻ tự xuất hiện.
-Ảnh bìa là ảnh PNG nền trong suốt (vd. ảnh sản phẩm) thì dùng `<figure class="workshop-cover">`; là ảnh
-chụp thường thì thêm `is-photo`: `<figure class="workshop-cover is-photo">` để ảnh lấp đầy khung.
+```html
+<div class="workshop-cards" data-workshop-cards></div>     <!-- chỗ hiện các thẻ (đặt 1 lần) -->
+
+<section class="workshop-panel" id="f1tenth-autonomous-racing" markdown="1">
+
+### Workshop 2 — F1TENTH Autonomous Racing              <!-- phần sau "—" = tên trên thẻ -->
+
+<div class="workshop">
+  <figure class="workshop-cover is-photo"><img src="/assets/img/projects/workshops/f1tenth-cover.jpg" alt="..."></figure>
+  <div class="workshop-info">
+    <span class="workshop-no">Workshop 02 · ROS 2 & autonomous driving</span>   <!-- nhãn trên thẻ -->
+    <p><strong>Goal:</strong> ...</p>
+    <div class="chips"><span class="chip">ROS 2</span> ...</div>
+    <p><a class="btn btn-primary" href="https://www.youtube.com/playlist?list=...">Watch the lectures</a></p>
+  </div>
+</div>
+
+#### Learning path
+<ol class="module-list">
+  <li><div><strong>Ubuntu basics</strong><p>Mô tả ngắn.</p></div></li>
+  <li><div><strong>ROS 2 basics</strong><p>...</p>
+    <div class="chips"><span class="chip">Node</span><span class="chip">Topic</span></div></div></li>
+  <li class="module-goal"><div><strong>Final goal: ...</strong><p>...</p></div></li>
+</ol>
+
+</section>
+```
+
+| Thẻ lấy từ | Trong khối `<section>` |
+|---|---|
+| Ảnh | `<figure class="workshop-cover">` — ảnh PNG nền trong suốt; ảnh chụp thường thì thêm `is-photo` |
+| Nhãn nhỏ | `<span class="workshop-no">` |
+| Tên | tiêu đề `###`, phần sau dấu "—" |
+| "6 modules" | số bước trong `module-list` (không tính bước `module-goal`) |
+| "Lecture videos" | có nút link YouTube trong khối |
+
+- `id` của `<section>`: không dấu, không trùng — dùng làm link mở thẳng workshop: `/projects/weekly-robotics-workshop-series/#<id>` (gửi cho sinh viên được).
+- Phải giữ `markdown="1"` và **dòng trống** sau `<section …>` / trước `</section>` để tiêu đề `###` hoạt động.
+- Nếu trình duyệt tắt JavaScript, tất cả workshop hiện đầy đủ (không mất nội dung).
+- Dùng được cho project khác (vd. một chuỗi khoá học): copy cả thẻ `<div class="workshop-cards" …>` và các khối `<section>`.
 
 ---
 
@@ -431,6 +472,7 @@ math: true                  # bật nếu có công thức toán
 | Ảnh banner | `assets/img/hero/` | ngang ~2400×900 |
 | Ảnh thẻ project | `assets/img/projects/` | 16:9, ~1280px |
 | Ảnh trang chi tiết project | `assets/img/projects/<tên-project>/` | rộng ~1400–1600px |
+| Ảnh workshop (bìa + ảnh lớp) | `assets/img/projects/workshops/` | bìa vuông hoặc PNG nền trong suốt; ảnh lớp ~1600px |
 | Ảnh bài viết | `assets/img/notes/` | 16:9, ~1000px |
 | CV PDF | `assets/files/cv.pdf` | tự tạo nếu `pdf_auto: true` |
 | PDF bài báo | `assets/files/papers/` | — |
@@ -443,7 +485,7 @@ math: true                  # bật nếu có công thức toán
 
 ---
 
-## 10. Giao diện: menu, màu, căn chữ, ảnh banner
+## 10. Giao diện: menu, màu, căn chữ, ảnh banner, độ rộng
 
 ### 10.1. Menu — `_data/navigation.yml`
 Xoá dòng để ẩn trang khỏi menu; đổi thứ tự để đổi vị trí.
@@ -475,16 +517,32 @@ Sửa `hero.background` trong `profile.yml`. Có sẵn trong `assets/img/hero/`:
 ### 10.5. Màu chủ đạo
 `_sass/base/_tokens.scss` → dòng `--primary: #1f5fd6;` (bảng màu sáng) và `--primary` trong `dark-palette` (bảng màu tối). Ví dụ `#0f766e` xanh ngọc, `#7c3aed` tím.
 
-### 10.6. Độ rộng trang
-`_sass/base/_tokens.scss` → 3 dòng đầu mục *Page widths*:
+### 10.6. Độ rộng trang & responsive
+Trang **tự co giãn theo màn hình**: mỗi vùng chiếm một tỉ lệ % chiều rộng màn hình, nhưng không hẹp hơn
+mức tối thiểu (trừ khi màn hình nhỏ hơn) và không rộng quá mức tối đa. Chỉnh ở `_sass/base/_tokens.scss`,
+mục *Page widths*:
 
-| Biến | Mặc định | Áp dụng cho |
+| Vùng | min | % màn hình | max |
+|---|---|---|---|
+| Toàn trang: header, footer, Home, Projects, CV, Publications, Notes, About (`$container-…`) | 1320px | 82vw | 1840px |
+| Trang chi tiết project (`$detail-…`) | 1200px | 72vw | 1560px |
+| Bài viết Notes (`$reading-…`), giữ vừa phải để dòng chữ dễ đọc | 820px | 50vw | 1000px |
+
+Kết quả thực tế (đã kiểm tra tự động, không màn hình nào bị tràn ngang):
+
+| Màn hình | Khung nội dung | Bố cục |
 |---|---|---|
-| `$container-width` | `1320px` | Header, footer, Home, Projects, CV, Publications, Notes, About |
-| `$detail-width` | `1160px` | Trang chi tiết project |
-| `$reading-width` | `820px` | Bài viết Notes (giữ hẹp để dòng chữ dễ đọc) |
+| Điện thoại 320–560px | toàn màn hình, lề 16px | 1 cột, menu ☰ |
+| Tablet 760–1080px | toàn màn hình | 2 cột |
+| Laptop 1366px | 1320px | 3 cột |
+| Màn Full HD 1920px | ~1575px (82%) | 3 cột |
+| Màn 2K/4K ≥ 1700px | tối đa 1840px | lưới Projects / Notes **4 cột** |
 
-Màn hình nhỏ hơn các số này thì trang tự co theo màn hình. Không nên để quá ~1440px vì dòng chữ sẽ quá dài.
+Các mốc chuyển bố cục là `$bp-xl / lg / md / sm / xs` trong cùng file. Banner Home tự cao thêm một chút
+trên màn rộng để ảnh nền không bị cắt.
+
+**Lưu ý khi sửa file `.scss`:** chú thích `//` kéo dài tới **hết dòng**, nên đừng viết CSS phía sau nó trên
+cùng một dòng (phần đó sẽ bị bỏ qua). `check_site.py` sẽ báo lỗi nếu gặp trường hợp này.
 
 ---
 
@@ -510,7 +568,7 @@ Màn hình nhỏ hơn các số này thì trang tự co theo màn hình. Không 
 
 ---
 
-## 13. Xử lý sự cố
+## 13. Xử lý sự cố & kiểm tra tự động
 
 | Hiện tượng | Cách xử lý |
 |---|---|
@@ -522,15 +580,15 @@ Màn hình nhỏ hơn các số này thì trang tự co theo màn hình. Không 
 | Trang chi tiết project 404 | File nằm trong `_projects/`, và `detail:` trong `projects.yml` trùng tên file (vd. `_projects/abc.md` ↔ `/projects/abc/`). |
 | Công thức toán không hiện | Thêm `math: true` vào phần đầu bài. |
 | Tên mình không in đậm | Tên trong `authors` phải khớp chính xác `publication_names`. |
+| Thẻ workshop không hiện / bấm không mở | Khối phải là `<section class="workshop-panel" id="..." markdown="1">` (có `id`, không trùng) và trang có `<div class="workshop-cards" data-workshop-cards></div>` phía trên. |
+| Giao diện lỗi sau khi sửa file `.scss` (mất màu, mất bo góc…) | Xem **Check site**: thường do viết CSS phía sau chú thích `//` trên cùng một dòng. |
 | Máy tính không vào được web nhưng 4G vào được | Do mạng/DNS: đổi DNS sang `8.8.8.8` / `1.1.1.1`, khởi động lại router. |
 
----
-
-### Kiểm tra tự động (Check site)
+### 13.1. Kiểm tra tự động (Check site)
 Mỗi lần commit, GitHub chạy **Check site** (`_scripts/check_site.py`):
-- **ERROR** (phải sửa): lỗi cú pháp YAML (kèm số dòng), ảnh / PDF không tồn tại, icon sai tên, project thiếu `title` / `group` / `description`, `group` không có trong `groups`, `detail` trỏ tới trang không tồn tại, tên file bài viết sai dạng, trùng tên project, link hỏng sau khi build.
+- **ERROR** (phải sửa): lỗi cú pháp YAML (kèm số dòng), ảnh / PDF không tồn tại, icon sai tên, project thiếu `title` / `group` / `description`, `group` không có trong `groups`, `detail` trỏ tới trang không tồn tại, tên file bài viết sai dạng, trùng tên project, CSS viết sau chú thích `//` trong file `.scss` (sẽ bị bỏ qua), link hỏng sau khi build.
 - **WARNING** (nên xem): link liên hệ còn là mẫu, ô giới thiệu quá dài, lĩnh vực viết khác danh sách chuẩn, tên bạn không có trong danh sách tác giả, trang project còn *Details coming soon*.
-- Chạy trên máy: `python3 _scripts/check_site.py` (cần `pip install pyyaml`).
+- Chạy trên máy: `python3 _scripts/check_site.py` (cần `pip install pyyaml`); thêm thư mục đã build để kiểm tra link: `python3 _scripts/check_site.py _site`.
 
 ---
 
@@ -551,7 +609,7 @@ Mỗi lần commit, GitHub chạy **Check site** (`_scripts/check_site.py`):
 │   ├── files/               # ★ cv.pdf, papers/
 │   ├── icons/               #   favicon
 │   ├── css/style.scss       #   chỉ danh sách @import (không viết style ở đây)
-│   ├── js/main.js           #   sáng/tối, menu, bộ lọc, tab CV, tìm kiếm
+│   ├── js/main.js           #   sáng/tối, menu, bộ lọc, tab CV, thẻ workshop, tìm kiếm
 │   └── fonts/               #   font Inter
 ├── _sass/                   #   GIAO DIỆN — mỗi phần 1 file (xem bên dưới)
 ├── _layouts/                #   khung trang: default, post, project
@@ -567,17 +625,20 @@ CSS được chia theo thành phần trong `_sass/`, **mỗi file chứa toàn b
 
 | File | Phụ trách |
 |---|---|
-| `base/_tokens.scss` | **Màu sắc** (sáng + tối), font, bo góc, **độ rộng trang**, các mốc màn hình (`$bp-lg/md/sm/xs`) |
+| `base/_tokens.scss` | **Màu sắc** (sáng + tối), font, bo góc, **độ rộng trang** (co giãn theo màn hình), các mốc màn hình (`$bp-xl/lg/md/sm/xs`) |
 | `base/_base.scss`, `_fonts.scss` | Nền tảng trang, font Inter |
 | `base/_typography.scss` | Căn chữ, công tắc `justify` (nạp cuối cùng) |
 | `components/*` | Nút, nhãn, thẻ card, timeline CV, thẻ project, thẻ bài viết, bài báo, màu icon liên hệ |
-| `layout/*` | Header + menu, tìm kiếm, footer, tiêu đề trang + cột trái, nội dung Markdown, khối trình bày (arch, gallery…) |
+| `layout/*` | Header + menu, tìm kiếm, footer, tiêu đề trang + cột trái, nội dung Markdown, khối trình bày (arch, gallery, video-list, workshop, module-list, thẻ workshop) |
 | `pages/*` | Riêng từng trang: Home, About, CV, Projects + trang chi tiết, bài viết + 404 |
 
 Thứ tự nạp nằm trong `assets/css/style.scss`: tokens → base → components → layout → pages → màu icon → typography. File nạp sau được ưu tiên.
 - **Đổi màu:** chỉ sửa `base/_tokens.scss`. **Thêm màu cho icon liên hệ mới:** thêm 1 dòng trong `components/_brand-icons.scss`.
 - **Thêm thành phần mới:** tạo `_sass/components/_ten.scss` rồi thêm `@import "components/ten";` vào `style.scss`.
 - Chế độ tối cho 1 thành phần: dùng `@include when-dark { ... }` (xem `_chips.scss`).
+- Độ rộng co giãn cho 1 vùng mới: `@include fluid-width($min, $fluid, $max);` (xem `_tokens.scss`).
+- Lưới thẻ tự co theo màn hình: `grid-template-columns: repeat(auto-fit, minmax(#{unquote("min(260px, 100%)")}, 1fr));` — không bao giờ tràn ngang trên điện thoại.
+- Chú thích `//` luôn đặt **trên dòng riêng** (xem [mục 10.6](#106-độ-rộng-trang--responsive)).
 
 ---
 

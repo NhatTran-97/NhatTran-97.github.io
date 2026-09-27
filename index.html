@@ -18,7 +18,11 @@ title: Home
       {%- endfor %}
     </div>
   </div>
-  {% if h.quote %}<blockquote class="hero-quote">&ldquo;{{ h.quote }}&rdquo;</blockquote>{% endif %}
+  {%- if h.quote %}
+  {%- comment -%} Each part of the quote (split at ";") stays on one line when it fits {%- endcomment -%}
+  {%- assign quote_parts = h.quote | split: "; " %}
+  <blockquote class="hero-quote">&ldquo;{% for part in quote_parts %}<span>{{ part }}{% unless forloop.last %};{% endunless %}{% if forloop.last %}&rdquo;{% endif %}</span>{% unless forloop.last %}&#32;{% endunless %}{% endfor %}</blockquote>
+  {%- endif %}
 </section>
 
 {% if p.highlights %}

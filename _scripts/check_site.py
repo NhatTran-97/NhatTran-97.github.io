@@ -261,6 +261,19 @@ def check_built_site(site):
                 err(str(page.relative_to(site)), f"broken link: {link}")
 
 
+def check_styles():
+    """In .scss a '//' comment runs to the end of the line, so CSS written after it
+    on the same line is silently dropped (e.g. 'a: 1;  // note  b: 2;' loses b)."""
+    for f in sorted((ROOT / "_sass").rglob("*.scss")) + sorted((ROOT / "assets" / "css").glob("*.scss")):
+        for n, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            code = re.sub(r'"[^"]*"|\'[^\']*\'|url\([^)]*\)', "", line)
+            if "//" in code:
+                before, comment = code.split("//", 1)
+                if before.strip() and re.search(r"[a-z-]+\s*:\s*[^;]+;", comment):
+                    err(f"{f.relative_to(ROOT)} line {n}",
+                        "CSS after a '//' comment is ignored - move the comment to its own line")
+
+
 def main():
     profile = check_profile()
     check_cv()
@@ -268,6 +281,7 @@ def main():
     check_project_pages()
     check_publications(profile)
     check_posts()
+    check_styles()
     if len(sys.argv) > 1:
         check_built_site(sys.argv[1])
 

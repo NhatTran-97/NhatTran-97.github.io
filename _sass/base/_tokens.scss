@@ -39,12 +39,22 @@
   :root:not([data-theme="light"]) { @include dark-palette; }
 }
 
-// Page widths — change here to make the whole site wider / narrower
-$container-width: 1320px;   // header, footer and all pages (Home, Projects, CV ...)
-$detail-width: 1160px;      // project detail pages
-$reading-width: 820px;      // notes / blog posts (long text reads best ~70–80 characters per line)
+// Page widths — fluid: each area takes a share of the screen width (vw), never
+// narrower than its "min" (unless the screen itself is smaller) nor wider than its "max".
+//   e.g. main container on a 1920px screen: 82vw ≈ 1575px; on 2560px: capped at 1840px
+$container-min: 1320px;  $container-fluid: 82vw;  $container-max: 1840px;  // header, footer, all pages
+$detail-min: 1200px;     $detail-fluid: 72vw;     $detail-max: 1560px;     // project detail pages
+$reading-min: 820px;     $reading-fluid: 50vw;    $reading-max: 1000px;    // notes / blog posts (keep lines readable)
+$hero-text-width: 640px;    // text column in the Home hero banner
+
+// max-width that grows with the screen: min(max, max(min, fluid)); older browsers use "min"
+@mixin fluid-width($min, $fluid, $max) {
+  max-width: $min;
+  max-width: unquote("min(#{$max}, max(#{$min}, #{$fluid}))");
+}
 
 // Breakpoints used across the partials
+$bp-xl: 1700px;   // wide screens: card grids 4 columns
 $bp-lg: 1080px;   // highlights 2 columns, About 2 columns
 $bp-md: 960px;    // home grid 1 column, card grids 2 columns
 $bp-sm: 760px;    // phones / small tablets

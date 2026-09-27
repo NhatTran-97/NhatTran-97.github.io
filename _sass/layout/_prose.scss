@@ -1,5 +1,5 @@
 // Markdown content: notes, project detail pages, About intro
-.prose { font-size: 1rem; line-height: 1.75; }
+.prose { font-size: 1rem; line-height: 1.75; overflow-wrap: break-word; }  // long URLs / code words never push the page wider
 .prose > :first-child { margin-top: 0; }
 .prose h2 { font-size: 1.35rem; margin: 1.8em 0 .6em; padding-bottom: .3em; border-bottom: 1px solid var(--border); }
 .prose h3 { font-size: 1.1rem; margin: 1.5em 0 .5em; }

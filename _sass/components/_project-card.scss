@@ -35,5 +35,6 @@
 .card-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: auto; padding-top: 4px; font-size: .85rem; font-weight: 600; }
 .card-links a { display: inline-flex; align-items: center; gap: 5px; }
 
+@media (min-width: $bp-xl) { .project-grid { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: $bp-md) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: $bp-xs) { .project-grid { grid-template-columns: 1fr; } }
