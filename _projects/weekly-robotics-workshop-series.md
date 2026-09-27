@@ -63,6 +63,21 @@ Select a workshop to see its goal, learning path and lecture recordings.
   </div>
 </div>
 
+#### Robot platform
+
+The workshop is built around a small two-wheeled self-balancing robot with a custom
+STM32 controller board, so every module can be tried directly on real hardware.
+
+<figure class="figure-narrow">
+  <img src="/assets/img/projects/workshops/stm32-robot-platform.png" alt="Overview of the self-balancing robot: mechanical design, sensing and actuation, electronics and firmware, technical specifications">
+  <figcaption>The robot platform: 3D-printed frame, IMU and encoder motors, STM32L476 board with an ESP32-C3 co-processor.</figcaption>
+</figure>
+
+<figure class="figure-narrow">
+  <img src="/assets/img/projects/workshops/stm32-robot-pcb.jpg" alt="3D view of the STM32L476RGT6 controller board of the self-balancing robot">
+  <figcaption>The robot's 2-layer controller board (STM32L476RGT6, IMU, motor driver, Bluetooth) — 3D view in Altium Designer.</figcaption>
+</figure>
+
 #### Learning path
 
 <ol class="module-list">
@@ -122,10 +137,12 @@ Select a workshop to see its goal, learning path and lecture recordings.
   </li>
 </ol>
 
-<figure>
-  <img src="/assets/img/projects/workshops/teaching.jpg" alt="Demonstrating the self-balancing robot to students">
-  <figcaption>Demonstrating the self-balancing robot to students during a session.</figcaption>
-</figure>
+#### In class
+
+<div class="gallery">
+  <figure><img src="/assets/img/projects/workshops/teaching.jpg" alt="Demonstrating the self-balancing robot to students"><figcaption>Demonstrating the self-balancing robot to students.</figcaption></figure>
+  <figure><img src="/assets/img/projects/workshops/stm32-class.jpg" alt="Students programming in C during a workshop session"><figcaption>A C programming session at the EIU FabLab.</figcaption></figure>
+</div>
 
 </section>
 

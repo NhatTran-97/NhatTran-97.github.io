@@ -3,6 +3,9 @@
 .gallery figure { margin: 0; }
 .gallery img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
 
+// A figure that should not stretch to the full content width (diagrams, infographics, renders)
+.prose .figure-narrow img { width: 100%; max-width: 900px; }
+
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(#{unquote("min(230px, 100%)")}, 1fr)); gap: 14px; margin: 1.2em 0; }
 .feature-grid > div { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg); }
 .feature-grid strong { display: block; margin-bottom: 4px; color: var(--primary); }
