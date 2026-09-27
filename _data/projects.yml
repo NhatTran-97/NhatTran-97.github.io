@@ -119,12 +119,16 @@ items:
     category: Teaching & Mentoring
     period: Dec 2025
     image: /assets/img/projects/eiusc-2025-best-paper.jpg
-    tags: [Research, Mentoring, Conference Paper]
+    tags: [AEB, Kalman Filter, Autonomous Racing, Research]
     description: >-
-      Mentored an EIU student team in writing and presenting a research paper at the
-      EIUSC International Conference 2025 (Ho Chi Minh City, 3 December 2025) — the
-      paper received the **Best Paper Award** in the student session.
+      Mentored an EIU student team on the paper *"Developing An Autonomous Emergency
+      Braking System-Based Kalman Filtering For An Autonomous Racing Car"*, presented at
+      the EIUSC International Conference 2025 (Ho Chi Minh City, 3 December 2025) — it
+      received the **Best Paper Award** in the student session.
     links:
+      - name: Paper
+        url: /publications/
+        icon: file-text
       - name: Experiment video
         url: https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s
         icon: youtube
