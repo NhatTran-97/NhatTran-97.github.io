@@ -5,6 +5,7 @@ layout: default
   Project detail page. Content comes from a Markdown file in _projects/
   (see _templates/new-project-page.md). Front matter fields:
   title, summary, category, role, period, partners, status, image, image_caption,
+  image_ratio (optional, e.g. "16 / 9" to show a wide banner uncropped; default 4 / 3),
   tags, links (name / url / icon).
 {%- endcomment -%}
 <article class="project-page">
@@ -36,7 +37,7 @@ layout: default
     </div>
     {% if page.image %}
     <figure class="project-hero-img">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.image_caption | default: page.title }}">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_caption | default: page.title }}"{% if page.image_ratio %} style="aspect-ratio: {{ page.image_ratio }}"{% endif %}>
       {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
     </figure>
     {% endif %}

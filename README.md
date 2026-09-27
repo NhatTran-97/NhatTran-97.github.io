@@ -334,6 +334,7 @@ partners: EIU FabLab × ARTC (Singapore)
 status: In progress             # Completed / In progress / Under review / Ongoing
 image: /assets/img/projects/vda5050/robots.jpg
 image_caption: Chú thích ảnh bìa
+image_ratio: "16 / 9"           # tuỳ chọn: giữ nguyên ảnh banner ngang (mặc định cắt 4 / 3)
 tags: [ROS 2 Jazzy, Open-RMF, VDA5050]
 links:                          # nút đầu tiên màu xanh đậm
   - name: GitHub repository
@@ -349,7 +350,7 @@ links:                          # nút đầu tiên màu xanh đậm
 | Khối | Dùng cho |
 |---|---|
 | `<div class="arch">…</div>` | Sơ đồ kiến trúc 2 cột có mũi tên ở giữa |
-| `<div class="feature-grid">…</div>` | Lưới ô tính năng |
+| `<div class="feature-grid">…</div>` | Lưới ô tính năng (thêm `cols-3` để luôn 3 cột trên màn rộng, vd. 6 ô → 2 hàng đều) |
 | `<figure><img …><figcaption>…</figcaption></figure>` | Ảnh có chú thích |
 | `<figure class="figure-narrow">…</figure>` | Ảnh không kéo quá rộng (sơ đồ, infographic, ảnh render) — tối đa 900px |
 | `<figure class="figure-narrow figure-small">…</figure>` | Ảnh phụ cỡ nhỏ (vd. ảnh mạch 3D) — tối đa 480px |

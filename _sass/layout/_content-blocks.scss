@@ -9,6 +9,8 @@
 .prose .figure-narrow.figure-large img { max-width: 1100px; }  // main overview image, a bit larger
 
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(#{unquote("min(230px, 100%)")}, 1fr)); gap: 14px; margin: 1.2em 0; }
+// .cols-3: always 3 columns on wide screens (e.g. 6 items → 2 even rows)
+@media (min-width: $bp-md) { .feature-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
 .feature-grid > div { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg); }
 .feature-grid strong { display: block; margin-bottom: 4px; color: var(--primary); }
 .feature-grid p { margin: 0; font-size: .9rem; color: var(--muted); }

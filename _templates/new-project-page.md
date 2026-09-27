@@ -16,6 +16,7 @@ partners: EIU FabLab               # đơn vị hợp tác (tuỳ chọn)
 status: Completed                  # Completed / In progress ...
 image: /assets/img/projects/ten-project/cover.jpg
 image_caption: Chú thích ảnh bìa
+# image_ratio: "16 / 9"           # tuỳ chọn: ảnh bìa ngang (banner) không bị cắt; mặc định 4 / 3
 tags: [ROS 2, Nav2, C++]
 links:                             # nút đầu tiên màu xanh đậm
   - name: GitHub repository

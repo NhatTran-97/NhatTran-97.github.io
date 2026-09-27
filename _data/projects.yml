@@ -166,7 +166,7 @@ items:
     org: EIU FabLab — research mentor & co-author
     category: Embedded & Hardware
     period: 2026 — under review at EIUSC 2026
-    image: /assets/img/projects/dc-motor.svg
+    image: /assets/img/projects/dc-motor/card.jpg
     tags: [Motor Control, PI Control, Feedforward, Embedded]
     description: >-
       Student research paper (co-authored, under review at the EIUSC International Conference 2026): *"Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors"*.
