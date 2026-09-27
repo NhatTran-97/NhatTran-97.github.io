@@ -80,6 +80,7 @@ sections:
           - "*Cuộc thi Sáng tạo và Điều khiển UAV-Drone dành cho Thanh thiếu niên TP. Hồ Chí Minh năm 2026*"
       - title: Weekly Robotics Workshop Series — Organizer & Instructor
         org: EIU FabLab
+        period: Jan 2025 – Present
         details:
           - Hands-on sessions for students on robotics, ROS 2, drones and embedded systems.
       - title: Student Competition Mentor

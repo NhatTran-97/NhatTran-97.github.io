@@ -117,6 +117,7 @@ items:
     group: professional
     org: EIU FabLab
     category: Teaching & Mentoring
+    period: Jan 2025 – Present
     image: /assets/img/projects/workshop.svg
     tags: [ROS 2, Drones, Embedded, Robotics]
     description: >-
