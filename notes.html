@@ -2,40 +2,33 @@
 title: Notes
 permalink: /notes/
 ---
-<h1>Notes</h1>
-<p class="muted">Things I have learned and want to remember — study notes, tutorials and write-ups.</p>
+{%- capture actions -%}
+<label class="search-field">
+  {% include icon.html name="search" %}
+  <input type="search" placeholder="Search posts…" data-filter-search aria-label="Search posts">
+</label>
+{%- endcapture -%}
 
-{% assign tags = site.tags | sort %}
-<div class="tag-filter" id="tag-filter">
-  <button type="button" class="on" data-tag="">All ({{ site.posts.size }})</button>
-  {% for t in tags %}<button type="button" data-tag="{{ t[0] }}">{{ t[0] }} ({{ t[1].size }})</button>{% endfor %}
-</div>
+<div data-filter>
+  {% include page-head.html title="Notes &amp; Knowledge" subtitle="I write about things I learn, from technical notes to personal insights." actions=actions %}
 
-<ul class="note-list" id="note-list">
-  {% for post in site.posts %}
-  <li data-tags="|{{ post.tags | join: '|' }}|">
-    <a class="note-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="note-meta">
-      {{ post.date | date: '%b %-d, %Y' }}
-      {% if post.tags.size > 0 %}&middot; {{ post.tags | join: ', ' }}{% endif %}
+  {%- assign cats = site.posts | map: "category" | compact | uniq | sort -%}
+  <div class="side-layout">
+    <aside class="side-nav card">
+      <button type="button" class="side-link active" data-filter-value="">All <span class="count">{{ site.posts.size }}</span></button>
+      {%- for c in cats %}
+      {%- assign n = site.posts | where: "category", c | size %}
+      <button type="button" class="side-link" data-filter-value="{{ c }}">{{ c }} <span class="count">{{ n }}</span></button>
+      {%- endfor %}
+    </aside>
+
+    <div>
+      <div class="note-grid">
+        {%- for post in site.posts %}
+        {% include note-card.html post=post %}
+        {%- endfor %}
+      </div>
+      <p class="empty" data-filter-empty hidden>No notes found.</p>
     </div>
-    <p class="note-excerpt">{{ post.excerpt | strip_html | truncatewords: 32 }}</p>
-  </li>
-  {% endfor %}
-</ul>
-
-<script>
-  (function () {
-    var buttons = document.querySelectorAll('#tag-filter button');
-    var items = document.querySelectorAll('#note-list li');
-    buttons.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var tag = btn.dataset.tag;
-        buttons.forEach(function (b) { b.classList.toggle('on', b === btn); });
-        items.forEach(function (li) {
-          li.hidden = tag !== '' && li.dataset.tags.indexOf('|' + tag + '|') === -1;
-        });
-      });
-    });
-  })();
-</script>
+  </div>
+</div>

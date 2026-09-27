@@ -1,0 +1,113 @@
+# =====================================================================
+#  THÔNG TIN CÁ NHÂN — dùng cho trang Home, About và footer.
+#  Các trường "icon" nhận một trong các tên sau:
+#    brain, bot, cpu, code, file-text, users, book-open, lightbulb, globe,
+#    graduation-cap, briefcase, award, star, map-pin, mail, phone, user,
+#    github, linkedin, researchgate, scholar, orcid, x-twitter, link,
+#    arrow-right, external-link, download, play, calendar, folder
+# =====================================================================
+
+name: Nhat Tran                 # Tên đầy đủ
+short_name: N. Tran             # Tên ngắn hiện ở góc trái menu
+role: Robotics & AI Engineer    # Chức danh ngắn
+avatar: /assets/img/avatar.svg  # Ảnh đại diện (nên dùng ảnh dọc, tỉ lệ 4:5)
+
+# Tên của bạn trong danh sách tác giả bài báo → sẽ được in đậm tự động
+publication_names:
+  - Nhat Tran
+  - N. Tran
+
+# ----- Banner lớn ở trang Home -----
+hero:
+  greeting: Hello, I'm
+  tagline: A robotics engineer and researcher.
+  intro: >-
+    I am interested in autonomous mobile robots, SLAM and robot perception —
+    turning ideas from research papers into systems that run on real hardware.
+  background: /assets/img/hero.svg     # Ảnh nền banner (ảnh ngang, ≥ 1600px)
+  quote: "Curiosity drives better questions, which lead to meaningful work."
+  buttons:
+    - text: View My CV
+      url: /cv/
+      icon_after: arrow-right
+      style: primary
+    - text: See My Projects
+      url: /projects/
+      icon: github
+      style: ghost
+
+# ----- 4 ô giới thiệu ngắn dưới banner -----
+highlights:
+  - icon: bot
+    title: Robotics & Autonomy
+    text: SLAM, navigation and control for mobile robots.
+  - icon: brain
+    title: AI & Machine Learning
+    text: Deep learning for perception on real-world data.
+  - icon: file-text
+    title: Research & Publication
+    text: Explore and share knowledge through academic work.
+  - icon: users
+    title: Open to Collaboration
+    text: Always excited to connect and work on new ideas.
+
+# ----- Thông tin liên hệ (trang About, Home và footer) -----
+# Xoá mục nào không dùng. "url" là link khi bấm vào.
+contacts:
+  - icon: map-pin
+    label: Location
+    value: Ho Chi Minh City, Vietnam
+  - icon: mail
+    label: Email
+    value: your.email@example.com
+    url: mailto:your.email@example.com
+  - icon: linkedin
+    label: LinkedIn
+    value: linkedin.com/in/your-id
+    url: https://www.linkedin.com/in/your-id
+  - icon: github
+    label: GitHub
+    value: github.com/NhatTran-97
+    url: https://github.com/NhatTran-97
+  - icon: scholar
+    label: Google Scholar
+    value: scholar.google.com/citations?user=XXXX
+    url: https://scholar.google.com/
+  - icon: researchgate
+    label: ResearchGate
+    value: researchgate.net/profile/your-id
+    url: https://www.researchgate.net/
+
+# ----- Trang About -----
+about:
+  subtitle: A little bit about who I am, my background, and what I'm passionate about.
+  # Đoạn ngắn hiện trên trang Home
+  summary: >-
+    I am a robotics engineer working on autonomous mobile robots. My interests
+    include SLAM, motion planning and learning-based perception. I enjoy building
+    reliable systems, collaborating with others, and continuously learning new things.
+  # Phần giới thiệu đầy đủ trên trang About (viết Markdown, có thể nhiều đoạn)
+  intro: |
+    I am a **robotics engineer** at *Company Name*, where I develop the navigation
+    stack for a fleet of autonomous mobile robots. Before that, I was a research
+    assistant at *Lab Name*, working on visual-inertial SLAM.
+
+    My research interests include state estimation, motion planning and robot
+    perception. I enjoy building useful tools, collaborating with others, and
+    continuously learning new things.
+
+    Outside of work, I like hiking, photography and writing technical notes on this site.
+  interests:
+    - SLAM
+    - Motion Planning
+    - Robot Perception
+    - Computer Vision
+    - Deep Learning
+    - ROS 2
+    - Open Source
+
+# ----- Số mục hiển thị trên trang Home (đặt 0 để ẩn phần đó) -----
+home:
+  projects: 3        # ưu tiên project có "featured: true"
+  publications: 3
+  notes: 3

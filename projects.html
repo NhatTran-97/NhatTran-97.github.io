@@ -2,20 +2,21 @@
 title: Projects
 permalink: /projects/
 ---
-<h1>Projects</h1>
-<p class="muted">Selected research and engineering projects.</p>
+{% include page-head.html title="Projects" subtitle="A collection of my personal, academic, and open-source projects." %}
 
-{% for p in site.data.projects %}
-<article class="project">
-  <img src="{{ p.image | default: '/assets/img/project-placeholder.svg' | relative_url }}" alt="{{ p.title }}">
-  <div>
-    <h3>{{ p.title }}</h3>
-    <p class="period">{{ p.period }}{% if p.role %} &middot; {{ p.role }}{% endif %}</p>
-    {{ p.description | markdownify }}
-    <div>{% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}</div>
-    {% if p.links %}
-    <div class="links">{% for l in p.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}</div>
-    {% endif %}
+{%- assign cats = site.data.projects | map: "category" | compact | uniq -%}
+<div data-filter>
+  <div class="pills">
+    <button type="button" class="pill active" data-filter-value="">All</button>
+    {%- for c in cats %}
+    <button type="button" class="pill" data-filter-value="{{ c }}">{{ c }}</button>
+    {%- endfor %}
   </div>
-</article>
-{% endfor %}
+
+  <div class="project-grid">
+    {%- for proj in site.data.projects %}
+    {% include project-card.html project=proj %}
+    {%- endfor %}
+  </div>
+  <p class="empty" data-filter-empty hidden>No projects in this category yet.</p>
+</div>

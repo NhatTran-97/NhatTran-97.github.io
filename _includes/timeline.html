@@ -1,0 +1,22 @@
+{%- comment -%} Usage: {% include timeline.html items=section.items icon=section.icon limit=3 %} {%- endcomment -%}
+{%- assign limit = include.limit | default: 100 -%}
+<ol class="timeline">
+  {%- for e in include.items limit: limit %}
+  <li class="tl-item">
+    <span class="tl-dot"></span>
+    <div class="tl-body">
+      <h3 class="tl-title">{{ e.title }}</h3>
+      {% if e.org %}<div class="tl-org">{{ e.org }}</div>{% endif %}
+      {% if e.period %}<div class="tl-period">{{ e.period }}</div>{% endif %}
+      {%- if e.details and include.hide_details != true %}
+      <ul class="tl-details">
+        {%- for d in e.details %}
+        <li>{{ d | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+    {% if include.icon %}<span class="tl-icon">{% include icon.html name=include.icon %}</span>{% endif %}
+  </li>
+  {%- endfor %}
+</ol>

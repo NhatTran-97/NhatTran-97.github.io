@@ -1,5 +1,7 @@
 ---
 title: "ROS 2 Commands I Use Every Day"
+category: Tools & Tips
+description: "A living list of ROS 2 CLI commands for building workspaces and debugging nodes, topics and TF."
 tags: [ROS 2, Tools]
 ---
 

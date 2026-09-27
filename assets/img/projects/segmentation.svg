@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b2a6b"/><stop offset="1" stop-color="#6a55d0"/></linearGradient>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".08"/></pattern></defs>
+  <rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#grid)"/>
+  <path d="M0 360 V250 L120 220 L260 240 L400 210 L520 230 L640 200 V360Z" fill="#43c59e" fill-opacity=".75"/><path d="M0 250 L120 220 L260 240 L400 210 L520 230 L640 200 V150 L520 170 L380 140 L240 175 L100 150 L0 180Z" fill="#f2b84b" fill-opacity=".7"/><path d="M0 180 L100 150 L240 175 L380 140 L520 170 L640 150 V0 H0Z" fill="#6fb2ff" fill-opacity=".45"/><g fill="none" stroke="#fff" stroke-width="3"><rect x="430" y="210" width="90" height="70" rx="4"/></g><rect x="430" y="192" width="60" height="18" fill="#fff"/><text x="436" y="206" font-family="Arial" font-size="12" font-weight="700" fill="#3b2a6b">rock</text>
+</svg>

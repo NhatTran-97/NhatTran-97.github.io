@@ -1,16 +1,38 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
-    <nav class="site-nav">
-      {% for item in site.navigation %}
-        {% assign active = false %}
-        {% if item.url == '/' %}
-          {% if page.url == '/' %}{% assign active = true %}{% endif %}
-        {% elsif page.url contains item.url %}
-          {% assign active = true %}
-        {% endif %}
-        <a href="{{ item.url | relative_url }}"{% if active %} class="active"{% endif %}>{{ item.title }}</a>
-      {% endfor %}
+    <a class="logo" href="{{ '/' | relative_url }}">{{ site.data.profile.short_name | default: site.data.profile.name }}</a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      {%- for item in site.data.navigation -%}
+        {%- assign active = false -%}
+        {%- if item.url == '/' -%}
+          {%- if page.url == '/' -%}{%- assign active = true -%}{%- endif -%}
+        {%- elsif page.url contains item.url -%}
+          {%- assign active = true -%}
+        {%- endif %}
+      <a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
     </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="show-light">{% include icon.html name="sun" %}</span>
+        <span class="show-dark">{% include icon.html name="moon" %}</span>
+      </button>
+      <button class="icon-btn" type="button" id="search-open" aria-label="Search (press /)">{% include icon.html name="search" %}</button>
+      <button class="icon-btn menu-btn" type="button" id="menu-toggle" aria-label="Menu" aria-controls="site-nav" aria-expanded="false">{% include icon.html name="menu" %}</button>
+    </div>
   </div>
 </header>
+
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-box" role="dialog" aria-label="Search">
+    <div class="search-input">
+      {% include icon.html name="search" %}
+      <input type="search" id="search-input" placeholder="Search notes, projects, publications…" autocomplete="off">
+      <button class="icon-btn" type="button" data-search-close aria-label="Close">{% include icon.html name="x" %}</button>
+    </div>
+    <ul class="search-results" id="search-results"></ul>
+  </div>
+</div>

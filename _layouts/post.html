@@ -1,23 +1,25 @@
 ---
 layout: default
 ---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 | at_least: 1 -%}
 <article class="post">
+  <a class="back-link" href="{{ '/notes/' | relative_url }}">&larr; All notes</a>
   <header class="post-header">
-    <a class="back-link" href="{{ '/notes/' | relative_url }}">&larr; All notes</a>
+    {% if page.category %}<span class="chip chip-primary">{{ page.category }}</span>{% endif %}
     <h1>{{ page.title }}</h1>
-    <p class="meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
-      {% if page.tags.size > 0 %}
-        &middot;
-        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
-      {% endif %}
-    </p>
+    <div class="post-meta">
+      <span>{% include icon.html name="calendar" %} {{ page.date | date: '%B %-d, %Y' }}</span>
+      <span>{% include icon.html name="clock" %} {{ minutes }} min read</span>
+    </div>
+    {% if page.tags.size > 0 %}<div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
   </header>
-  <div class="post-content">
+  {% if page.image %}<img class="post-cover" src="{{ page.image | relative_url }}" alt="">{% endif %}
+  <div class="card post-content prose">
     {{ content }}
   </div>
   <nav class="post-nav">
-    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-    {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} &rarr;</a>{% endif %}
+    {% if page.previous %}<a class="card" href="{{ page.previous.url | relative_url }}"><span class="muted small">&larr; Previous</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="card next" href="{{ page.next.url | relative_url }}"><span class="muted small">Next &rarr;</span>{{ page.next.title }}</a>{% endif %}
   </nav>
 </article>

@@ -1,0 +1,22 @@
+---
+layout: null
+permalink: /search.json
+---
+{
+  "notes": [
+    {%- for post in site.posts %}
+    {"title": {{ post.title | jsonify }}, "url": {{ post.url | relative_url | jsonify }}, "meta": {{ post.category | default: "Note" | jsonify }}, "text": {{ post.content | strip_html | strip_newlines | truncatewords: 80 | jsonify }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "projects": [
+    {%- for p in site.data.projects %}
+    {%- capture url %}/projects/#{{ p.title | slugify }}{% endcapture %}
+    {"title": {{ p.title | jsonify }}, "url": {{ url | relative_url | jsonify }}, "meta": "Project", "text": {{ p.description | append: " " | append: p.category | jsonify }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "publications": [
+    {%- for p in site.data.publications %}
+    {"title": {{ p.title | jsonify }}, "url": {{ '/publications/' | relative_url | jsonify }}, "meta": {{ p.venue | jsonify }}, "text": {{ p.authors | append: " " | append: p.year | jsonify }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

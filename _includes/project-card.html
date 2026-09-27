@@ -1,0 +1,25 @@
+{%- assign prj = include.project -%}
+<article class="project-card card" id="{{ prj.title | slugify }}" data-filter-item data-cats="|{{ prj.category }}|">
+  <div class="project-thumb">
+    {%- if prj.image %}
+    <img src="{{ prj.image | relative_url }}" alt="{{ prj.title }}" loading="lazy">
+    {%- else %}
+    <div class="thumb-fallback">{% include icon.html name="code" %}</div>
+    {%- endif %}
+  </div>
+  <div class="project-body">
+    <div class="chips">
+      {% if prj.category %}<span class="chip chip-primary">{{ prj.category }}</span>{% endif %}
+      {%- for t in prj.tags limit: include.max_tags | default: 10 %}<span class="chip">{{ t }}</span>{% endfor %}
+    </div>
+    <h3>{{ prj.title }}</h3>
+    {% if prj.period and include.compact != true %}<div class="muted small">{{ prj.period }}</div>{% endif %}
+    <div class="project-desc">{{ prj.description | markdownify }}</div>
+    <div class="card-links">
+      {% if prj.github %}<a href="{{ prj.github }}">{% include icon.html name="github" %} GitHub</a>{% endif %}
+      {% if prj.demo %}<a href="{{ prj.demo }}">{% include icon.html name="external-link" %} Demo</a>{% endif %}
+      {% if prj.paper %}<a href="{{ prj.paper | relative_url }}">{% include icon.html name="file-text" %} Paper</a>{% endif %}
+      {% if prj.video %}<a href="{{ prj.video }}">{% include icon.html name="play" %} Video</a>{% endif %}
+    </div>
+  </div>
+</article>

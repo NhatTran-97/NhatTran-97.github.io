@@ -2,43 +2,35 @@
 title: CV
 permalink: /cv/
 ---
-{% assign cv = site.data.cv %}
-<h1>Curriculum Vitae</h1>
-<p class="cv-actions">
-  <a class="btn" href="{{ '/assets/files/cv.pdf' | relative_url }}">Download PDF</a>
-  <span class="muted">&nbsp;Last updated: {{ cv.updated }}</span>
-</p>
+{%- assign cv = site.data.cv -%}
+{%- capture actions -%}
+  {% if cv.pdf %}<a class="btn btn-dark" href="{{ cv.pdf | relative_url }}">{% include icon.html name="download" %} Download PDF</a>{% endif %}
+  {% if cv.github %}<a class="btn btn-outline" href="{{ cv.github }}">{% include icon.html name="github" %} View on GitHub</a>{% endif %}
+{%- endcapture -%}
+{% include page-head.html title="Curriculum Vitae" subtitle=cv.subtitle actions=actions %}
 
-<h2>Education</h2>
-{% for e in cv.education %}
-<div class="cv-entry">
-  <span class="title">{{ e.degree }}</span><span class="when">{{ e.period }}</span>
-  <span class="where">{{ e.school }}</span>
-  {% if e.details %}<ul>{% for d in e.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}</ul>{% endif %}
+<div class="side-layout" data-tabs>
+  <aside class="side-nav card">
+    {%- for s in cv.sections %}
+    <a href="#{{ s.id }}" class="side-link{% if forloop.first %} active{% endif %}" data-tab-link="{{ s.id }}">{{ s.title }}</a>
+    {%- endfor %}
+  </aside>
+
+  <div class="card cv-panel">
+    {%- for s in cv.sections %}
+    <section class="cv-section{% if forloop.first %} active{% endif %}" id="{{ s.id }}" data-tab="{{ s.id }}">
+      <h2>{{ s.title }}</h2>
+      {%- if s.type == "skills" %}
+      <dl class="skills">
+        {%- for g in s.items %}
+        <dt>{{ g.group }}</dt>
+        <dd class="chips">{% for i in g.items %}<span class="chip">{{ i }}</span>{% endfor %}</dd>
+        {%- endfor %}
+      </dl>
+      {%- else %}
+      {% include timeline.html items=s.items icon=s.icon %}
+      {%- endif %}
+    </section>
+    {%- endfor %}
+  </div>
 </div>
-{% endfor %}
-
-<h2>Experience</h2>
-{% for e in cv.experience %}
-<div class="cv-entry">
-  <span class="title">{{ e.role }}</span><span class="when">{{ e.period }}</span>
-  <span class="where">{{ e.company }}</span>
-  {% if e.details %}<ul>{% for d in e.details %}<li>{{ d | markdownify | remove: '<p>' | remove: '</p>' }}</li>{% endfor %}</ul>{% endif %}
-</div>
-{% endfor %}
-
-<h2>Skills</h2>
-<dl class="skills">
-  {% for s in cv.skills %}<dt>{{ s.group }}</dt><dd>{{ s.items }}</dd>{% endfor %}
-</dl>
-
-<h2>Honors &amp; Awards</h2>
-{% for e in cv.awards %}
-<div class="cv-entry">
-  <span class="title">{{ e.title }}</span><span class="when">{{ e.year }}</span>
-  {% if e.by %}<span class="where">{{ e.by }}</span>{% endif %}
-</div>
-{% endfor %}
-
-<h2>Publications</h2>
-<p>See the <a href="{{ '/publications/' | relative_url }}">Publications</a> page for the full list.</p>

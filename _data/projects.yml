@@ -1,41 +1,56 @@
-# Mỗi project: title, period, role, description (markdown), tags, image, links
+# =====================================================================
+#  PROJECTS — mỗi project là một mục bắt đầu bằng dấu "-"
+#    title        : tên project
+#    category     : nhóm để lọc (các nút lọc được tạo tự động từ đây)
+#    image        : ảnh minh hoạ (tỉ lệ 16:9), bỏ trống sẽ dùng ảnh mặc định
+#    tags         : công nghệ sử dụng
+#    description  : mô tả ngắn (Markdown)
+#    featured     : true → hiện trên trang Home
+#    github / demo / paper / video : link (bỏ trống nếu không có)
+# =====================================================================
+
 - title: Autonomous Warehouse Robot
+  category: Robotics
   period: 2024 – Present
-  role: Lead developer
-  image: /assets/img/project-placeholder.svg
+  image: /assets/img/projects/robot-nav.svg
+  tags: [ROS 2, C++, Nav2]
   description: >-
-    End-to-end navigation system for an autonomous mobile robot (AMR):
-    2D LiDAR SLAM, localization with AMCL, path planning with Nav2 and a
-    custom MPC controller. Deployed on 20+ robots in production.
-  tags: [ROS 2, C++, SLAM, Nav2]
-  links:
-    - name: Code
-      url: https://github.com/NhatTran-97
-    - name: Video
-      url: "#"
+    End-to-end navigation system for a warehouse AMR: LiDAR SLAM, AMCL
+    localization, Nav2 planning and a custom MPC controller.
+  featured: true
+  github: https://github.com/NhatTran-97
+  demo: "#"
 
 - title: Visual-Inertial Odometry on Jetson
+  category: Computer Vision
   period: 2023
-  role: M.Sc. thesis
-  image: /assets/img/project-placeholder.svg
+  image: /assets/img/projects/vio.svg
+  tags: [C++, CUDA, VIO]
   description: >-
-    Real-time visual-inertial odometry running at 30 Hz on NVIDIA Jetson Orin.
-    Tight coupling of feature tracking and IMU pre-integration in a sliding-window optimizer.
-  tags: [C++, CUDA, VIO, Optimization]
-  links:
-    - name: Code
-      url: https://github.com/NhatTran-97
-    - name: Paper
-      url: /publications/
+    Real-time visual-inertial odometry at 30 Hz on NVIDIA Jetson Orin with a
+    sliding-window optimizer.
+  featured: true
+  github: https://github.com/NhatTran-97
+  paper: /publications/
 
-- title: Semantic Segmentation for Field Robots
+- title: Terrain Segmentation for Field Robots
+  category: Machine Learning
   period: 2021 – 2022
-  role: Research assistant
-  image: /assets/img/project-placeholder.svg
+  image: /assets/img/projects/segmentation.svg
+  tags: [PyTorch, TensorRT, Segmentation]
   description: >-
-    Lightweight segmentation network for terrain classification, trained on a
-    self-collected dataset of 10k images and exported to TensorRT for on-board inference.
-  tags: [PyTorch, Computer Vision, TensorRT]
-  links:
-    - name: Dataset
-      url: "#"
+    Lightweight segmentation network for terrain classification, exported to
+    TensorRT for on-board inference.
+  featured: true
+  github: https://github.com/NhatTran-97
+  video: "#"
+
+- title: Personal Portfolio Website
+  category: Web Development
+  period: 2026
+  tags: [Jekyll, HTML, CSS, GitHub Pages]
+  description: >-
+    This website — a minimal, responsive academic portfolio where all content
+    lives in simple data files.
+  github: https://github.com/NhatTran-97/NhatTran-97.github.io
+  demo: https://nhattran-97.github.io

@@ -1,5 +1,7 @@
 ---
 title: "Kalman Filter — A Practical Cheat Sheet"
+category: Robotics
+description: "The linear Kalman filter on one page: system model, predict/update equations, a minimal Python implementation and tuning tips."
 tags: [Estimation, Robotics]
 math: true
 ---

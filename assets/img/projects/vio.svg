@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f3d4c"/><stop offset="1" stop-color="#1b8a8f"/></linearGradient>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".08"/></pattern></defs>
+  <rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#grid)"/>
+  <g fill="#fff"><circle cx="120" cy="110" r="4"/><circle cx="180" cy="80" r="3"/><circle cx="240" cy="140" r="5"/><circle cx="300" cy="70" r="3"/><circle cx="360" cy="120" r="4"/><circle cx="420" cy="90" r="3"/><circle cx="480" cy="150" r="5"/><circle cx="530" cy="100" r="3"/><circle cx="150" cy="200" r="3"/><circle cx="500" cy="220" r="4"/><circle cx="560" cy="180" r="3"/><circle cx="90" cy="170" r="3"/></g><path d="M90 300 Q220 250 320 270 T560 230" fill="none" stroke="#9ff0e4" stroke-width="4"/><g fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"><path d="M300 250 l40-20 v40 z" /><rect x="262" y="232" width="38" height="36" rx="4"/></g><g stroke="#9ff0e4" stroke-opacity=".35" stroke-width="1.5"><path d="M340 250 L240 140 M340 250 L360 120 M340 250 L480 150 M340 250 L300 70"/></g>
+</svg>

@@ -1,46 +1,117 @@
 ---
-title: About
+title: Home
 ---
-{% assign a = site.author %}
-<section class="profile">
-  <img src="{{ a.avatar | relative_url }}" alt="Portrait of {{ a.name }}">
-  <div>
-    <h1>{{ a.name }}</h1>
-    <p class="role">{{ a.position }}<br>{{ a.affiliation }} &middot; {{ a.location }}</p>
-    {% include social.html %}
+{%- assign p = site.data.profile -%}
+{%- assign h = p.hero -%}
+
+<section class="hero" style="--hero-bg: url('{{ h.background | relative_url }}')">
+  <div class="hero-content">
+    {% if h.greeting %}<p class="hero-greeting">{{ h.greeting }}</p>{% endif %}
+    <h1>{{ p.name }}</h1>
+    {% if h.tagline %}<p class="hero-tagline">{{ h.tagline }}</p>{% endif %}
+    {% if h.intro %}<p class="hero-intro">{{ h.intro }}</p>{% endif %}
+    <div class="hero-buttons">
+      {%- for b in h.buttons %}
+      <a class="btn {% if b.style == 'ghost' %}btn-ghost{% else %}btn-primary{% endif %}" href="{{ b.url | relative_url }}">
+        {% if b.icon %}{% include icon.html name=b.icon %}{% endif %}{{ b.text }}{% if b.icon_after %}{% include icon.html name=b.icon_after %}{% endif %}
+      </a>
+      {%- endfor %}
+    </div>
   </div>
+  {% if h.quote %}<blockquote class="hero-quote">&ldquo;{{ h.quote }}&rdquo;</blockquote>{% endif %}
 </section>
 
-<p>
-  I am a <strong>robotics and AI engineer</strong> working on autonomous mobile robots,
-  perception and motion planning. My work sits between research and deployment:
-  turning ideas from papers into software that runs reliably on real hardware.
-</p>
-<p>
-  <em>Replace this paragraph with your own bio: current role, research interests,
-  what you are looking for (PhD position, collaboration, jobs), and a short personal note.</em>
-</p>
+{% if p.highlights %}
+<section class="highlights">
+  {%- for item in p.highlights %}
+  <div class="hl-item">
+    <span class="icon-circle">{% include icon.html name=item.icon %}</span>
+    <div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.text }}</p>
+    </div>
+  </div>
+  {%- endfor %}
+</section>
+{% endif %}
 
-<h2>Research Interests</h2>
-<ul>
-  <li>Simultaneous Localization and Mapping (SLAM)</li>
-  <li>Motion planning and control for mobile robots</li>
-  <li>Robot perception with deep learning</li>
-</ul>
+<div class="home-grid">
+  <!-- About -->
+  <section class="card home-card">
+    <div class="card-head">
+      <h2>{% include icon.html name="user" %} About Me</h2>
+      <a class="more" href="{{ '/about/' | relative_url }}">More about me {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <div class="about-mini">
+      <img class="avatar" src="{{ p.avatar | relative_url }}" alt="{{ p.name }}">
+      <div>
+        <p>{{ p.about.summary }}</p>
+        <ul class="contact-grid">
+          {%- for c in p.contacts limit: 6 %}
+          <li>{% include icon.html name=c.icon %}{% if c.url %}<a href="{{ c.url }}">{{ c.value }}</a>{% else %}<span>{{ c.value }}</span>{% endif %}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<h2>News</h2>
-<ul class="news">
-  {% for item in site.data.news limit: 6 %}
-  <li><span class="date">{{ item.date }}</span><span>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
-  {% endfor %}
-</ul>
+  <!-- Education -->
+  {%- assign edu = site.data.cv.sections | where: "id", "education" | first -%}
+  {% if edu %}
+  <section class="card home-card">
+    <div class="card-head">
+      <h2>{% include icon.html name="graduation-cap" %} {{ edu.title }}</h2>
+      {% if site.data.cv.pdf %}<a class="btn btn-primary btn-sm" href="{{ site.data.cv.pdf | relative_url }}">{% include icon.html name="download" %} Download CV</a>{% endif %}
+    </div>
+    {% include timeline.html items=edu.items icon=edu.icon limit=3 %}
+  </section>
+  {% endif %}
 
-<h2>Latest Notes</h2>
-<ul class="note-list">
-  {% for post in site.posts limit: 3 %}
-  <li>
-    <a class="note-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="note-meta">{{ post.date | date: '%b %-d, %Y' }}</div>
-  </li>
-  {% endfor %}
-</ul>
+  <!-- Projects -->
+  {% if p.home.projects > 0 and site.data.projects.size > 0 %}
+  {%- assign featured = site.data.projects | where: "featured", true -%}
+  {%- if featured.size == 0 -%}{%- assign featured = site.data.projects -%}{%- endif -%}
+  <section class="card home-card">
+    <div class="card-head">
+      <h2>{% include icon.html name="folder" %} Projects</h2>
+      <a class="more" href="{{ '/projects/' | relative_url }}">View all projects {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <div class="mini-projects">
+      {%- for proj in featured limit: p.home.projects %}
+      {% include project-card.html project=proj compact=true max_tags=1 %}
+      {%- endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Publications -->
+  {% if p.home.publications > 0 and site.data.publications.size > 0 %}
+  <section class="card home-card">
+    <div class="card-head">
+      <h2>{% include icon.html name="file-text" %} Publications</h2>
+      <a class="more" href="{{ '/publications/' | relative_url }}">View all publications {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <ul class="pub-list compact">
+      {%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+      {%- for pub in pubs limit: p.home.publications %}
+      {% include pub-item.html pub=pub compact=true %}
+      {%- endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <!-- Notes -->
+  {% if p.home.notes > 0 and site.posts.size > 0 %}
+  <section class="card home-card span-2">
+    <div class="card-head">
+      <h2>{% include icon.html name="book-open" %} Notes &amp; Knowledge</h2>
+      <a class="more" href="{{ '/notes/' | relative_url }}">View all notes {% include icon.html name="arrow-right" %}</a>
+    </div>
+    <div class="note-grid">
+      {%- for post in site.posts limit: p.home.notes %}
+      {% include note-card.html post=post %}
+      {%- endfor %}
+    </div>
+  </section>
+  {% endif %}
+</div>

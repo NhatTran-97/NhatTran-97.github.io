@@ -1,8 +1,0 @@
-{% assign a = site.author %}
-<span class="social">
-  {% if a.email %}<a href="mailto:{{ a.email }}">Email</a>{% endif %}
-  {% if a.github %}<a href="https://github.com/{{ a.github }}">GitHub</a>{% endif %}
-  {% if a.linkedin %}<a href="https://www.linkedin.com/in/{{ a.linkedin }}">LinkedIn</a>{% endif %}
-  {% if a.scholar != "" %}<a href="https://scholar.google.com/citations?user={{ a.scholar }}">Google Scholar</a>{% endif %}
-  {% if a.orcid != "" %}<a href="https://orcid.org/{{ a.orcid }}">ORCID</a>{% endif %}
-</span>

@@ -1,0 +1,47 @@
+---
+title: About
+permalink: /about/
+---
+{%- assign p = site.data.profile -%}
+{% include page-head.html title="About Me" subtitle=p.about.subtitle %}
+
+<div class="card about-page">
+  <img class="avatar about-photo" src="{{ p.avatar | relative_url }}" alt="{{ p.name }}">
+
+  <section class="about-info">
+    <h2>Personal Information</h2>
+    <ul class="info-list">
+      <li>
+        <span class="info-icon">{% include icon.html name="user" %}</span>
+        <div><div class="info-label">Name</div><div class="info-value">{{ p.name }}</div></div>
+      </li>
+      {% if p.role %}
+      <li>
+        <span class="info-icon">{% include icon.html name="briefcase" %}</span>
+        <div><div class="info-label">Position</div><div class="info-value">{{ p.role }}</div></div>
+      </li>
+      {% endif %}
+      {%- for c in p.contacts %}
+      <li>
+        <span class="info-icon">{% include icon.html name=c.icon %}</span>
+        <div>
+          <div class="info-label">{{ c.label }}</div>
+          <div class="info-value">{% if c.url %}<a href="{{ c.url }}">{{ c.value }}</a>{% else %}{{ c.value }}{% endif %}</div>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <section class="about-text">
+    <h2>Brief Introduction</h2>
+    <div class="prose">{{ p.about.intro | markdownify }}</div>
+
+    {% if p.about.interests %}
+    <h2>Interests</h2>
+    <div class="chips chips-lg">
+      {%- for i in p.about.interests %}<span class="chip">{{ i }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </section>
+</div>

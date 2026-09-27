@@ -1,5 +1,7 @@
 ---
 title: "How I Read a Research Paper"
+category: Research
+description: "My three-pass method for reading research papers efficiently, plus the note template I keep for every paper."
 tags: [Research]
 ---
 

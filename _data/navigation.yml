@@ -1,0 +1,13 @@
+# Menu trên cùng. Xoá dòng nào nếu không muốn hiện trang đó.
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: CV
+  url: /cv/
+- title: Projects
+  url: /projects/
+- title: Publications
+  url: /publications/
+- title: Notes
+  url: /notes/

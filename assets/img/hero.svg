@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a3b55"/><stop offset=".55" stop-color="#6f86a3"/><stop offset="1" stop-color="#b8c6d6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".72" cy=".38" r=".35">
+      <stop offset="0" stop-color="#f4e7d0" stop-opacity=".55"/><stop offset="1" stop-color="#f4e7d0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9d4e0" stop-opacity="0"/><stop offset="1" stop-color="#c9d4e0" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7d93ad"/><stop offset="1" stop-color="#2a3a50"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="600" fill="url(#sky)"/>
+  <rect width="1600" height="600" fill="url(#glow)"/>
+  <!-- far snowy peaks -->
+  <path d="M0 330 L120 250 L210 290 L330 170 L420 240 L520 150 L610 230 L720 120 L800 200 L880 140 L990 230 L1090 110 L1180 200 L1290 150 L1400 240 L1500 180 L1600 230 V600 H0Z" fill="#9aabc0"/>
+  <path d="M330 170 L360 205 L345 205 L372 228 L300 200Z M720 120 L752 160 L735 158 L765 190 L690 150Z M1090 110 L1125 150 L1105 150 L1140 185 L1060 140Z M520 150 L548 185 L530 183 L556 210 L495 175Z" fill="#e9eef4" opacity=".85"/>
+  <rect y="200" width="1600" height="200" fill="url(#mist)"/>
+  <!-- mid ridge -->
+  <path d="M0 380 L90 330 L200 360 L310 300 L420 350 L540 290 L660 345 L780 300 L900 350 L1010 305 L1130 355 L1250 300 L1380 350 L1490 310 L1600 340 V600 H0Z" fill="#5f7390"/>
+  <rect y="300" width="1600" height="160" fill="url(#mist)" opacity=".6"/>
+  <!-- near forest ridge -->
+  <path d="M0 440 L60 410 L140 430 L230 395 L330 425 L450 390 L560 420 L690 385 L800 415 L930 392 L1050 422 L1170 390 L1300 418 L1420 395 L1520 420 L1600 405 V600 H0Z" fill="#34465e"/>
+  <g fill="#26364b">
+    <path d="M40 450 l12-38 12 38Z M80 452 l10-30 10 30Z M180 445 l14-44 14 44Z M260 448 l11-34 11 34Z M1330 446 l13-40 13 40Z M1380 450 l10-32 10 32Z M1460 444 l14-44 14 44Z M1530 450 l11-34 11 34Z"/>
+  </g>
+  <!-- lake -->
+  <rect y="455" width="1600" height="145" fill="url(#lake)"/>
+  <path d="M0 455 H1600" stroke="#c9d4e0" stroke-opacity=".5" stroke-width="2"/>
+  <g stroke="#dfe7f0" stroke-opacity=".25" stroke-width="2">
+    <path d="M200 490 h140 M620 510 h220 M1050 485 h160 M380 540 h120 M900 560 h200 M1300 530 h140"/>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+{%- assign pub = include.pub -%}
+{%- assign authors = pub.authors -%}
+{%- for n in site.data.profile.publication_names -%}
+  {%- assign strong = '<strong class="me">' | append: n | append: '</strong>' -%}
+  {%- assign authors = authors | replace: n, strong -%}
+{%- endfor -%}
+<li class="pub-item" data-filter-item data-cats="|{{ pub.type }}|">
+  <div class="pub-year">{{ pub.year }}</div>
+  <div class="pub-main">
+    <h3 class="pub-title">{{ pub.title }}{% if pub.note %} <span class="badge">{{ pub.note }}</span>{% endif %}</h3>
+    <div class="pub-authors">{{ authors }}</div>
+    <div class="pub-venue">{{ pub.venue }}</div>
+    {%- if include.compact != true %}
+    {%- if pub.tags %}<div class="chips">{% for t in pub.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+    <div class="card-links">
+      {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}">{% include icon.html name="link" %} DOI</a>{% endif %}
+      {% if pub.code %}<a href="{{ pub.code }}">{% include icon.html name="github" %} Code</a>{% endif %}
+      {% if pub.slides %}<a href="{{ pub.slides }}">{% include icon.html name="file-text" %} Slides</a>{% endif %}
+      {% if pub.project %}<a href="{{ pub.project | relative_url }}">{% include icon.html name="external-link" %} Project</a>{% endif %}
+    </div>
+    {%- if pub.bibtex %}
+    <details class="bibtex"><summary>BibTeX</summary><pre><code>{{ pub.bibtex | escape }}</code></pre></details>
+    {%- endif %}
+    {%- endif %}
+  </div>
+  <div class="pub-side">
+    {% if pub.pdf %}<a class="btn btn-soft btn-sm" href="{{ pub.pdf | relative_url }}">{% include icon.html name="file-text" %} PDF</a>{% endif %}
+  </div>
+</li>

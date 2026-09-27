@@ -1,0 +1,17 @@
+{%- assign post = include.post -%}
+{%- capture search_text -%}{{ post.title }} {{ post.description }} {{ post.category }} {{ post.tags | join: ' ' }}{%- endcapture -%}
+<article class="note-card card" data-filter-item data-cats="|{{ post.category }}|" data-text="{{ search_text | downcase | escape }}">
+  <a class="note-thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {%- if post.image %}
+    <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+    {%- else %}
+    <div class="thumb-fallback">{% include icon.html name="book-open" %}<span>{{ post.category | default: 'Note' }}</span></div>
+    {%- endif %}
+  </a>
+  <div class="note-body">
+    <div class="note-meta">{{ post.date | date: '%b %-d, %Y' }}{% if post.category %} · {{ post.category }}{% endif %}</div>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p>{{ post.description | default: post.excerpt | strip_html | strip | truncatewords: 26 }}</p>
+    <a class="read-more" href="{{ post.url | relative_url }}">Read more {% include icon.html name="arrow-right" %}</a>
+  </div>
+</article>

@@ -1,40 +1,51 @@
-# type phải là 1 trong: "Journal Articles", "Conference Papers", "Preprints & Theses"
-# Tên của bạn trong "authors" phải viết giống hệt author.name trong _config.yml để được gạch chân.
-- type: Journal Articles
-  title: "Robust Visual-Inertial Odometry for Low-Texture Indoor Environments"
-  authors: Nhat Tran, Co Author, Supervisor Name
+# =====================================================================
+#  PUBLICATIONS — tự sắp xếp theo năm (mới nhất lên đầu).
+#    type    : nhóm để lọc, ví dụ Conference / Journal / Preprint / Workshop / Thesis
+#    authors : tên bạn (khai báo ở profile.yml → publication_names) sẽ tự in đậm
+#    note    : nhãn nhỏ, ví dụ "Oral", "Best Paper"
+#    pdf / doi / code / slides / project : link (bỏ trống nếu không có)
+#    bibtex  : trích dẫn BibTeX (tuỳ chọn)
+# =====================================================================
+
+- title: Learning-Based Local Planner for Crowded Warehouses
+  authors: Nhat Tran, A. B. Le, C. D. Pham
+  venue: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)
+  year: 2026
+  type: Conference
+  note: Oral
+  tags: [Motion Planning, Reinforcement Learning]
+  pdf: "#"
+  slides: "#"
+
+- title: Robust Visual-Inertial Odometry for Low-Texture Indoor Environments
+  authors: Nhat Tran, Q. H. Pham, Supervisor Name
   venue: IEEE Robotics and Automation Letters (RA-L)
   year: 2025
-  doi: 10.0000/example.2025.00001
+  type: Journal
+  tags: [SLAM, VIO]
   pdf: "#"
+  doi: 10.0000/example.2025.00001
   code: https://github.com/NhatTran-97
   bibtex: |
     @article{tran2025robust,
       title   = {Robust Visual-Inertial Odometry for Low-Texture Indoor Environments},
-      author  = {Tran, Nhat and Author, Co and Name, Supervisor},
+      author  = {Tran, Nhat and Pham, Q. H. and Name, Supervisor},
       journal = {IEEE Robotics and Automation Letters},
       year    = {2025}
     }
 
-- type: Conference Papers
-  title: "Learning-Based Local Planner for Crowded Warehouses"
-  authors: Nhat Tran, Another Author
-  venue: IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
-  year: 2026
-  note: Oral
+- title: Self-Supervised Depth Estimation for Mobile Robots
+  authors: Nhat Tran, M. T. Hoang
+  venue: arXiv preprint arXiv:2501.12345
+  year: 2025
+  type: Preprint
+  tags: [Depth Estimation, Self-Supervised]
   pdf: "#"
-  slides: "#"
 
-- type: Conference Papers
-  title: "Lightweight Terrain Segmentation for Field Robots"
-  authors: First Author*, Nhat Tran*, Supervisor Name
-  venue: IEEE International Conference on Robotics and Automation (ICRA)
+- title: Lightweight Terrain Segmentation for Field Robots
+  authors: First Author, Nhat Tran, Supervisor Name
+  venue: ICRA 2023 Workshop on Field Robotics
   year: 2023
-  pdf: "#"
-
-- type: Preprints & Theses
-  title: "Visual-Inertial SLAM for Indoor Mobile Robots"
-  authors: Nhat Tran
-  venue: M.Sc. Thesis, University Name
-  year: 2024
+  type: Workshop
+  tags: [Segmentation, Field Robotics]
   pdf: "#"

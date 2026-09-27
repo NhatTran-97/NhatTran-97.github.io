@@ -1,48 +1,86 @@
-updated: September 2026
+# =====================================================================
+#  CV — mỗi "section" là một mục ở cột trái trang CV.
+#  Có thể thêm / xoá / đổi thứ tự section tuỳ ý.
+#
+#  Section dạng timeline (mặc định): mỗi item gồm
+#     title, org, period, details (danh sách, viết Markdown được)
+#  Section dạng kỹ năng: đặt "type: skills", mỗi item gồm group + items
+# =====================================================================
 
-education:
-  - degree: M.Sc. in Mechatronics Engineering
-    school: University Name, City, Country
-    period: 2022 – 2024
-    details:
-      - "Thesis: *Visual-inertial SLAM for indoor mobile robots*"
-      - "GPA: 3.8 / 4.0"
-  - degree: B.Eng. in Mechatronics Engineering
-    school: University Name, City, Country
-    period: 2015 – 2020
-    details:
-      - Graduated with Distinction
+subtitle: My academic background, experience, skills, and achievements.
+pdf: /assets/files/cv.pdf                    # nút "Download PDF" (để trống để ẩn)
+github: https://github.com/NhatTran-97        # nút "View on GitHub" (để trống để ẩn)
 
-experience:
-  - role: Robotics Engineer
-    company: Company Name, City
-    period: 2024 – Present
-    details:
-      - Developed navigation stack (ROS 2, Nav2) for a fleet of warehouse AMRs.
-      - Reduced localization drift by 40% by fusing wheel odometry, IMU and LiDAR.
-  - role: Research Assistant
-    company: Lab Name, University Name
-    period: 2021 – 2024
-    details:
-      - Designed learning-based perception pipeline for outdoor robots.
-      - Co-authored 3 peer-reviewed papers.
+sections:
+  - id: education
+    title: Education
+    icon: graduation-cap
+    items:
+      - title: M.Sc. in Mechatronics Engineering
+        org: University Name, Vietnam
+        period: 2022 – 2024
+        details:
+          - "**Thesis:** Visual-inertial SLAM for indoor mobile robots"
+          - "**GPA:** 3.8 / 4.0"
+      - title: B.Eng. in Mechatronics Engineering
+        org: University Name, Vietnam
+        period: 2015 – 2020
+        details:
+          - "**Relevant coursework:** Control Systems, Robotics, Computer Vision, Embedded Systems"
+          - Graduated with Distinction
 
-skills:
-  - group: Programming
-    items: C++, Python, MATLAB, Bash
-  - group: Robotics
-    items: ROS / ROS 2, Nav2, MoveIt, Gazebo, Isaac Sim
-  - group: ML / Vision
-    items: PyTorch, OpenCV, PCL, TensorRT
-  - group: Tools
-    items: Git, Docker, Linux, LaTeX
-  - group: Languages
-    items: Vietnamese (native), English (professional)
+  - id: experience
+    title: Experience
+    icon: briefcase
+    items:
+      - title: Robotics Engineer
+        org: Company Name, Ho Chi Minh City
+        period: 2024 – Present
+        details:
+          - Developed the navigation stack (ROS 2, Nav2) for a fleet of warehouse AMRs.
+          - Reduced localization drift by 40% by fusing wheel odometry, IMU and LiDAR.
+      - title: Research Assistant
+        org: Lab Name, University Name
+        period: 2021 – 2024
+        details:
+          - Designed a learning-based perception pipeline for outdoor robots.
+          - Co-authored 3 peer-reviewed papers.
 
-awards:
-  - title: Best Paper Award Finalist
-    by: Conference Name
-    year: 2025
-  - title: Graduate Research Scholarship
-    by: University Name
-    year: 2022
+  - id: skills
+    title: Skills
+    type: skills
+    items:
+      - group: Programming
+        items: [C++, Python, MATLAB, Bash]
+      - group: Robotics
+        items: [ROS / ROS 2, Nav2, MoveIt, Gazebo, Isaac Sim]
+      - group: ML / Vision
+        items: [PyTorch, OpenCV, PCL, TensorRT]
+      - group: Tools
+        items: [Git, Docker, Linux, LaTeX]
+      - group: Languages
+        items: [Vietnamese (native), English (professional)]
+
+  - id: achievements
+    title: Achievements
+    icon: award
+    items:
+      - title: Best Paper Award Finalist
+        org: Conference Name
+        period: "2025"
+      - title: Graduate Research Scholarship
+        org: University Name
+        period: "2022"
+
+  - id: activities
+    title: Activities
+    icon: users
+    items:
+      - title: Teaching Assistant — Introduction to Robotics
+        org: University Name
+        period: 2022 – 2023
+        details:
+          - Led weekly lab sessions on ROS for 40+ undergraduate students.
+      - title: Member, Robotics Club
+        org: University Name
+        period: 2016 – 2020

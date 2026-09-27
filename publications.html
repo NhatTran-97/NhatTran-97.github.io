@@ -2,36 +2,25 @@
 title: Publications
 permalink: /publications/
 ---
-<h1>Publications</h1>
-<p class="muted">
-  <u>Underlined</u> = me. * = equal contribution.
-  {% if site.author.scholar != "" %}Full list on <a href="https://scholar.google.com/citations?user={{ site.author.scholar }}">Google Scholar</a>.{% endif %}
-</p>
+{% include page-head.html title="Publications" subtitle="A list of my research papers, conference proceedings, and academic works." %}
 
-{% assign groups = site.data.publications | group_by: "type" %}
-{% assign order = "Journal Articles,Conference Papers,Preprints & Theses" | split: "," %}
-{% for name in order %}
-  {% assign group = groups | where: "name", name | first %}
-  {% if group %}
-  <h2>{{ name }}</h2>
-  <ol class="pub-list">
-    {% assign items = group.items | sort: "year" | reverse %}
-    {% for p in items %}
-    <li>
-      <div class="pub-title">{{ p.title }}</div>
-      <div class="pub-authors">{{ p.authors | replace: site.author.name, '<span class="me">NAME_ME</span>' | replace: 'NAME_ME', site.author.name }}</div>
-      <div><span class="pub-venue">{{ p.venue }}</span>, {{ p.year }}.{% if p.note %}<span class="pub-note">{{ p.note }}</span>{% endif %}</div>
-      <div class="links">
-        {% if p.pdf %}<a href="{{ p.pdf }}">PDF</a>{% endif %}
-        {% if p.doi %}<a href="https://doi.org/{{ p.doi }}">DOI</a>{% endif %}
-        {% if p.code %}<a href="{{ p.code }}">Code</a>{% endif %}
-        {% if p.slides %}<a href="{{ p.slides }}">Slides</a>{% endif %}
-      </div>
-      {% if p.bibtex %}
-      <details class="bibtex"><summary>BibTeX</summary><pre><code>{{ p.bibtex | escape }}</code></pre></details>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ol>
-  {% endif %}
-{% endfor %}
+{%- assign pubs = site.data.publications | sort: "year" | reverse -%}
+{%- assign types = site.data.publications | map: "type" | compact | uniq -%}
+<div class="side-layout" data-filter>
+  <aside class="side-nav card">
+    <button type="button" class="side-link active" data-filter-value="">All <span class="count">{{ pubs.size }}</span></button>
+    {%- for t in types %}
+    {%- assign n = site.data.publications | where: "type", t | size %}
+    <button type="button" class="side-link" data-filter-value="{{ t }}">{{ t }} <span class="count">{{ n }}</span></button>
+    {%- endfor %}
+  </aside>
+
+  <div class="card">
+    <ul class="pub-list">
+      {%- for pub in pubs %}
+      {% include pub-item.html pub=pub %}
+      {%- endfor %}
+    </ul>
+    <p class="empty" data-filter-empty hidden>No publications in this category yet.</p>
+  </div>
+</div>

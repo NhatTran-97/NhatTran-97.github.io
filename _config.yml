@@ -1,43 +1,23 @@
-# ===== Thông tin site — sửa các giá trị dưới đây =====
-title: Nhat Tran
+# =====================================================================
+#  CẤU HÌNH WEBSITE — thường chỉ sửa 1 lần.
+#  Nội dung cá nhân nằm trong thư mục _data/ (profile.yml, cv.yml, ...)
+# =====================================================================
+title: Nhat Tran                       # tên hiển thị trên tab trình duyệt / Google
 description: >-
-  Personal academic portfolio — research, projects, publications and notes.
-author:
-  name: Nhat Tran
-  position: Robotics & AI Engineer
-  affiliation: Your University / Company
-  email: your.email@example.com
-  location: Ho Chi Minh City, Vietnam
-  avatar: /assets/img/avatar.svg
-  github: NhatTran-97
-  linkedin: your-linkedin-id
-  scholar: ""            # Google Scholar user id, ví dụ: abcdEFGhijk
-  orcid: ""              # ví dụ: 0000-0000-0000-0000
-
+  Personal portfolio of Nhat Tran — robotics & AI research, projects,
+  publications and technical notes.
 url: "https://nhattran-97.github.io"
 baseurl: ""
+lang: en
+timezone: Asia/Ho_Chi_Minh
 
-# Menu điều hướng (thứ tự hiển thị)
-navigation:
-  - title: About
-    url: /
-  - title: CV
-    url: /cv/
-  - title: Projects
-    url: /projects/
-  - title: Publications
-    url: /publications/
-  - title: Notes
-    url: /notes/
-
-# ===== Cấu hình build =====
+# ----- Không cần sửa phần dưới -----
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 permalink: /notes/:year/:title/
 excerpt_separator: "<!--more-->"
-timezone: Asia/Ho_Chi_Minh
 
 plugins:
   - jekyll-seo-tag
@@ -54,3 +34,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - assets/files/README.txt
