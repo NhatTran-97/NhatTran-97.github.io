@@ -3,11 +3,12 @@
 %  the website data files — edit _data/*.yml, not this file.
 %  Colours / fonts / spacing can be tuned below.
 % =====================================================================
-\documentclass[10.5pt]{article}
+\documentclass[10pt]{article}
+% Layout values below are filled in by build_cv.py (auto-fit to pdf_max_pages).
 \usepackage[a4paper, margin=1.6cm, top=1.4cm, bottom=1.5cm]{geometry}
 \usepackage{fontspec}
 \setmainfont{texgyreheros}[
-  Extension = .otf,
+  Extension = .otf, Scale = 1.00,
   UprightFont = *-regular, BoldFont = *-bold,
   ItalicFont = *-italic, BoldItalicFont = *-bolditalic]
 \usepackage{xcolor}
@@ -22,23 +23,24 @@
 \fancyfoot[C]{\footnotesize\color{muted}Last updated: September 2026 \quad\textbullet\quad \thepage}
 \setlength{\parindent}{0pt}
 \linespread{1.08}
+\newcommand{\cvsp}{1.00}  % multiplies vertical spacing
 \raggedright
 
 % ----- building blocks -----
 \newcommand{\cvheader}[3]{%
-  {\fontsize{24}{28}\selectfont\bfseries #1}\par\vspace{2pt}
-  {\large\color{accent} #2}\par\vspace{5pt}
+  {\fontsize{24}{28}\selectfont\bfseries #1}\par\vspace{\cvsp\dimexpr2pt\relax}
+  {\large\color{accent} #2}\par\vspace{\cvsp\dimexpr5pt\relax}
   {\small\color{muted}\hypersetup{urlcolor=muted} #3}\par\vspace{2pt}}
 \newcommand{\cvsection}[1]{%
-  \par\vspace{10pt}{\large\bfseries\color{accent}\MakeUppercase{#1}}\par
-  \vspace{2pt}{\color{rule}\hrule height 0.8pt}\vspace{6pt}}
+  \par\vspace{\cvsp\dimexpr10pt\relax}{\large\bfseries\color{accent}\MakeUppercase{#1}}\par
+  \vspace{2pt}{\color{rule}\hrule height 0.8pt}\vspace{\cvsp\dimexpr6pt\relax}}
 \newcommand{\cventry}[3]{%
   \textbf{#1}\hfill{\small\color{muted}#2}\par
   \ifx&#3&\else{\color{muted}#3}\par\fi\vspace{1pt}}
-\newenvironment{cvitems}{\begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=1pt, parsep=0pt, label={\color{accent}\textbullet}]\small}{\end{itemize}\vspace{5pt}}
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=1pt, parsep=0pt, label={\color{accent}\textbullet}]\small}{\end{itemize}\vspace{\cvsp\dimexpr5pt\relax}}
 \newenvironment{cvskills}{\small\tabularx{\linewidth}{@{}p{3.6cm}X@{}}}{\endtabularx}
-\newcommand{\cvskill}[2]{\textbf{#1} & #2 \\[2pt]}
-\newenvironment{cvpubs}{\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=1pt, label={\color{muted}[\arabic*]}]\small}{\end{enumerate}}
+\newcommand{\cvskill}[2]{\textbf{#1} & #2 \\[\cvsp\dimexpr2pt\relax]}
+\newenvironment{cvpubs}{\begin{enumerate}[leftmargin=1.6em, itemsep=\cvsp\dimexpr3pt\relax, topsep=1pt, label={\color{muted}[\arabic*]}]\small}{\end{enumerate}}
 
 \begin{document}
 \cvheader{Nhat Tran}{FabLab Technician, Eastern International University}{Ho Chi Minh City, Vietnam \quad\textbullet\quad \href{mailto:nhat.tranduy1997@gmail.com}{nhat.tranduy1997@gmail.com} \quad\textbullet\quad \href{https://www.linkedin.com/in/nh\%E1\%BA\%A5t-duy-475028131/}{linkedin.com/in/nhất-duy-475028131} \quad\textbullet\quad \href{https://github.com/NhatTran-97}{github.com/NhatTran-97} \quad\textbullet\quad \href{https://www.youtube.com/@NhatTran-b8g}{youtube.com/@NhatTran-b8g} \quad\textbullet\quad \href{https://nhattran-97.github.io}{nhattran-97.github.io}}

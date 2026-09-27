@@ -211,6 +211,7 @@ Dùng cho mọi trường `icon:` trong các file dữ liệu:
 subtitle: My academic background, experience, skills, and achievements.
 pdf: /assets/files/cv.pdf                   # nút "Download PDF" — để "" để ẩn
 pdf_auto: true                              # true = GitHub tự tạo cv.pdf từ dữ liệu website
+pdf_max_pages: 2                            # PDF tự co giãn để vừa số trang này (0 = không giới hạn)
 github: https://github.com/NhatTran-97       # nút "View on GitHub" — để "" để ẩn
 ```
 
@@ -222,10 +223,11 @@ github: https://github.com/NhatTran-97       # nút "View on GitHub" — để "
 | **Tự upload** (`pdf_auto: false`) | Tự làm CV (Overleaf, Word…) → xuất PDF → upload đè vào `assets/files/cv.pdf` | Muốn CV PDF khác website (vd. bản rút gọn 1 trang) |
 
 - PDF tự động gồm: tiêu đề + liên hệ, Summary (`about.summary`), các mục trong `cv.yml` theo đúng thứ tự, và **Publications** (chèn sau Experience).
+- **Tự co giãn cho vừa số trang:** đặt `pdf_max_pages: 2` trong `cv.yml` (0 = không giới hạn). Khi nội dung dài hơn, PDF tự thu nhỏ dần chữ, khoảng cách, lề (tối thiểu ~90% cỡ chữ để vẫn dễ đọc). Nếu thu nhỏ hết mức vẫn không vừa, log của GitHub Actions báo *WARNING* → rút gọn nội dung hoặc tăng `pdf_max_pages`.
 - Liên hệ còn là link mẫu (chứa `XXXX`, `your-id`, `example.com`) sẽ tự bị bỏ khỏi PDF.
 - Theo dõi: tab **Actions** → *Build CV PDF*. Chạy lại thủ công: *Build CV PDF* → **Run workflow**.
 - Đổi màu / font / lề của PDF: sửa `_cv/template.tex`. File `_cv/cv.tex` (được tạo tự động) có thể mở bằng **Overleaf** để chỉnh tay.
-- Tạo PDF trên máy (cần TeX Live): `python3 _cv/build_cv.py && cd _cv && latexmk -xelatex cv.tex`
+- Tạo PDF trên máy (cần TeX Live): `python3 _cv/build_cv.py --compile` (tự co giãn như trên GitHub).
 
 ### 4.2. Các mục (sections)
 Mỗi section = một mục ở cột trái trang CV. **Thêm / xoá / đổi thứ tự tuỳ ý.**
