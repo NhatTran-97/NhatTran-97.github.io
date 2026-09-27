@@ -12,7 +12,8 @@
 #       title        : tên project
 #       group        : id của nhóm ở trên (professional / personal ...)
 #       org          : công ty / tổ chức (tuỳ chọn, hợp với project công ty)
-#       category     : lĩnh vực để lọc (nút lọc được tạo tự động)
+#       category     : lĩnh vực để lọc (nút lọc được tạo tự động),
+#                      vd. "Robotics & Vision", "Machine Learning"
 #       period       : thời gian
 #       image        : ảnh minh hoạ 16:9 (bỏ trống sẽ dùng ảnh mặc định)
 #       tags         : công nghệ sử dụng
@@ -39,7 +40,7 @@ items:
   - title: Autonomous Warehouse Robot
     group: professional
     org: Company Name
-    category: Robotics
+    category: Robotics & Vision
     period: 2024 – Present
     image: /assets/img/projects/robot-nav.svg
     tags: [ROS 2, C++, Nav2]
@@ -49,20 +50,20 @@ items:
     featured: true
     demo: "#"
 
-  - title: Fleet Management Dashboard
+  - title: LiDAR–Camera Calibration Toolkit
     group: professional
     org: Company Name
-    category: Software
+    category: Robotics & Vision
     period: 2024
-    tags: [Python, FastAPI, React, ROS 2]
+    tags: [C++, OpenCV, PCL, ROS 2]
     description: >-
-      Web dashboard to monitor robot status, assign missions and replay logs for
-      a fleet of autonomous mobile robots.
+      Target-based extrinsic calibration between 3D LiDAR and cameras, cutting
+      sensor setup time per robot from hours to minutes.
 
   # ---------- Personal ----------
   - title: Visual-Inertial Odometry on Jetson
     group: personal
-    category: Computer Vision
+    category: Robotics & Vision
     period: 2023
     image: /assets/img/projects/vio.svg
     tags: [C++, CUDA, VIO]
@@ -85,14 +86,3 @@ items:
     featured: true
     github: https://github.com/NhatTran-97
     video: "#"
-
-  - title: Personal Portfolio Website
-    group: personal
-    category: Software
-    period: 2026
-    tags: [Jekyll, HTML, CSS, GitHub Pages]
-    description: >-
-      This website — a minimal, responsive academic portfolio where all content
-      lives in simple data files.
-    github: https://github.com/NhatTran-97/NhatTran-97.github.io
-    demo: https://nhattran-97.github.io

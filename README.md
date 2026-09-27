@@ -1,78 +1,438 @@
 # NhatTran-97.github.io
 
 Website portfolio cá nhân chạy trên **GitHub Pages + Jekyll**.
-👉 https://nhattran-97.github.io
+👉 **https://nhattran-97.github.io**
 
-> **Nguyên tắc:** mọi nội dung nằm trong các file dữ liệu (`_data/*.yml`) và bài viết (`_posts/*.md`).
-> Bạn **không cần sửa HTML/CSS**. Sửa file → commit → 1–2 phút sau web tự cập nhật.
+> **Nguyên tắc:** toàn bộ nội dung nằm trong các **file dữ liệu** (`_data/*.yml`) và **bài viết** (`_posts/*.md`).
+> Bạn **không cần sửa HTML/CSS/JS**. Sửa file → Commit → 1–2 phút sau website tự cập nhật.
+
+## Mục lục
+1. [Cách sửa file trực tiếp trên GitHub](#1-cách-sửa-file-trực-tiếp-trên-github)
+2. [Bản đồ: muốn sửa gì thì mở file nào](#2-bản-đồ-muốn-sửa-gì-thì-mở-file-nào)
+3. [Thông tin cá nhân & trang Home / About — `profile.yml`](#3-thông-tin-cá-nhân--trang-home--about--profileyml)
+4. [CV — `cv.yml`](#4-cv--cvyml)
+5. [Projects — `projects.yml`](#5-projects--projectsyml)
+6. [Publications — `publications.yml`](#6-publications--publicationsyml)
+7. [Notes — viết bài chia sẻ kiến thức](#7-notes--viết-bài-chia-sẻ-kiến-thức)
+8. [Ảnh và file (upload, kích thước)](#8-ảnh-và-file)
+9. [Menu, tiêu đề web, màu sắc](#9-menu-tiêu-đề-web-màu-sắc)
+10. [Quy tắc viết file YAML (tránh lỗi)](#10-quy-tắc-viết-file-yaml-tránh-lỗi)
+11. [Xử lý sự cố](#11-xử-lý-sự-cố)
+12. [Tính năng có sẵn](#12-tính-năng-có-sẵn)
+13. [Chạy thử trên máy (tuỳ chọn)](#13-chạy-thử-trên-máy-tuỳ-chọn)
+14. [Cấu trúc thư mục](#14-cấu-trúc-thư-mục)
 
 ---
 
-## 1. Sửa nội dung ở đâu?
+## 1. Cách sửa file trực tiếp trên GitHub
 
-| Muốn thay đổi | Mở file |
+Không cần cài gì, làm ngay trên trình duyệt:
+
+1. Vào repo `https://github.com/NhatTran-97/NhatTran-97.github.io`.
+2. Bấm vào file cần sửa (ví dụ `_data` → `profile.yml`).
+3. Bấm biểu tượng **✏️ (Edit this file)** ở góc phải.
+4. Sửa nội dung.
+5. Bấm **Commit changes…** → ghi ngắn gọn đã sửa gì → **Commit changes**.
+6. Đợi 1–2 phút, mở website và bấm **Ctrl + F5** để xem bản mới.
+
+**Tạo file mới** (ví dụ bài viết): vào thư mục → **Add file → Create new file**.
+**Upload ảnh / PDF**: vào thư mục → **Add file → Upload files** → kéo thả file → **Commit changes**.
+
+> Theo dõi tiến trình: tab **Actions** → dòng *pages build and deployment*. ✅ xanh = xong, ❌ đỏ = có lỗi (xem [mục 11](#11-xử-lý-sự-cố)).
+
+---
+
+## 2. Bản đồ: muốn sửa gì thì mở file nào
+
+| Muốn thay đổi | File |
 |---|---|
-| Tên, ảnh đại diện, banner trang chủ, 4 ô giới thiệu, liên hệ, giới thiệu bản thân, sở thích | `_data/profile.yml` |
+| Tên, chức danh, ảnh đại diện | `_data/profile.yml` |
+| Banner trang Home (lời chào, giới thiệu, nút bấm, câu quote, ảnh nền) | `_data/profile.yml` → `hero` |
+| 4 ô giới thiệu dưới banner | `_data/profile.yml` → `highlights` |
+| Email, LinkedIn, GitHub, Scholar… (trang About, Home, footer) | `_data/profile.yml` → `contacts` |
+| Đoạn giới thiệu, sở thích (trang About) | `_data/profile.yml` → `about` |
+| Số project / bài báo / bài viết hiện trên Home | `_data/profile.yml` → `home` |
 | CV: học vấn, kinh nghiệm, kỹ năng, giải thưởng, hoạt động | `_data/cv.yml` |
-| Danh sách project | `_data/projects.yml` |
-| Danh sách bài báo | `_data/publications.yml` |
+| Project (chia nhóm Professional / Personal) | `_data/projects.yml` |
+| Bài báo khoa học | `_data/publications.yml` |
 | Bài viết chia sẻ kiến thức | thư mục `_posts/` |
 | Menu trên cùng | `_data/navigation.yml` |
 | Tiêu đề web trên Google / tab trình duyệt | `_config.yml` |
-
-Mỗi file `.yml` đều có ghi chú (dòng bắt đầu bằng `#`) giải thích từng trường.
-
-### Ảnh và file
-| Loại | Đặt vào | Ghi chú |
-|---|---|---|
-| Ảnh đại diện | `assets/img/` | Ảnh dọc 4:5, rồi sửa `avatar:` trong `profile.yml` |
-| Ảnh banner | `assets/img/` | Ảnh ngang ≥ 1600px, sửa `hero.background` |
-| Ảnh project | `assets/img/projects/` | Tỉ lệ 16:9, sửa `image:` của project |
-| Ảnh bìa bài viết | `assets/img/notes/` | Tỉ lệ 16:9, khai báo `image:` trong bài |
-| CV PDF | `assets/files/cv.pdf` | Nút "Download CV/PDF" trỏ tới file này |
+| File CV PDF | `assets/files/cv.pdf` |
 
 ---
 
-## 2. Viết bài mới (Notes)
+## 3. Thông tin cá nhân & trang Home / About — `profile.yml`
 
-1. Copy file mẫu `_templates/new-note.md` vào thư mục `_posts/`.
-2. Đổi tên theo dạng **`YYYY-MM-DD-ten-bai-khong-dau.md`**, ví dụ `2026-10-01-pid-controller.md`.
-3. Sửa phần đầu file (giữa hai dòng `---`): `title`, `category`, `tags`, `description`.
-4. Viết nội dung bằng Markdown bên dưới. Commit là xong.
+### 3.1. Thông tin cơ bản
+```yaml
+name: Nhat Tran                 # Tên đầy đủ (hiện ở banner, About, footer)
+short_name: N. Tran             # Tên ngắn ở góc trái menu
+role: Robotics & AI Engineer    # Chức danh (trang About)
+avatar: /assets/img/avatar.jpg  # Ảnh đại diện, ảnh dọc tỉ lệ 4:5
 
-Bài mới sẽ tự hiện ở trang **Notes**, trên **Home**, có trong ô **tìm kiếm**, và `category` mới sẽ tự thành một mục lọc.
+publication_names:              # Tên bạn trong danh sách tác giả → tự in đậm
+  - Nhat Tran
+  - N. Tran
+```
 
-- Công thức toán: thêm `math: true`, viết `$...$` (trong dòng) hoặc `$$...$$` (riêng dòng).
-- Code: dùng ```` ```python ```` … ```` ``` ```` — tự tô màu.
-- Chèn ảnh: `![mô tả](/assets/img/notes/ten-anh.png)`
+### 3.2. Banner trang Home — `hero`
+```yaml
+hero:
+  greeting: Hello, I'm                      # dòng chữ nhỏ phía trên tên
+  tagline: A robotics engineer and researcher.
+  intro: >-
+    Đoạn giới thiệu 1–2 câu. Dấu ">-" cho phép viết xuống dòng
+    mà vẫn hiển thị thành một đoạn liền.
+  background: /assets/img/hero.jpg          # ảnh nền (ảnh ngang, ≥ 1600px)
+  quote: "Curiosity drives better questions."   # để trống "" nếu không muốn
+  buttons:
+    - text: View My CV
+      url: /cv/
+      icon_after: arrow-right               # icon sau chữ
+      style: primary                        # primary = nút xanh đặc
+    - text: See My Projects
+      url: /projects/
+      icon: github                          # icon trước chữ
+      style: ghost                          # ghost = nút viền trong suốt
+```
 
-## 3. Thêm project / bài báo
+### 3.3. Bốn ô giới thiệu — `highlights`
+```yaml
+highlights:
+  - icon: bot
+    title: Robotics & Autonomy
+    text: SLAM, navigation and control for mobile robots.
+```
+Có thể để 2, 3 hoặc 4 ô. Xoá hết phần `highlights` nếu không muốn hiện.
 
-Copy một khối có sẵn trong `_data/projects.yml` (phần `items:`) hoặc `_data/publications.yml` (từ dấu `-` đến trước dấu `-` tiếp theo), dán xuống và sửa nội dung.
+### 3.4. Liên hệ — `contacts`
+```yaml
+contacts:
+  - icon: mail
+    label: Email                              # tiêu đề nhỏ (trang About)
+    value: your.email@example.com             # chữ hiển thị
+    url: mailto:your.email@example.com        # link khi bấm (bỏ dòng này nếu không cần link)
+```
+- Mục có `url` sẽ hiện thêm icon ở **footer**.
+- Trang **Home** hiện tối đa 6 mục đầu tiên → đặt mục quan trọng lên trước.
+- Không có số điện thoại / địa chỉ riêng tư trên web công khai.
 
-- Project được chia nhóm bằng trường `group`: `professional` (project công ty) hoặc `personal` (project cá nhân / nghiên cứu). Tên, mô tả, thứ tự các nhóm sửa ở phần `groups:` đầu file — có thể thêm nhóm mới (vd. `academic`). Nhóm nào không có project sẽ tự ẩn.
-- Project công ty: thêm `org: Tên công ty`; không có link public thì bỏ trống `github`.
-- `category` mới → tự thêm nút lọc; `featured: true` → hiện trên Home.
-- Bài báo: tự sắp xếp theo `year`; `type` mới (vd. `Thesis`) → tự thêm mục lọc; tên bạn khai báo trong `profile.yml → publication_names` sẽ tự in đậm.
+### 3.5. Trang About — `about`
+```yaml
+about:
+  subtitle: A little bit about who I am...    # dòng dưới tiêu đề "About Me"
+  summary: >-                                 # đoạn ngắn trên trang Home
+    I am a robotics engineer ...
+  intro: |                                    # phần giới thiệu đầy đủ (Markdown)
+    Đoạn 1 ... **in đậm**, *in nghiêng*, [link](https://...)
 
-## 4. Lưu ý khi sửa file `.yml`
+    Đoạn 2 (cách một dòng trống để xuống đoạn)
+  interests: [SLAM, Motion Planning, ROS 2]   # các thẻ sở thích
+```
+> `>-` = gộp thành 1 đoạn. `|` = giữ nguyên xuống dòng (dùng cho nhiều đoạn).
 
-- Thụt lề bằng **dấu cách** (không dùng Tab), giữ đúng số dấu cách như dòng mẫu.
-- Nếu nội dung có dấu `:` hoặc bắt đầu bằng `*`, `#`, `"` thì đặt trong ngoặc kép: `title: "Thesis: SLAM"`.
-- Nếu web không cập nhật sau vài phút → vào tab **Actions** trên GitHub xem lỗi (thường là sai thụt lề).
+### 3.6. Trang Home hiển thị bao nhiêu mục — `home`
+```yaml
+home:
+  projects: 3        # đặt 0 để ẩn khu Projects trên Home
+  publications: 3
+  notes: 3
+```
 
-## 5. Tính năng có sẵn
-- Giao diện sáng / tối (nút ☀/🌙), tự nhớ lựa chọn.
-- Tìm kiếm toàn trang (nút 🔍 hoặc phím `/`).
-- Lọc project theo nhóm, bài báo theo loại, bài viết theo chủ đề + ô tìm kiếm.
-- Hiển thị tốt trên điện thoại.
+### 3.7. Danh sách icon dùng được
+Dùng cho mọi trường `icon:` trong các file dữ liệu:
 
-## 6. Đổi màu chủ đạo (tuỳ chọn)
-Mở `assets/css/style.css`, sửa giá trị `--primary` ở đầu file (ví dụ `#0f766e` cho màu xanh ngọc).
+| Nhóm | Tên icon |
+|---|---|
+| Lĩnh vực | `bot` `brain` `cpu` `code` `file-text` `book-open` `lightbulb` `globe` `users` `user` |
+| CV | `graduation-cap` `briefcase` `award` `star` `calendar` `clock` `folder` |
+| Liên hệ | `mail` `phone` `map-pin` `link` |
+| Mạng xã hội | `github` `linkedin` `scholar` `researchgate` `orcid` `x-twitter` |
+| Khác | `arrow-right` `external-link` `download` `play` |
 
-## 7. Chạy thử trên máy (tuỳ chọn)
+---
+
+## 4. CV — `cv.yml`
+
+### 4.1. Phần đầu
+```yaml
+subtitle: My academic background, experience, skills, and achievements.
+pdf: /assets/files/cv.pdf                   # nút "Download PDF" — để "" để ẩn
+github: https://github.com/NhatTran-97       # nút "View on GitHub" — để "" để ẩn
+```
+
+### 4.2. Các mục (sections)
+Mỗi section = một mục ở cột trái trang CV. **Thêm / xoá / đổi thứ tự tuỳ ý.**
+
+**Dạng timeline** (Education, Experience, Achievements, Activities, Certifications…):
+```yaml
+sections:
+  - id: experience              # mã, viết liền không dấu (dùng cho link /cv/#experience)
+    title: Experience           # tên hiển thị
+    icon: briefcase             # icon bên phải mỗi mục
+    items:
+      - title: Robotics Engineer
+        org: Company Name, Ho Chi Minh City
+        period: 2024 – Present
+        details:                # các gạch đầu dòng (Markdown), bỏ nếu không cần
+          - Developed the navigation stack ...
+          - "**Key result:** reduced drift by 40%"
+```
+
+**Dạng kỹ năng**:
+```yaml
+  - id: skills
+    title: Skills
+    type: skills                # ← bắt buộc để hiển thị dạng thẻ
+    items:
+      - group: Programming
+        items: [C++, Python, MATLAB]
+```
+
+**Ví dụ thêm mục mới** — Certifications:
+```yaml
+  - id: certifications
+    title: Certifications
+    icon: award
+    items:
+      - title: Deep Learning Specialization
+        org: Coursera / DeepLearning.AI
+        period: "2023"
+```
+> Section có `id: education` cũng được dùng cho khung **Education** trên trang Home (hiện 3 mục đầu).
+
+---
+
+## 5. Projects — `projects.yml`
+
+File gồm 2 phần: **`groups`** (các nhóm) và **`items`** (danh sách project).
+
+### 5.1. Nhóm project — `groups`
+Mỗi nhóm hiển thị thành một khu riêng trên trang Projects, theo đúng thứ tự khai báo.
+```yaml
+groups:
+  - id: professional                 # mã nhóm, dùng ở trường "group" của project
+    title: Professional Projects     # tiêu đề khu
+    label: Professional              # nhãn nhỏ ở góc ảnh project
+    icon: briefcase
+    description: Projects I built and shipped as part of my work in industry.
+  - id: personal
+    title: Personal Projects
+    label: Personal
+    icon: user
+    description: Research, side projects and open-source work done in my own time.
+```
+- Đổi tên tuỳ ý, ví dụ `Industry Projects` / `Side Projects`, `Work` / `Research`.
+- Thêm nhóm mới, ví dụ `academic` (project ở trường / lab):
+  ```yaml
+    - id: academic
+      title: Academic Projects
+      label: Academic
+      icon: graduation-cap
+  ```
+- Nhóm nào chưa có project sẽ **tự ẩn**.
+
+### 5.2. Một project — `items`
+```yaml
+items:
+  - title: Autonomous Warehouse Robot
+    group: professional              # id nhóm ở trên
+    org: Company Name                # công ty / tổ chức (tuỳ chọn)
+    category: Robotics & Vision      # lĩnh vực → tự tạo nút lọc
+    period: 2024 – Present
+    image: /assets/img/projects/warehouse.jpg   # ảnh 16:9; bỏ dòng này → ảnh mặc định
+    tags: [ROS 2, C++, Nav2]
+    description: >-
+      Mô tả ngắn 1–3 câu: làm gì, dùng gì, kết quả ra sao.
+    featured: true                   # hiện trên trang Home
+    github: https://github.com/...   # các link — bỏ dòng nào không có
+    demo: https://...
+    paper: /publications/
+    video: https://youtube.com/...
+```
+
+**Mẹo:**
+- **Project công ty** thường không public code → bỏ `github`, có thể để `video` hoặc `demo` nếu được phép. Tránh ghi thông tin mật của công ty.
+- Viết mô tả theo công thức: *vấn đề → giải pháp / công nghệ → kết quả có số liệu* (ví dụ "Deployed on 20+ robots").
+- Trang Home hiện các project có `featured: true` (tối đa theo `home.projects` trong `profile.yml`); nếu không có project nào `featured` thì lấy các project đầu tiên.
+- Thứ tự project trong trang = thứ tự trong file → đặt project mạnh nhất lên đầu mỗi nhóm.
+
+---
+
+## 6. Publications — `publications.yml`
+
+```yaml
+- title: Robust Visual-Inertial Odometry for Low-Texture Environments
+  authors: Nhat Tran, Q. H. Pham, Supervisor Name
+  venue: IEEE Robotics and Automation Letters (RA-L)
+  year: 2025                     # số, dùng để sắp xếp (mới nhất lên đầu)
+  type: Journal                  # nhóm lọc: Conference / Journal / Preprint / Workshop / Thesis...
+  note: Oral                     # nhãn vàng nhỏ (tuỳ chọn): Oral, Best Paper, Spotlight...
+  tags: [SLAM, VIO]
+  pdf: /assets/files/papers/tran2025.pdf   # hoặc link ngoài
+  doi: 10.1109/LRA.2025.1234567  # chỉ ghi mã DOI, web tự tạo link
+  code: https://github.com/...
+  slides: https://...
+  project: /projects/            # link tới trang project (tuỳ chọn)
+  bibtex: |
+    @article{tran2025robust,
+      title  = {...},
+      author = {Tran, Nhat and ...},
+      year   = {2025}
+    }
+```
+- Tên bạn trong `authors` phải viết **giống hệt** một tên trong `publication_names` (profile.yml) để được in đậm.
+- `type` mới → tự thêm mục lọc ở cột trái.
+- Trang Home hiện 3 bài mới nhất.
+
+---
+
+## 7. Notes — viết bài chia sẻ kiến thức
+
+### 7.1. Tạo bài mới
+1. Mở file mẫu `_templates/new-note.md`, copy toàn bộ nội dung.
+2. Vào thư mục `_posts/` → **Add file → Create new file**.
+3. Đặt tên file đúng dạng: **`YYYY-MM-DD-ten-bai-khong-dau.md`**
+   ví dụ `2026-10-01-pid-controller.md` (ngày trong tên = ngày đăng bài).
+4. Dán nội dung mẫu, sửa phần đầu (front matter) và viết bài → **Commit**.
+
+### 7.2. Phần đầu bài (front matter)
+```yaml
+---
+title: "PID Controller — From Theory to Code"
+category: Control               # 1 chủ đề → tạo mục lọc ở cột trái trang Notes
+tags: [PID, Control, Python]
+description: "Một câu tóm tắt, hiện trên thẻ bài viết và khi chia sẻ link."
+image: /assets/img/notes/pid.jpg   # ảnh bìa 16:9 (tuỳ chọn; bỏ → bìa màu mặc định)
+math: true                      # bật nếu bài có công thức toán
+---
+```
+Đặt `<!--more-->` sau đoạn mở đầu: phần phía trên dùng làm tóm tắt nếu không có `description`.
+
+### 7.3. Cú pháp Markdown hay dùng
+| Muốn | Viết |
+|---|---|
+| Tiêu đề mục | `## Tiêu đề` , `### Tiêu đề nhỏ` |
+| In đậm / nghiêng | `**đậm**` , `*nghiêng*` |
+| Link | `[chữ hiển thị](https://...)` |
+| Ảnh | `![mô tả](/assets/img/notes/ten-anh.png)` |
+| Danh sách | `- mục` hoặc `1. mục` |
+| Trích dẫn / ghi chú | `> Ghi chú quan trọng` |
+| Code trong dòng | `` `ros2 topic list` `` |
+| Khối code (tự tô màu) | ```` ```python ```` … ```` ``` ```` (đổi `python` thành `cpp`, `bash`, `yaml`…) |
+| Bảng | `\| Cột 1 \| Cột 2 \|` + dòng `\|---\|---\|` |
+| Công thức trong dòng (cần `math: true`) | `$E = mc^2$` |
+| Công thức riêng dòng | `$$ x_k = F x_{k-1} + w_k $$` |
+| Đường kẻ ngang | `---` |
+
+### 7.4. Sửa / ẩn / xoá bài
+- **Sửa:** mở file trong `_posts/`, bấm ✏️.
+- **Ẩn tạm (nháp):** thêm `published: false` vào phần đầu bài.
+- **Xoá:** mở file → menu `…` → **Delete file**.
+- **Đổi ngày đăng:** đổi ngày trong tên file.
+
+Bài mới tự xuất hiện ở trang **Notes**, trên **Home** (3 bài mới nhất), trong ô **tìm kiếm**, và có nút **Previous / Next** giữa các bài.
+
+---
+
+## 8. Ảnh và file
+
+| Loại | Thư mục | Kích thước gợi ý | Khai báo ở |
+|---|---|---|---|
+| Ảnh đại diện | `assets/img/` | dọc 4:5, rộng ~600px | `profile.yml → avatar` |
+| Ảnh banner | `assets/img/` | ngang, rộng 1600–2000px | `profile.yml → hero.background` |
+| Ảnh project | `assets/img/projects/` | 16:9, rộng ~1000px | `projects.yml → image` |
+| Ảnh bìa / ảnh trong bài | `assets/img/notes/` | 16:9, rộng ~1000px | `image:` trong bài / `![](...)` |
+| CV PDF | `assets/files/cv.pdf` | — | `cv.yml → pdf` |
+| PDF bài báo | `assets/files/papers/` | — | `publications.yml → pdf` |
+
+**Lưu ý:**
+- Ảnh chụp điện thoại thường 3–5 MB → **thu nhỏ trước** bằng https://squoosh.app (chọn WebP hoặc JPG, chất lượng ~75). Mỗi ảnh nên **< 300 KB** để web tải nhanh.
+- Tên file **không dấu, không khoảng trắng**: `robot-arm.jpg` ✅ — `Ảnh robot 1.JPG` ❌.
+- Đường dẫn phân biệt chữ hoa/thường: `photo.JPG` ≠ `photo.jpg`.
+- Upload: vào thư mục → **Add file → Upload files**. Muốn thay ảnh cũ: upload file **trùng tên** để ghi đè.
+
+---
+
+## 9. Menu, tiêu đề web, màu sắc
+
+**Menu** — `_data/navigation.yml`: xoá dòng để ẩn trang khỏi menu, đổi thứ tự để đổi vị trí.
+```yaml
+- title: Projects
+  url: /projects/
+```
+
+**Tiêu đề & mô tả trên Google** — `_config.yml`: sửa `title` và `description`.
+
+**Màu chủ đạo** — `assets/css/style.css`, dòng `--primary: #1f5fd6;` ở đầu file. Ví dụ:
+`#0f766e` (xanh ngọc), `#7c3aed` (tím), `#b91c1c` (đỏ đô), `#0f172a` (đen xám).
+
+---
+
+## 10. Quy tắc viết file YAML (tránh lỗi)
+
+- Thụt lề bằng **dấu cách**, **không dùng Tab**. Giữ đúng số dấu cách như dòng mẫu phía trên.
+- Mỗi mục trong danh sách bắt đầu bằng `- ` (gạch ngang + dấu cách).
+- Đặt nội dung trong **ngoặc kép** nếu có dấu `:` , `#` , hoặc bắt đầu bằng `*` , `[` , `{` , `@` , `"`:
+  `title: "Thesis: Visual SLAM"` , `period: "2023"` , `- "**GPA:** 3.8"`.
+- Dòng bắt đầu bằng `#` là ghi chú, không hiển thị.
+- Danh sách ngắn viết một dòng: `tags: [ROS 2, C++, Python]`.
+- Muốn tạm ẩn một mục: thêm `# ` vào đầu các dòng của mục đó.
+
+---
+
+## 11. Xử lý sự cố
+
+| Hiện tượng | Cách xử lý |
+|---|---|
+| Sửa xong web không đổi | Đợi 2 phút → **Ctrl + F5**. Vẫn không đổi → xem tab **Actions**. |
+| Actions báo ❌ đỏ | Bấm vào lần chạy lỗi → đọc dòng báo lỗi (thường ghi tên file + số dòng). Hay gặp nhất: sai thụt lề YAML, thiếu ngoặc kép khi có dấu `:`. |
+| Ảnh không hiện | Kiểm tra đường dẫn bắt đầu bằng `/assets/...`, đúng tên file, đúng chữ hoa/thường. |
+| Bài viết không hiện | Tên file phải đúng dạng `YYYY-MM-DD-ten.md`, nằm trong `_posts/`, có phần `---` ở đầu; ngày không được ở tương lai. |
+| Công thức toán không hiển thị | Thêm `math: true` vào phần đầu bài. |
+| Tên mình không in đậm trong Publications | Tên trong `authors` phải khớp chính xác với `publication_names`. |
+| Máy tính không vào được web nhưng 4G vào được | Do mạng / DNS: đổi DNS sang `8.8.8.8` hoặc `1.1.1.1`, khởi động lại router. |
+
+---
+
+## 12. Tính năng có sẵn
+- 🌗 Giao diện sáng / tối (nút ☀/🌙), tự nhớ lựa chọn.
+- 🔍 Tìm kiếm toàn trang (nút kính lúp hoặc phím `/`): tìm trong bài viết, project, bài báo.
+- 🗂 Lọc: project theo lĩnh vực, bài báo theo loại, bài viết theo chủ đề + ô tìm kiếm.
+- 📱 Hiển thị tốt trên điện thoại (menu thu gọn).
+- 🔗 Link thẳng tới từng mục: `/cv/#experience`, `/projects/#personal`.
+- 📰 RSS feed tự động: `/feed.xml`.
+- ⚡ Nhẹ (~120 KB/trang), font nhúng sẵn, không phụ thuộc dịch vụ ngoài (trừ MathJax khi bài có công thức).
+
+---
+
+## 13. Chạy thử trên máy (tuỳ chọn)
+Cần cài Ruby. Sau đó:
 ```bash
 bundle install
 bundle exec jekyll serve
-# mở http://localhost:4000
+# mở http://localhost:4000 — sửa file là trang tự cập nhật (riêng _config.yml phải chạy lại)
+```
+
+---
+
+## 14. Cấu trúc thư mục
+```
+├── _config.yml            # cấu hình chung (tiêu đề web, URL)
+├── _data/                 # ★ NỘI DUNG — sửa ở đây
+│   ├── profile.yml        #   thông tin cá nhân, Home, About
+│   ├── cv.yml             #   CV
+│   ├── projects.yml       #   project
+│   ├── publications.yml   #   bài báo
+│   └── navigation.yml     #   menu
+├── _posts/                # ★ BÀI VIẾT — thêm file .md ở đây
+├── _templates/            #   file mẫu bài viết (không hiển thị lên web)
+├── assets/
+│   ├── img/               # ★ ẢNH
+│   ├── files/             # ★ CV PDF, PDF bài báo
+│   ├── css/ js/ fonts/    #   giao diện (không cần sửa)
+├── _layouts/ _includes/   #   khung giao diện (không cần sửa)
+└── index.html, about.html, cv.html, projects.html, publications.html, notes.html
+                           #   các trang (không cần sửa)
 ```
