@@ -483,3 +483,10 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; a
 .info-icon .icon-orcid, .contact-grid .icon-orcid, .footer-social a:hover .icon-orcid { color: #a6ce39; }
 .info-icon .icon-mail, .contact-grid .icon-mail, .footer-social a:hover .icon-mail { color: #ea4335; }
 .info-icon .icon-github, .contact-grid .icon-github, .footer-social a:hover .icon-github { color: var(--text); }
+
+/* Distinct colours for generic info icons (Name / Position / Location) */
+.info-icon .icon-user, .contact-grid .icon-user { color: #2563eb; }
+.info-icon .icon-briefcase, .contact-grid .icon-briefcase { color: #d97706; }
+.info-icon .icon-map-pin, .contact-grid .icon-map-pin { color: #16a34a; }
+.info-icon .icon-phone, .contact-grid .icon-phone { color: #0d9488; }
+.info-icon .icon-globe, .contact-grid .icon-globe, .info-icon .icon-link, .contact-grid .icon-link { color: #7c3aed; }
