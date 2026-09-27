@@ -73,7 +73,7 @@ STM32 controller board, so every module can be tried directly on real hardware.
   <figcaption>The robot platform: 3D-printed frame, IMU and encoder motors, STM32L476 board with an ESP32-C3 co-processor.</figcaption>
 </figure>
 
-<figure class="figure-narrow">
+<figure class="figure-narrow figure-small">
   <img src="/assets/img/projects/workshops/stm32-robot-pcb.jpg" alt="3D view of the STM32L476RGT6 controller board of the self-balancing robot">
   <figcaption>The robot's 2-layer controller board (STM32L476RGT6, IMU, motor driver, Bluetooth) — 3D view in Altium Designer.</figcaption>
 </figure>

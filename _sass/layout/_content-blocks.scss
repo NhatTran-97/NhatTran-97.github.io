@@ -5,6 +5,7 @@
 
 // A figure that should not stretch to the full content width (diagrams, infographics, renders)
 .prose .figure-narrow img { width: 100%; max-width: 900px; }
+.prose .figure-narrow.figure-small img { max-width: 480px; }   // secondary image (e.g. a PCB render)
 
 .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(#{unquote("min(230px, 100%)")}, 1fr)); gap: 14px; margin: 1.2em 0; }
 .feature-grid > div { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg); }

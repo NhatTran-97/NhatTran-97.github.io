@@ -352,6 +352,7 @@ links:                          # nút đầu tiên màu xanh đậm
 | `<div class="feature-grid">…</div>` | Lưới ô tính năng |
 | `<figure><img …><figcaption>…</figcaption></figure>` | Ảnh có chú thích |
 | `<figure class="figure-narrow">…</figure>` | Ảnh không kéo quá rộng (sơ đồ, infographic, ảnh render) — tối đa 900px |
+| `<figure class="figure-narrow figure-small">…</figure>` | Ảnh phụ cỡ nhỏ (vd. ảnh mạch 3D) — tối đa 480px |
 | `<div class="gallery">…</div>` | Nhiều ảnh dạng lưới |
 | `<ul class="video-list">…</ul>` | Danh sách video YouTube |
 | `<section class="workshop-panel">` + `<div class="workshop-cards" data-workshop-cards>` | Nhiều khoá học/workshop dạng thẻ nhỏ, bấm để mở (xem bên dưới) |
