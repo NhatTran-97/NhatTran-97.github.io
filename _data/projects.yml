@@ -1,56 +1,98 @@
 # =====================================================================
-#  PROJECTS — mỗi project là một mục bắt đầu bằng dấu "-"
-#    title        : tên project
-#    category     : nhóm để lọc (các nút lọc được tạo tự động từ đây)
-#    image        : ảnh minh hoạ (tỉ lệ 16:9), bỏ trống sẽ dùng ảnh mặc định
-#    tags         : công nghệ sử dụng
-#    description  : mô tả ngắn (Markdown)
-#    featured     : true → hiện trên trang Home
-#    github / demo / paper / video : link (bỏ trống nếu không có)
+#  PROJECTS
+#
+#  1) groups: các nhóm project, hiển thị thành từng khu riêng trên trang
+#     Projects theo đúng thứ tự dưới đây. Đổi tên / thêm nhóm tuỳ ý.
+#       id          : mã nhóm (viết liền, không dấu) — dùng ở trường "group" của project
+#       title       : tiêu đề khu
+#       label       : nhãn ngắn hiện ở góc ảnh project
+#       description : một câu mô tả (tuỳ chọn)
+#
+#  2) items: danh sách project, mỗi project bắt đầu bằng dấu "-"
+#       title        : tên project
+#       group        : id của nhóm ở trên (professional / personal ...)
+#       org          : công ty / tổ chức (tuỳ chọn, hợp với project công ty)
+#       category     : lĩnh vực để lọc (nút lọc được tạo tự động)
+#       period       : thời gian
+#       image        : ảnh minh hoạ 16:9 (bỏ trống sẽ dùng ảnh mặc định)
+#       tags         : công nghệ sử dụng
+#       description  : mô tả ngắn (Markdown)
+#       featured     : true → hiện trên trang Home
+#       github / demo / paper / video : link (bỏ trống nếu không có,
+#                                        project công ty thường không public code)
 # =====================================================================
 
-- title: Autonomous Warehouse Robot
-  category: Robotics
-  period: 2024 – Present
-  image: /assets/img/projects/robot-nav.svg
-  tags: [ROS 2, C++, Nav2]
-  description: >-
-    End-to-end navigation system for a warehouse AMR: LiDAR SLAM, AMCL
-    localization, Nav2 planning and a custom MPC controller.
-  featured: true
-  github: https://github.com/NhatTran-97
-  demo: "#"
+groups:
+  - id: professional
+    title: Professional Projects
+    label: Professional
+    icon: briefcase
+    description: Projects I built and shipped as part of my work in industry.
+  - id: personal
+    title: Personal Projects
+    label: Personal
+    icon: user
+    description: Research, side projects and open-source work done in my own time.
 
-- title: Visual-Inertial Odometry on Jetson
-  category: Computer Vision
-  period: 2023
-  image: /assets/img/projects/vio.svg
-  tags: [C++, CUDA, VIO]
-  description: >-
-    Real-time visual-inertial odometry at 30 Hz on NVIDIA Jetson Orin with a
-    sliding-window optimizer.
-  featured: true
-  github: https://github.com/NhatTran-97
-  paper: /publications/
+items:
+  # ---------- Professional ----------
+  - title: Autonomous Warehouse Robot
+    group: professional
+    org: Company Name
+    category: Robotics
+    period: 2024 – Present
+    image: /assets/img/projects/robot-nav.svg
+    tags: [ROS 2, C++, Nav2]
+    description: >-
+      End-to-end navigation system for a warehouse AMR: LiDAR SLAM, AMCL
+      localization, Nav2 planning and a custom MPC controller. Deployed on 20+ robots.
+    featured: true
+    demo: "#"
 
-- title: Terrain Segmentation for Field Robots
-  category: Machine Learning
-  period: 2021 – 2022
-  image: /assets/img/projects/segmentation.svg
-  tags: [PyTorch, TensorRT, Segmentation]
-  description: >-
-    Lightweight segmentation network for terrain classification, exported to
-    TensorRT for on-board inference.
-  featured: true
-  github: https://github.com/NhatTran-97
-  video: "#"
+  - title: Fleet Management Dashboard
+    group: professional
+    org: Company Name
+    category: Software
+    period: 2024
+    tags: [Python, FastAPI, React, ROS 2]
+    description: >-
+      Web dashboard to monitor robot status, assign missions and replay logs for
+      a fleet of autonomous mobile robots.
 
-- title: Personal Portfolio Website
-  category: Web Development
-  period: 2026
-  tags: [Jekyll, HTML, CSS, GitHub Pages]
-  description: >-
-    This website — a minimal, responsive academic portfolio where all content
-    lives in simple data files.
-  github: https://github.com/NhatTran-97/NhatTran-97.github.io
-  demo: https://nhattran-97.github.io
+  # ---------- Personal ----------
+  - title: Visual-Inertial Odometry on Jetson
+    group: personal
+    category: Computer Vision
+    period: 2023
+    image: /assets/img/projects/vio.svg
+    tags: [C++, CUDA, VIO]
+    description: >-
+      Real-time visual-inertial odometry at 30 Hz on NVIDIA Jetson Orin with a
+      sliding-window optimizer. Part of my M.Sc. thesis.
+    featured: true
+    github: https://github.com/NhatTran-97
+    paper: /publications/
+
+  - title: Terrain Segmentation for Field Robots
+    group: personal
+    category: Machine Learning
+    period: 2021 – 2022
+    image: /assets/img/projects/segmentation.svg
+    tags: [PyTorch, TensorRT, Segmentation]
+    description: >-
+      Lightweight segmentation network for terrain classification, exported to
+      TensorRT for on-board inference.
+    featured: true
+    github: https://github.com/NhatTran-97
+    video: "#"
+
+  - title: Personal Portfolio Website
+    group: personal
+    category: Software
+    period: 2026
+    tags: [Jekyll, HTML, CSS, GitHub Pages]
+    description: >-
+      This website — a minimal, responsive academic portfolio where all content
+      lives in simple data files.
+    github: https://github.com/NhatTran-97/NhatTran-97.github.io
+    demo: https://nhattran-97.github.io

@@ -68,9 +68,9 @@ title: Home
   {% endif %}
 
   <!-- Projects -->
-  {% if p.home.projects > 0 and site.data.projects.size > 0 %}
-  {%- assign featured = site.data.projects | where: "featured", true -%}
-  {%- if featured.size == 0 -%}{%- assign featured = site.data.projects -%}{%- endif -%}
+  {% if p.home.projects > 0 and site.data.projects.items.size > 0 %}
+  {%- assign featured = site.data.projects.items | where: "featured", true -%}
+  {%- if featured.size == 0 -%}{%- assign featured = site.data.projects.items -%}{%- endif -%}
   <section class="card home-card">
     <div class="card-head">
       <h2>{% include icon.html name="folder" %} Projects</h2>

@@ -2,9 +2,10 @@
 title: Projects
 permalink: /projects/
 ---
-{% include page-head.html title="Projects" subtitle="A collection of my personal, academic, and open-source projects." %}
+{% include page-head.html title="Projects" subtitle="Selected projects from my professional work and personal research." %}
 
-{%- assign cats = site.data.projects | map: "category" | compact | uniq -%}
+{%- assign all = site.data.projects.items -%}
+{%- assign cats = all | map: "category" | compact | uniq -%}
 <div data-filter>
   <div class="pills">
     <button type="button" class="pill active" data-filter-value="">All</button>
@@ -13,10 +14,37 @@ permalink: /projects/
     {%- endfor %}
   </div>
 
-  <div class="project-grid">
-    {%- for proj in site.data.projects %}
-    {% include project-card.html project=proj %}
-    {%- endfor %}
-  </div>
+  {%- for g in site.data.projects.groups %}
+  {%- assign items = all | where: "group", g.id %}
+  {%- if items.size > 0 %}
+  <section class="project-group" id="{{ g.id }}" data-filter-section>
+    <div class="group-head">
+      <h2>{% if g.icon %}<span class="icon-circle sm">{% include icon.html name=g.icon %}</span>{% endif %}{{ g.title }} <span class="count">{{ items.size }}</span></h2>
+      {% if g.description %}<p>{{ g.description }}</p>{% endif %}
+    </div>
+    <div class="project-grid">
+      {%- for proj in items %}
+      {% include project-card.html project=proj %}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+
+  {%- comment %} Projects whose "group" doesn't match any group above {% endcomment %}
+  {%- assign group_ids = site.data.projects.groups | map: "id" %}
+  {%- assign others = "" | split: "" %}
+  {%- for proj in all %}{% unless group_ids contains proj.group %}{% assign others = others | push: proj %}{% endunless %}{% endfor %}
+  {%- if others.size > 0 %}
+  <section class="project-group" data-filter-section>
+    <div class="group-head"><h2>Other Projects <span class="count">{{ others.size }}</span></h2></div>
+    <div class="project-grid">
+      {%- for proj in others %}
+      {% include project-card.html project=proj %}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+
   <p class="empty" data-filter-empty hidden>No projects in this category yet.</p>
 </div>

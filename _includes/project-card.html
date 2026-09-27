@@ -1,6 +1,8 @@
 {%- assign prj = include.project -%}
+{%- assign prj_group = site.data.projects.groups | where: "id", prj.group | first -%}
 <article class="project-card card" id="{{ prj.title | slugify }}" data-filter-item data-cats="|{{ prj.category }}|">
   <div class="project-thumb">
+    {%- if prj_group.label %}<span class="thumb-badge badge-{{ prj_group.id }}">{{ prj_group.label }}</span>{% endif %}
     {%- if prj.image %}
     <img src="{{ prj.image | relative_url }}" alt="{{ prj.title }}" loading="lazy">
     {%- else %}
@@ -13,6 +15,7 @@
       {%- for t in prj.tags limit: include.max_tags | default: 10 %}<span class="chip">{{ t }}</span>{% endfor %}
     </div>
     <h3>{{ prj.title }}</h3>
+    {% if prj.org %}<div class="project-org">{% include icon.html name="briefcase" %} {{ prj.org }}</div>{% endif %}
     {% if prj.period and include.compact != true %}<div class="muted small">{{ prj.period }}</div>{% endif %}
     <div class="project-desc">{{ prj.description | markdownify }}</div>
     <div class="card-links">

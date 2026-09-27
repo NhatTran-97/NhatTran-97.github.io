@@ -48,9 +48,11 @@ Bài mới sẽ tự hiện ở trang **Notes**, trên **Home**, có trong ô **
 
 ## 3. Thêm project / bài báo
 
-Copy một khối có sẵn trong `_data/projects.yml` hoặc `_data/publications.yml` (từ dấu `-` đến trước dấu `-` tiếp theo), dán xuống và sửa nội dung.
+Copy một khối có sẵn trong `_data/projects.yml` (phần `items:`) hoặc `_data/publications.yml` (từ dấu `-` đến trước dấu `-` tiếp theo), dán xuống và sửa nội dung.
 
-- Project: `category` mới → tự thêm nút lọc; `featured: true` → hiện trên Home.
+- Project được chia nhóm bằng trường `group`: `professional` (project công ty) hoặc `personal` (project cá nhân / nghiên cứu). Tên, mô tả, thứ tự các nhóm sửa ở phần `groups:` đầu file — có thể thêm nhóm mới (vd. `academic`). Nhóm nào không có project sẽ tự ẩn.
+- Project công ty: thêm `org: Tên công ty`; không có link public thì bỏ trống `github`.
+- `category` mới → tự thêm nút lọc; `featured: true` → hiện trên Home.
 - Bài báo: tự sắp xếp theo `year`; `type` mới (vd. `Thesis`) → tự thêm mục lọc; tên bạn khai báo trong `profile.yml → publication_names` sẽ tự in đậm.
 
 ## 4. Lưu ý khi sửa file `.yml`

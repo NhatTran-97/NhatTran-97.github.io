@@ -9,7 +9,7 @@ permalink: /search.json
     {%- endfor %}
   ],
   "projects": [
-    {%- for p in site.data.projects %}
+    {%- for p in site.data.projects.items %}
     {%- capture url %}/projects/#{{ p.title | slugify }}{% endcapture %}
     {"title": {{ p.title | jsonify }}, "url": {{ url | relative_url | jsonify }}, "meta": "Project", "text": {{ p.description | append: " " | append: p.category | jsonify }}}{% unless forloop.last %},{% endunless %}
     {%- endfor %}

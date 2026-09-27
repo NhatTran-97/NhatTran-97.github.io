@@ -41,6 +41,9 @@
         el.hidden = !(okCat && okQ);
         if (!el.hidden) shown++;
       });
+      box.querySelectorAll('[data-filter-section]').forEach(function (sec) {
+        sec.hidden = !sec.querySelector('[data-filter-item]:not([hidden])');
+      });
       if (empty) empty.hidden = shown !== 0;
     }
 
