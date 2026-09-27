@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+  <!-- Dawn climb: a robot trajectory up the mountain. Visited waypoints glow; the
+       current pose shows a covariance ellipse and heading, like a SLAM/RViz view. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1a33"/><stop offset=".42" stop-color="#15406b"/>
+      <stop offset=".66" stop-color="#1f7a86"/><stop offset=".84" stop-color="#7cc4a6"/><stop offset="1" stop-color="#f3d58a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="1080" cy="215" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe0a8" stop-opacity=".95"/><stop offset=".18" stop-color="#ffc07a" stop-opacity=".55"/>
+      <stop offset=".5" stop-color="#7cd3b4" stop-opacity=".16"/><stop offset="1" stop-color="#7cd3b4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4fa3a8"/><stop offset="1" stop-color="#2f6f8a"/></linearGradient>
+    <linearGradient id="mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23607f"/><stop offset="1" stop-color="#173d63"/></linearGradient>
+    <linearGradient id="main" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f4f7a"/><stop offset=".55" stop-color="#14325a"/><stop offset="1" stop-color="#0d2140"/></linearGradient>
+    <linearGradient id="front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1c33"/><stop offset="1" stop-color="#071224"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#sky)"/>
+  <circle cx="620" cy="40" r="1.6" fill="#fff" opacity="0.7"/><circle cx="760" cy="90" r="1.2" fill="#fff" opacity="0.5"/><circle cx="880" cy="30" r="1.4" fill="#fff" opacity="0.6"/><circle cx="1010" cy="70" r="1.1" fill="#fff" opacity="0.45"/><circle cx="1180" cy="40" r="1.5" fill="#fff" opacity="0.55"/><circle cx="1330" cy="95" r="1.2" fill="#fff" opacity="0.4"/><circle cx="1450" cy="35" r="1.6" fill="#fff" opacity="0.5"/><circle cx="1540" cy="120" r="1.1" fill="#fff" opacity="0.35"/><circle cx="520" cy="120" r="1.2" fill="#fff" opacity="0.4"/><circle cx="420" cy="50" r="1.4" fill="#fff" opacity="0.5"/><circle cx="300" cy="100" r="1.1" fill="#fff" opacity="0.35"/><circle cx="180" cy="40" r="1.5" fill="#fff" opacity="0.45"/>
+  <rect width="1600" height="600" fill="url(#glow)"/>
+  <circle cx="1080" cy="228" r="62" fill="#ffe3b0"/>
+  <circle cx="1080" cy="228" r="80" fill="#ffd490" opacity=".25" filter="url(#soft)"/>
+
+  <!-- far range -->
+  <path d="M0 330 L110 270 L210 305 L330 215 L430 285 L540 240 L650 300 L760 250 L860 300 L1180 330 L1300 250 L1400 290 L1500 230 L1600 280 V600 H0Z" fill="url(#far)" opacity=".75"/>
+  <!-- mid range -->
+  <path d="M0 400 L120 350 L240 385 L360 320 L470 370 L560 345 L640 380 L1250 400 L1340 340 L1450 375 L1600 330 V600 H0Z" fill="url(#mid)"/>
+  <!-- main peak -->
+  <path d="M520 600 L700 430 L790 380 L880 300 L960 250 L1030 196 L1080 168 L1130 200 L1200 262 L1290 300 L1380 360 L1470 395 L1600 430 V600Z" fill="url(#main)"/>
+  <path d="M1080 168 L1130 200 L1200 262 L1290 300 L1380 360 L1470 395 L1600 430" fill="none" stroke="#ffc995" stroke-opacity=".55" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M1080 168 L1103 184 L1092 186 L1112 201 L1070 190 L1058 181Z" fill="#f3e6e9" opacity=".85"/>
+  <!-- foreground hills -->
+  <path d="M0 520 C150 480 300 500 420 470 C540 440 600 520 700 540 C820 565 900 520 1000 545 C1120 575 1250 520 1400 540 C1500 552 1560 540 1600 530 V600 H0Z" fill="url(#front)"/>
+
+  <!-- trajectory: travelled part (bright) and path ahead (faint) -->
+  <path d="M940,318 C947.5,308.7 968.3,279.7 985,262 C1001.7,244.3 1024.2,226.3 1040,212 C1055.8,197.7 1073.3,182.0 1080,176" fill="none" stroke="#e8ecff" stroke-opacity=".45" stroke-width="2.5" stroke-dasharray="4 10" stroke-linecap="round"/>
+  <path d="M690,640 C695.0,626.7 720.0,583.3 720,560 C720.0,536.7 681.7,517.5 690,500 C698.3,482.5 740.0,468.3 770,455 C800.0,441.7 855.0,435.8 870,420 C885.0,404.2 848.3,377.0 860,360 C871.7,343.0 926.7,325.0 940,318" fill="none" stroke="#ffd9a0" stroke-opacity=".35" stroke-width="10" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M690,640 C695.0,626.7 720.0,583.3 720,560 C720.0,536.7 681.7,517.5 690,500 C698.3,482.5 740.0,468.3 770,455 C800.0,441.7 855.0,435.8 870,420 C885.0,404.2 848.3,377.0 860,360 C871.7,343.0 926.7,325.0 940,318" fill="none" stroke="#ffe2b5" stroke-width="3" stroke-dasharray="12 9" stroke-linecap="round"/>
+  <circle cx="720" cy="560" r="5" fill="#ffd9a0"/><circle cx="720" cy="560" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="690" cy="500" r="5" fill="#ffd9a0"/><circle cx="690" cy="500" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="770" cy="455" r="5" fill="#ffd9a0"/><circle cx="770" cy="455" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="870" cy="420" r="5" fill="#ffd9a0"/><circle cx="870" cy="420" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="860" cy="360" r="5" fill="#ffd9a0"/><circle cx="860" cy="360" r="11" fill="#ffd9a0" opacity=".18"/><circle cx="985" cy="262" r="4.5" fill="none" stroke="#e8ecff" stroke-opacity=".55" stroke-width="2"/><circle cx="1040" cy="212" r="4.5" fill="none" stroke="#e8ecff" stroke-opacity=".55" stroke-width="2"/>
+
+  <!-- current pose: covariance ellipse + heading arrow -->
+  <g transform="translate(940 318) rotate(-51.2)">
+    <ellipse rx="30" ry="17" fill="#7fd6ff" fill-opacity=".14" stroke="#7fd6ff" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="3 4"/>
+    <circle r="7" fill="#7fd6ff"/><circle r="13" fill="#7fd6ff" opacity=".25"/>
+    <path d="M10 -7 L28 0 L10 7Z" fill="#7fd6ff"/>
+  </g>
+
+  <!-- goal flag at the summit -->
+  <g transform="translate(1080 168)">
+    <line x1="0" y1="0" x2="0" y2="-40" stroke="#fff" stroke-width="2.5"/>
+    <path d="M0 -40 L26 -32 L0 -24Z" fill="#ff7a59"/>
+  </g>
+</svg>

@@ -139,6 +139,10 @@ hero:
       style: ghost                          # ghost = nút viền trong suốt
 ```
 
+**Ảnh nền banner có sẵn** (thư mục `assets/img/hero/`) — đổi bằng cách sửa `hero.background`:
+`hero-photo-mountain.jpg` (ảnh bạn trên núi xanh ngọc, đang dùng) · `hero-photo-fablab.jpg` (ảnh bạn trong FabLab) · `hero-mountain-teal.svg` · `hero-mountain-dawn.svg`.
+Muốn dùng ảnh mới: ảnh ngang ~2400×900, chủ thể nằm bên phải, bên trái tối/đơn giản để chữ dễ đọc, nén < 300 KB.
+
 ### 3.3. Bốn ô giới thiệu — `highlights`
 ```yaml
 highlights:

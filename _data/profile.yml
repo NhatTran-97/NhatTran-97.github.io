@@ -28,7 +28,12 @@ hero:
     fusion and Visual SLAM, along with navigation in ROS 2 and embedded programming.
     I'm still learning with every project, and I enjoy sharing what I learn with
     students at the EIU FabLab.
-  background: /assets/img/hero.svg     # Ảnh nền banner (ảnh ngang, ≥ 1600px)
+  # Ảnh nền banner (ảnh ngang ~2400x900, < 300 KB). Có sẵn 4 lựa chọn:
+  #   /assets/img/hero/hero-photo-mountain.jpg  ← ảnh bạn mờ dần trên núi xanh ngọc (đang dùng)
+  #   /assets/img/hero/hero-photo-fablab.jpg    ← ảnh bạn trong FabLab, bên trái chuyển xanh đậm
+  #   /assets/img/hero/hero-mountain-teal.svg   ← tranh núi xanh ngọc, quỹ đạo robot
+  #   /assets/img/hero/hero-mountain-dawn.svg   ← tranh núi tím – vàng cam
+  background: /assets/img/hero/hero-photo-mountain.jpg
   quote: "Passion builds robots; persistence makes them work."
   buttons:
     - text: View My CV

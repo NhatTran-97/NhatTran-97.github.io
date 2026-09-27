@@ -560,3 +560,12 @@ p, li { text-wrap: pretty; }
 .empty, .not-found p { text-align: center; }
 /* Narrow phones: justified text gets gappy — always left aligned */
 @media (max-width: 420px) { .text-justify p, .text-justify li { text-align: left; } }
+
+/* Phones: text spans the whole banner, so darken the background evenly for readability */
+@media (max-width: 760px) {
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(9, 16, 30, .80) 0%, rgba(9, 16, 30, .70) 100%),
+      var(--hero-bg) 65% center / cover no-repeat, #1e2b40;
+  }
+}
