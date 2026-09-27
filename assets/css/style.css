@@ -222,7 +222,7 @@ img { max-width: 100%; display: block; }
 .avatar { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; background: var(--chip); }
 .contact-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; font-size: .85rem; }
 .contact-grid li { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.contact-grid .icon { color: var(--muted); font-size: 1.05rem; }
+.contact-grid .icon { color: var(--primary); font-size: 1.05rem; }
 .contact-grid a, .contact-grid span { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .contact-grid a:hover { color: var(--primary); }
 
@@ -343,7 +343,7 @@ details.bibtex summary { cursor: pointer; color: var(--primary); font-weight: 60
 .about-info { border-right: 1px solid var(--border); padding-right: 32px; }
 .info-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
 .info-list li { display: flex; gap: 14px; align-items: flex-start; }
-.info-icon { font-size: 1.3rem; color: var(--text); padding-top: 2px; }
+.info-icon { font-size: 1.3rem; color: var(--primary); padding-top: 2px; }
 .info-label { font-weight: 600; font-size: .88rem; }
 .info-value { color: var(--muted); font-size: .88rem; word-break: break-word; }
 .info-value a { color: var(--muted); }

@@ -416,12 +416,14 @@ Bài mới tự xuất hiện ở trang **Notes**, trên **Home** (3 bài mới 
 | Ảnh bìa / ảnh trong bài | `assets/img/notes/` | 16:9, rộng ~1000px | `image:` trong bài / `![](...)` |
 | CV PDF | `assets/files/cv.pdf` | — | `cv.yml → pdf` |
 | PDF bài báo | `assets/files/papers/` | — | `publications.yml → pdf` |
+| Icon trên tab trình duyệt (favicon) | `assets/icons/` + `favicon.ico` ở thư mục gốc | vuông; bộ 32px, 180px, 192px, 512px | tự động (xem ghi chú bên dưới) |
 
 **Lưu ý:**
 - Ảnh chụp điện thoại thường 3–5 MB → **thu nhỏ trước** bằng https://squoosh.app (chọn WebP hoặc JPG, chất lượng ~75). Mỗi ảnh nên **< 300 KB** để web tải nhanh.
 - Tên file **không dấu, không khoảng trắng**: `robot-arm.jpg` ✅ — `Ảnh robot 1.JPG` ❌.
 - Đường dẫn phân biệt chữ hoa/thường: `photo.JPG` ≠ `photo.jpg`.
 - Upload: vào thư mục → **Add file → Upload files**. Muốn thay ảnh cũ: upload file **trùng tên** để ghi đè.
+- **Đổi favicon:** tạo ảnh vuông, xuất các cỡ (dùng https://realfavicongenerator.net cho nhanh), rồi upload **đè đúng tên**: `assets/icons/favicon-32.png`, `assets/icons/apple-touch-icon.png` (180px), `assets/icons/icon-192.png`, `assets/icons/icon-512.png` và `favicon.ico` (thư mục gốc). Trình duyệt lưu favicon rất lâu → mở tab ẩn danh để thấy icon mới.
 
 ---
 
