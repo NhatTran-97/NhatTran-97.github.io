@@ -50,7 +50,7 @@ highlights:
     text: SLAM, localization, motion planning and control with ROS 2.
   - icon: users
     title: Teaching & Mentoring
-    text: Workshops, competition teams and student research — AUTO RACE 2025 prizes, EIUSC 2025 Best Paper Award.
+    text: Workshops, competition teams and student research — AUTO RACE 2025 prizes, EIUSC 2025 Best Paper Award (Student Session).
 
 # ----- Thông tin liên hệ (trang About, Home và footer) -----
 # Xoá mục nào không dùng. "url" là link khi bấm vào.
@@ -107,7 +107,7 @@ about:
     robotics, ROS 2, drones and embedded systems, and mentor student teams in annual
     robotics competitions — at **AUTO RACE 2025**, two of our teams won **2nd and 3rd Prize**.
     I also supervise student research; our paper at the **EIUSC International Conference 2025**
-    received the **Best Paper Award** in the student session.
+    received the **Best Paper Award (Student Session)**.
   interests:
     - Embedded Systems
     - Edge AI

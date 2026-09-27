@@ -113,7 +113,7 @@ items:
       - name: News
         url: https://eiu.edu.vn/en/news/eiu-students-journey-of-hang-on-experience-and-learning-at-auto-race-2025/
 
-  - title: Student Research — Best Paper Award, EIUSC 2025
+  - title: Student Research — Best Paper Award (Student Session), EIUSC 2025
     group: professional
     org: EIU FabLab — research mentor & co-author
     category: Teaching & Mentoring
@@ -124,7 +124,7 @@ items:
       Mentored an EIU student team on the paper *"Developing An Autonomous Emergency
       Braking System-Based Kalman Filtering For An Autonomous Racing Car"*, presented at
       the EIUSC International Conference 2025 (Ho Chi Minh City, 3 December 2025) — it
-      received the **Best Paper Award** in the student session.
+      received the **Best Paper Award (Student Session)**.
     links:
       - name: Paper
         url: /publications/
