@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{%- comment -%}
+  Project detail page. Content comes from a Markdown file in _projects/
+  (see _templates/new-project-page.md). Front matter fields:
+  title, summary, category, role, period, partners, status, image, image_caption,
+  tags, links (name / url / icon).
+{%- endcomment -%}
+<article class="project-page">
+  <a class="back-link" href="{{ '/projects/' | relative_url }}">&larr; All projects</a>
+
+  <header class="project-hero card">
+    <div class="project-hero-text">
+      {% if page.category %}<span class="chip chip-primary">{{ page.category }}</span>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="project-summary">{{ page.summary }}</p>{% endif %}
+
+      <dl class="project-meta">
+        {% if page.role %}<div><dt>{% include icon.html name="user" %} Role</dt><dd>{{ page.role }}</dd></div>{% endif %}
+        {% if page.period %}<div><dt>{% include icon.html name="calendar" %} Period</dt><dd>{{ page.period }}</dd></div>{% endif %}
+        {% if page.partners %}<div><dt>{% include icon.html name="users" %} Partners</dt><dd>{{ page.partners }}</dd></div>{% endif %}
+        {% if page.status %}<div><dt>{% include icon.html name="clock" %} Status</dt><dd>{{ page.status }}</dd></div>{% endif %}
+      </dl>
+
+      {% if page.tags.size > 0 %}<div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+
+      {% if page.links %}
+      <div class="project-actions">
+        {%- for l in page.links %}
+        {%- assign link_icon = l.icon | default: "external-link" %}
+        <a class="btn {% if forloop.first %}btn-primary{% else %}btn-outline{% endif %}" href="{{ l.url | relative_url }}">{% include icon.html name=link_icon %} {{ l.name }}</a>
+        {%- endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% if page.image %}
+    <figure class="project-hero-img">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_caption | default: page.title }}">
+      {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+  </header>
+
+  <div class="card project-body-content prose{% if site.typography.post_text_align == 'justify' %} text-justify{% endif %}">
+    {{ content }}
+  </div>
+
+  <a class="back-link" href="{{ '/projects/' | relative_url }}">&larr; All projects</a>
+</article>

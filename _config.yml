@@ -30,9 +30,17 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 
+# Trang chi tiết project: mỗi file trong _projects/ → /projects/<tên-file>/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 defaults:
   - scope: { path: "", type: posts }
     values: { layout: post }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
   - scope: { path: "" }
     values: { layout: default }
 

@@ -24,6 +24,8 @@
 #       tags         : công nghệ sử dụng
 #       description  : mô tả ngắn (Markdown)
 #       featured     : true → hiện trên trang Home
+#       detail       : link trang chi tiết (tuỳ chọn), vd. /projects/ten-file/ — tạo trang
+#                      bằng cách copy _templates/new-project-page.md vào _projects/
 #       github / demo / paper / video : link (bỏ trống nếu không có,
 #                                        project công ty thường không public code)
 #       links        : link khác tuỳ ý, mỗi link gồm name + url (+ icon tuỳ chọn), vd.
@@ -53,10 +55,11 @@ items:
   # ---------- Professional ----------
   - title: VDA5050 Support for Open-RMF
     group: professional
-    org: EIU × ARTC Singapore (joint project)
+    org: EIU × ARTC Singapore — Technical Lead
     category: Autonomy
-    period: 2026 — ongoing
-    image: /assets/img/projects/vda5050-open-rmf.jpg
+    period: Jun 2026 – Nov 2026
+    image: /assets/img/projects/vda5050/card.jpg
+    detail: /projects/vda5050-open-rmf/
     tags: [ROS 2, Open-RMF, VDA5050, MQTT, Nav2, Docker]
     description: >-
       A ROS 2 Jazzy implementation of the VDA5050 v2.1.0 protocol that connects

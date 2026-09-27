@@ -569,3 +569,60 @@ p, li { text-wrap: pretty; }
       var(--hero-bg) 65% center / cover no-repeat, #1e2b40;
   }
 }
+
+/* =====================================================================
+   Project detail page (_layouts/project.html)
+   ===================================================================== */
+.project-page { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; }
+.project-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; padding: 28px; align-items: center; }
+.project-hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.project-hero h1 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); font-weight: 700; letter-spacing: -.02em; }
+.project-summary { color: var(--muted); margin: 0; }
+.project-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin: 4px 0; width: 100%; }
+.project-meta dt { display: flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.project-meta dt .icon { color: var(--primary); }
+.project-meta dd { margin: 2px 0 0; font-weight: 600; font-size: .92rem; }
+.project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.project-hero-img { margin: 0; }
+.project-hero-img img { width: 100%; border-radius: 10px; aspect-ratio: 4 / 3; object-fit: cover; }
+.project-hero-img figcaption, .prose figcaption { font-size: .8rem; color: var(--muted); margin-top: 6px; text-align: center; }
+.project-body-content { padding: 32px 40px; }
+.project-body-content h2:first-child { margin-top: 0; }
+
+/* Reusable blocks for Markdown content (see _templates/new-project-page.md) */
+.prose figure { margin: 1.4em 0; }
+.prose figure img { margin: 0 auto; border: 1px solid var(--border); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 1.4em 0; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 1.2em 0; }
+.feature-grid > div { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--bg); }
+.feature-grid strong { display: block; margin-bottom: 4px; color: var(--primary); }
+.feature-grid p { margin: 0; font-size: .9rem; color: var(--muted); }
+.arch { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; margin: 1.4em 0; }
+.arch-col { border: 1px solid var(--border); border-radius: 12px; padding: 14px; background: var(--bg); display: flex; flex-direction: column; gap: 8px; }
+.arch-col > strong { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.arch-box { border-radius: 8px; padding: 8px 12px; background: var(--primary-soft); color: var(--text); font-size: .88rem; font-weight: 600; }
+.arch-box small { display: block; font-weight: 400; color: var(--muted); }
+.arch-link { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; font-size: .78rem; color: var(--muted); text-align: center; min-width: 110px; }
+.arch-link span { font-size: 1.6rem; color: var(--primary); line-height: 1; }
+.video-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; }
+.video-list li { margin: 0; }
+.video-list a { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; color: var(--text); text-decoration: none; }
+.video-list a:hover { border-color: var(--primary); }
+.video-list .icon { color: #ff0000; font-size: 1.3rem; margin-top: 2px; }
+.video-list small { display: block; color: var(--muted); font-size: .8rem; }
+@media (max-width: 860px) {
+  .project-hero { grid-template-columns: 1fr; padding: 20px; }
+  .project-hero-img { order: -1; }
+  .project-body-content { padding: 22px 20px; }
+  .arch { grid-template-columns: 1fr; }
+  .arch-link { flex-direction: row; min-width: 0; }
+  .arch-link span { transform: rotate(90deg); }
+}
+
+/* Project card: link to the detail page */
+.project-card h3 a { color: inherit; }
+.project-card h3 a:hover { color: var(--primary); }
+.card-links a.details-link { color: var(--primary); }
+.project-thumb > a { display: block; width: 100%; height: 100%; }
