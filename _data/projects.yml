@@ -84,16 +84,18 @@ items:
       and CAN bus, Ethernet and Modbus communication, bridging sensors and actuators
       to the ROS 2 system.
 
-  - title: Student Drone Competition Team
+  - title: EIU-Spark Delivery UAV
     group: professional
-    org: EIU FabLab
+    org: EIU FabLab — mentor of team EIU-Spark
     category: Teaching & Mentoring
-    period: 2026 – Ongoing
-    image: /assets/img/projects/drone.svg
-    tags: [Drones, Mentoring, Competition]
+    period: "2026 – Ongoing (competition: October 2026)"
+    image: /assets/img/projects/eiu-spark-drone.jpg
+    tags: [UAV, ArUco, Computer Vision, Mentoring]
     description: >-
-      Currently mentoring an EIU student team building an autonomous drone for a
-      student drone competition (November 2026). *In progress.*
+      Mentoring team **EIU-Spark** at the *Ho Chi Minh City Youth UAV-Drone Creativity
+      and Control Competition 2026* (October 2026). The delivery drone flies semi-autonomously from the
+      start point to a pickup station, identifies the parcel by its **ArUco marker**,
+      picks it up and carries it to the drop-off point. *In progress — details coming soon.*
 
   - title: AUTO RACE 2025 — Student Teams
     group: professional

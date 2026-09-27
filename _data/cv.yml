@@ -72,11 +72,12 @@ sections:
     title: Activities
     icon: users
     items:
-      - title: Mentor — Student Drone Competition Team (ongoing)
-        org: EIU FabLab
-        period: 2026 – Present
+      - title: Mentor — Team EIU-Spark (ongoing)
+        org: Ho Chi Minh City Youth UAV-Drone Creativity and Control Competition 2026
+        period: "2026 – Present (competition: October 2026)"
         details:
-          - Mentoring an EIU student team developing an autonomous drone for a student drone competition (finals in November 2026).
+          - "Project **EIU-Spark Delivery UAV**: semi-autonomous delivery drone that flies to a pickup station, identifies the parcel by ArUco marker, picks it up and delivers it to the drop-off point."
+          - "*Cuộc thi Sáng tạo và Điều khiển UAV-Drone dành cho Thanh thiếu niên TP. Hồ Chí Minh năm 2026*"
       - title: Weekly Robotics Workshop Series — Organizer & Instructor
         org: EIU FabLab
         details:
