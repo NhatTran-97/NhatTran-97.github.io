@@ -1,0 +1,113 @@
+% =====================================================================
+%  CV template (XeLaTeX). Content is filled in by _cv/build_cv.py from
+%  the website data files — edit _data/*.yml, not this file.
+%  Colours / fonts / spacing can be tuned below.
+% =====================================================================
+\documentclass[10.5pt]{article}
+\usepackage[a4paper, margin=1.6cm, top=1.4cm, bottom=1.5cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyreheros}[
+  Extension = .otf,
+  UprightFont = *-regular, BoldFont = *-bold,
+  ItalicFont = *-italic, BoldItalicFont = *-bolditalic]
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F5FD6}
+\definecolor{muted}{HTML}{5D6778}
+\definecolor{rule}{HTML}{D5DBE5}
+\usepackage[colorlinks=true, urlcolor=accent, linkcolor=accent]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\footnotesize\color{muted}Last updated: September 2026 \quad\textbullet\quad \thepage}
+\setlength{\parindent}{0pt}
+\linespread{1.08}
+\raggedright
+
+% ----- building blocks -----
+\newcommand{\cvheader}[3]{%
+  {\fontsize{24}{28}\selectfont\bfseries #1}\par\vspace{2pt}
+  {\large\color{accent} #2}\par\vspace{5pt}
+  {\small\color{muted}\hypersetup{urlcolor=muted} #3}\par\vspace{2pt}}
+\newcommand{\cvsection}[1]{%
+  \par\vspace{10pt}{\large\bfseries\color{accent}\MakeUppercase{#1}}\par
+  \vspace{2pt}{\color{rule}\hrule height 0.8pt}\vspace{6pt}}
+\newcommand{\cventry}[3]{%
+  \textbf{#1}\hfill{\small\color{muted}#2}\par
+  \ifx&#3&\else{\color{muted}#3}\par\fi\vspace{1pt}}
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=1.1em, itemsep=1pt, topsep=1pt, parsep=0pt, label={\color{accent}\textbullet}]\small}{\end{itemize}\vspace{5pt}}
+\newenvironment{cvskills}{\small\tabularx{\linewidth}{@{}p{3.6cm}X@{}}}{\endtabularx}
+\newcommand{\cvskill}[2]{\textbf{#1} & #2 \\[2pt]}
+\newenvironment{cvpubs}{\begin{enumerate}[leftmargin=1.6em, itemsep=3pt, topsep=1pt, label={\color{muted}[\arabic*]}]\small}{\end{enumerate}}
+
+\begin{document}
+\cvheader{Nhat Tran}{FabLab Technician, Eastern International University}{Ho Chi Minh City, Vietnam \quad\textbullet\quad \href{mailto:nhat.tranduy1997@gmail.com}{nhat.tranduy1997@gmail.com} \quad\textbullet\quad \href{https://www.linkedin.com/in/nh\%E1\%BA\%A5t-duy-475028131/}{linkedin.com/in/nhất-duy-475028131} \quad\textbullet\quad \href{https://github.com/NhatTran-97}{github.com/NhatTran-97} \quad\textbullet\quad \href{https://www.youtube.com/@NhatTran-b8g}{youtube.com/@NhatTran-b8g} \quad\textbullet\quad \href{https://nhattran-97.github.io}{nhattran-97.github.io}}
+\cvsection{Summary}
+I work on autonomous robots and drones across the full stack — from low-level firmware (SPI, I2C, CAN bus, Ethernet, Modbus on RTOS) to Visual SLAM, computer vision and ROS 2 navigation. I also run weekly workshops on robotics and embedded systems.
+\cvsection{Education}
+\cventry{Control Engineering and Automation}{2015 – 2022}{Eastern International University (EIU), Vietnam}
+\begin{cvitems}
+\item Completed full program coursework
+\item \textbf{Focus:} control systems, embedded systems, robotics
+\item \textbf{Relevant coursework:} Automatic Control, Microcontrollers, Power Electronics, PLC \& Industrial Automation, Digital Signal Processing
+\end{cvitems}
+\cvsection{Experience}
+\cventry{FabLab Technician}{Oct 2018 – Present}{Eastern International University (EIU)}
+\begin{cvitems}
+\item Develop autonomous robot and autonomous drone platforms, working across the full stack from low-level firmware to high-level autonomy.
+\item \textbf{Autonomy \& perception:} Visual SLAM, computer vision, ROS 2 and autonomous navigation (Nav2).
+\item \textbf{Embedded:} low-level robot firmware on RTOS — SPI, I2C, UART, CAN bus, Ethernet and Modbus.
+\item Organize and teach a weekly workshop series for students on robotics, ROS 2, drones and embedded systems.
+\item Mentor student teams in annual robotics competitions — \textbf{2nd and 3rd Prize at AUTO RACE 2025} with two teams.
+\item Supervise student research papers — \textbf{Best Paper Award (Student Session)} at the EIUSC International Conference 2025.
+\end{cvitems}
+\cvsection{Publications}
+\begin{cvpubs}
+\item EIU student authors, \textbf{Duy Nhat Tran}. \textit{Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors}. Under review, 2026.
+\item EIU student authors, \textbf{Duy Nhat Tran}. \textit{Sim-to-Real Transfer for End-to-End Autonomous Racing via Imitation Learning and Control Barrier Function Safety Filtering}. Under review, 2026.
+\item Cong Danh Huynh, Nhu Y Pham, Hoang Dung Bui, Duong Tai Vu, \textbf{Duy Nhat Tran}. \textit{Developing An Autonomous Emergency Braking System-Based Kalman Filtering For An Autonomous Racing Car}. EIUSC International Conference 2025 — Student Session, Ho Chi Minh City. \textcolor{accent}{\textbf{[Best Paper Award (Student Session)]}}
+\end{cvpubs}
+\cvsection{Skills}
+\begin{cvskills}
+\cvskill{Embedded \& Hardware}{RTOS, SPI, I2C, UART, CAN bus, Ethernet, Modbus}
+\cvskill{Perception \& AI}{PyTorch, OpenCV, TensorRT, ONNX, YOLO, PCL}
+\cvskill{Autonomy}{ROS 2, Nav2, Visual SLAM, Autonomous Robots, Autonomous Drones}
+\cvskill{Programming}{C / C++, Python, CUDA, Bash}
+\cvskill{Tools}{Git, Docker, Linux, NVIDIA Jetson}
+\cvskill{Languages}{Vietnamese (native), English (professional)}
+\end{cvskills}
+\cvsection{Achievements}
+\cventry{Best Paper Award (Student Session) — EIUSC International Conference 2025}{Dec 2025}{As research mentor and co-author}
+\begin{cvitems}
+\item Paper: \textit{Developing An Autonomous Emergency Braking System-Based Kalman Filtering For An Autonomous Racing Car}
+\item Oral presentation at EIUSC 2025, Ho Chi Minh City, 3 December 2025.
+\item \href{https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s}{Experiment video on YouTube}
+\end{cvitems}
+\cventry{2nd Prize \& 3rd Prize — AUTO RACE 2025}{2025}{As mentor of two EIU student teams}
+\begin{cvitems}
+\item Southern Vietnam autonomous vehicle competition, hosted by FPT University Can Tho.
+\item \href{https://eiu.edu.vn/en/news/eiu-students-journey-of-hang-on-experience-and-learning-at-auto-race-2025/}{Read the story on EIU News}
+\end{cvitems}
+\cvsection{Activities}
+\cventry{Mentor — Team EIU-Spark (ongoing)}{2026 – Present (competition: October 2026)}{Ho Chi Minh City Youth UAV-Drone Creativity and Control Competition 2026}
+\begin{cvitems}
+\item Project \textbf{EIU-Spark Delivery UAV}: semi-autonomous delivery drone that flies to a pickup station, identifies the parcel by ArUco marker, picks it up and delivers it to the drop-off point.
+\item \textit{Cuộc thi Sáng tạo và Điều khiển UAV-Drone dành cho Thanh thiếu niên TP. Hồ Chí Minh năm 2026}
+\end{cvitems}
+\cventry{Weekly Robotics Workshop Series — Organizer \& Instructor}{Jan 2025 – Present}{EIU FabLab}
+\begin{cvitems}
+\item Hands-on sessions for students on robotics, ROS 2, drones and embedded systems.
+\end{cvitems}
+\cventry{Student Research Mentor}{}{EIU FabLab}
+\begin{cvitems}
+\item Guide student teams in writing and presenting scientific research papers.
+\item 2026 (under review, co-author): \textit{Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors} — \href{https://www.youtube.com/watch?v=8gYRO59CVcA&t=220s}{demo video}
+\item 2026 (under review, supervising author): \textit{Sim-to-Real Transfer for End-to-End Autonomous Racing via Imitation Learning and Control Barrier Function Safety Filtering} — \href{https://www.youtube.com/watch?v=yUCWBFdo0DQ&t=15s}{demo video}
+\item EIUSC International Conference 2025: our student paper received the \textbf{Best Paper Award (Student Session)} — \href{https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s}{experiment video}.
+\end{cvitems}
+\cventry{Student Competition Mentor}{}{EIU FabLab}
+\begin{cvitems}
+\item Mentor student teams for annual robotics competitions.
+\item AUTO RACE 2025 (Southern Vietnam autonomous vehicle competition, FPT University Can Tho): two teams won \textbf{2nd Prize} and \textbf{3rd Prize} — \href{https://eiu.edu.vn/en/news/eiu-students-journey-of-hang-on-experience-and-learning-at-auto-race-2025/}{read on EIU News}.
+\end{cvitems}
+\end{document}

@@ -1,0 +1,65 @@
+# Rebuilds assets/files/cv.pdf (LaTeX) from the website data whenever the CV data changes.
+# Turn off by setting `pdf_auto: false` in _data/cv.yml (then upload your own PDF).
+name: Build CV PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_data/cv.yml"
+      - "_data/profile.yml"
+      - "_data/publications.yml"
+      - "_config.yml"
+      - "_cv/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: cv-pdf
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check pdf_auto
+        id: check
+        run: |
+          pip install --quiet pyyaml
+          python3 -c "import yaml; cv = yaml.safe_load(open('_data/cv.yml')); print('auto=' + str(cv.get('pdf_auto', True)).lower())" >> "$GITHUB_OUTPUT"
+
+      - name: Generate cv.tex from website data
+        if: steps.check.outputs.auto == 'true'
+        run: python3 _cv/build_cv.py
+
+      - name: Compile with XeLaTeX
+        if: steps.check.outputs.auto == 'true'
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          working_directory: _cv
+          latexmk_use_xelatex: true
+
+      - name: Commit updated PDF
+        if: steps.check.outputs.auto == 'true'
+        run: |
+          cp _cv/cv.pdf assets/files/cv.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/files/cv.pdf _cv/cv.tex
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Update CV PDF"
+          git push
+
+      - name: Rebuild GitHub Pages
+        if: steps.check.outputs.auto == 'true'
+        run: |
+          curl -sS -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" || true

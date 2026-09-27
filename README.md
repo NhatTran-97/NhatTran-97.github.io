@@ -210,8 +210,22 @@ Dùng cho mọi trường `icon:` trong các file dữ liệu:
 ```yaml
 subtitle: My academic background, experience, skills, and achievements.
 pdf: /assets/files/cv.pdf                   # nút "Download PDF" — để "" để ẩn
+pdf_auto: true                              # true = GitHub tự tạo cv.pdf từ dữ liệu website
 github: https://github.com/NhatTran-97       # nút "View on GitHub" — để "" để ẩn
 ```
+
+### 4.1b. File CV PDF (nút "Download PDF") — 2 cách
+
+| Cách | Làm gì | Khi nào dùng |
+|---|---|---|
+| **Tự động** (`pdf_auto: true`, mặc định) | Chỉ cần sửa `_data/cv.yml` / `profile.yml` / `publications.yml`. GitHub Actions tự tạo CV bằng **LaTeX (XeLaTeX)** và cập nhật `assets/files/cv.pdf` sau ~2–3 phút | Muốn PDF luôn khớp website |
+| **Tự upload** (`pdf_auto: false`) | Tự làm CV (Overleaf, Word…) → xuất PDF → upload đè vào `assets/files/cv.pdf` | Muốn CV PDF khác website (vd. bản rút gọn 1 trang) |
+
+- PDF tự động gồm: tiêu đề + liên hệ, Summary (`about.summary`), các mục trong `cv.yml` theo đúng thứ tự, và **Publications** (chèn sau Experience).
+- Liên hệ còn là link mẫu (chứa `XXXX`, `your-id`, `example.com`) sẽ tự bị bỏ khỏi PDF.
+- Theo dõi: tab **Actions** → *Build CV PDF*. Chạy lại thủ công: *Build CV PDF* → **Run workflow**.
+- Đổi màu / font / lề của PDF: sửa `_cv/template.tex`. File `_cv/cv.tex` (được tạo tự động) có thể mở bằng **Overleaf** để chỉnh tay.
+- Tạo PDF trên máy (cần TeX Live): `python3 _cv/build_cv.py && cd _cv && latexmk -xelatex cv.tex`
 
 ### 4.2. Các mục (sections)
 Mỗi section = một mục ở cột trái trang CV. **Thêm / xoá / đổi thứ tự tuỳ ý.**
@@ -434,7 +448,7 @@ Bài mới tự xuất hiện ở trang **Notes**, trên **Home** (3 bài mới 
 | Ảnh banner | `assets/img/` | ngang, rộng 1600–2000px | `profile.yml → hero.background` |
 | Ảnh project | `assets/img/projects/` | 16:9, rộng ~1000px | `projects.yml → image` |
 | Ảnh bìa / ảnh trong bài | `assets/img/notes/` | 16:9, rộng ~1000px | `image:` trong bài / `![](...)` |
-| CV PDF | `assets/files/cv.pdf` | — | `cv.yml → pdf` |
+| CV PDF | `assets/files/cv.pdf` | — | `cv.yml → pdf` (tự tạo nếu `pdf_auto: true`, xem mục 4.1b) |
 | PDF bài báo | `assets/files/papers/` | — | `publications.yml → pdf` |
 | Icon trên tab trình duyệt (favicon) | `assets/icons/` + `favicon.ico` ở thư mục gốc | vuông; bộ 32px, 180px, 192px, 512px | tự động (xem ghi chú bên dưới) |
 

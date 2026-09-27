@@ -9,6 +9,8 @@
 
 subtitle: My academic background, experience, skills, and achievements.
 pdf: /assets/files/cv.pdf                    # nút "Download PDF" (để trống để ẩn)
+pdf_auto: true      # true  = GitHub tự tạo cv.pdf (LaTeX) từ dữ liệu website mỗi khi bạn sửa CV
+                    # false = tự upload file PDF của bạn vào assets/files/cv.pdf (không bị ghi đè)
 github: https://github.com/NhatTran-97        # nút "View on GitHub" (để trống để ẩn)
 
 sections:

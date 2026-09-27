@@ -3,3 +3,11 @@ _site/
 .sass-cache/
 vendor/
 Gemfile.lock
+# LaTeX build files for the CV
+_cv/*.aux
+_cv/*.log
+_cv/*.fls
+_cv/*.fdb_latexmk
+_cv/*.xdv
+_cv/*.out
+_cv/cv.pdf
