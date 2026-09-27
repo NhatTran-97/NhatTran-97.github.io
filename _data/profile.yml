@@ -12,8 +12,9 @@ short_name: N. Tran             # Tên ngắn hiện ở góc trái menu
 role: FabLab Technician, Eastern International University    # Chức danh ngắn
 avatar: /assets/img/avatar.jpg  # Ảnh đại diện (nên dùng ảnh dọc, tỉ lệ 4:5)
 
-# Tên của bạn trong danh sách tác giả bài báo → sẽ được in đậm tự động
+# Tên của bạn trong danh sách tác giả bài báo → sẽ được in đậm tự động (ghi tên dài trước, tên ngắn sau)
 publication_names:
+  - Duy Nhất Trần
   - Duy Nhat Tran
   - Nhat Tran
   - N. Tran

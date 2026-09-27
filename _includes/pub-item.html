@@ -1,8 +1,15 @@
 {%- assign pub = include.pub -%}
+{%- comment -%} Bold my name: swap each alias for a placeholder first (list longest names first),
+     so a short alias such as "Nhat Tran" is never bolded again inside "Duy Nhat Tran". {%- endcomment -%}
 {%- assign authors = pub.authors -%}
 {%- for n in site.data.profile.publication_names -%}
+  {%- capture ph -%}@@ME{{ forloop.index0 }}@@{%- endcapture -%}
+  {%- assign authors = authors | replace: n, ph -%}
+{%- endfor -%}
+{%- for n in site.data.profile.publication_names -%}
+  {%- capture ph -%}@@ME{{ forloop.index0 }}@@{%- endcapture -%}
   {%- assign strong = '<strong class="me">' | append: n | append: '</strong>' -%}
-  {%- assign authors = authors | replace: n, strong -%}
+  {%- assign authors = authors | replace: ph, strong -%}
 {%- endfor -%}
 <li class="pub-item" data-filter-item data-cats="|{{ pub.type }}|">
   <div class="pub-year">{{ pub.year }}</div>
