@@ -18,7 +18,7 @@ sections:
     items:
       # Chỉ ghi tên ngành (không ghi "B.Eng." / "Graduated") — xem README mục 4.3
       - title: Control Engineering and Automation
-        org: Eastern International University (EIU), Binh Duong, Vietnam
+        org: Eastern International University (EIU), Vietnam
         period: 2015 – 2022
         details:
           - Completed full program coursework
