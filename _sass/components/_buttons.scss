@@ -1,0 +1,32 @@
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  font: 600 .9rem/1 var(--font); padding: 11px 20px; border-radius: 8px;
+  border: 1px solid transparent; transition: background .15s, border-color .15s, color .15s;
+  white-space: nowrap;
+}
+.btn-sm { padding: 8px 14px; font-size: .82rem; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); color: #fff; }
+.btn-dark { background: var(--navy); color: #fff; }
+.btn-dark:hover { filter: brightness(1.15); color: #fff; }
+.btn-outline { border-color: var(--border); color: var(--text); background: var(--card); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.btn-ghost { border-color: rgba(255,255,255,.75); color: #fff; background: rgba(255,255,255,.06); }
+.btn-ghost:hover { background: rgba(255,255,255,.16); color: #fff; }
+.btn-soft { background: var(--primary-soft); color: var(--primary); }
+.btn-soft:hover { background: var(--primary); color: #fff; }
+
+.icon-btn {
+  display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 8px;
+  border: 0; background: transparent; color: var(--text); cursor: pointer; font-size: 1.1rem;
+}
+.icon-btn:hover { background: var(--chip); }
+
+// Filter pills (Projects category filter)
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.pill {
+  padding: 7px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--card);
+  color: var(--text); font: 500 .85rem var(--font); cursor: pointer;
+}
+.pill:hover { border-color: var(--primary); color: var(--primary); }
+.pill.active { background: var(--navy); border-color: var(--navy); color: #fff; }

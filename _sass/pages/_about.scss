@@ -1,0 +1,22 @@
+// About page (about.html)
+.about-page { display: grid; grid-template-columns: 230px 1fr 1.2fr; gap: 36px; padding: 32px; }
+.about-page h2 { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+.about-page .about-text h2:not(:first-child) { margin-top: 28px; }
+.about-info { border-right: 1px solid var(--border); padding-right: 32px; }
+.info-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.info-list li { display: flex; gap: 14px; align-items: flex-start; }
+.info-icon { font-size: 1.3rem; color: var(--primary); padding-top: 2px; }
+.info-label { font-weight: 600; font-size: .88rem; }
+.info-value { color: var(--muted); font-size: .88rem; word-break: break-word; }
+.info-value a { color: var(--muted); }
+.info-value a:hover { color: var(--primary); }
+
+@media (max-width: $bp-lg) {
+  .about-page { grid-template-columns: 200px 1fr; }
+  .about-text { grid-column: 1 / -1; }
+  .about-info { border-right: 0; padding-right: 0; }
+}
+@media (max-width: $bp-sm) {
+  .about-page { grid-template-columns: 1fr; padding: 22px; gap: 24px; }
+  .about-photo { max-width: 220px; }
+}

@@ -1,0 +1,23 @@
+// CV page (cv.html): tabbed sections + skills
+.cv-panel { padding: 28px 32px; }
+.cv-section + .cv-section { margin-top: 36px; }
+.cv-section h2 { font-size: 1.25rem; margin-bottom: 20px; }
+.tabs-ready .cv-section { display: none; margin-top: 0; }
+.tabs-ready .cv-section.active { display: block; }
+
+// Skills: one-line group names, uniform chip height, text centred
+.skills { display: grid; grid-template-columns: 190px 1fr; gap: 12px 20px; align-items: center; margin: 0; }
+.skills dt { font-weight: 600; font-size: .9rem; white-space: nowrap; }
+.skills dd { margin: 0; }
+.skills dd.chips { align-items: center; align-content: center; gap: 6px; }
+.skills dd .chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 28px; padding: 0 12px; line-height: 1; font-size: .78rem;
+}
+
+@media (max-width: $bp-sm) { .cv-panel { padding: 22px 20px; } }
+@media (max-width: $bp-xs) {
+  .skills { grid-template-columns: 1fr; gap: 4px 6px; }
+  .skills dt { white-space: normal; margin-top: 8px; }
+  .skills dd { margin-bottom: 10px; }
+}

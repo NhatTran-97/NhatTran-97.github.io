@@ -1,0 +1,26 @@
+// Site-wide search dialog (_includes/header.html + assets/js/main.js)
+.search-modal { position: fixed; inset: 0; z-index: 100; }
+.search-backdrop { position: absolute; inset: 0; background: rgba(8, 12, 20, .45); }
+.search-box {
+  position: relative; max-width: 620px; margin: 12vh auto 0; background: var(--card);
+  border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,.25); overflow: hidden;
+  width: calc(100% - 32px);
+}
+.search-input { display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 18px; border-bottom: 1px solid var(--border); color: var(--muted); }
+.search-input input { flex: 1; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 1rem; padding: 10px 0; }
+.search-results { list-style: none; margin: 0; padding: 8px; max-height: 60vh; overflow-y: auto; }
+.search-results a { display: flex; flex-direction: column; padding: 10px 12px; border-radius: 8px; color: var(--text); }
+.search-results a:hover, .search-results a:focus { background: var(--primary-soft); outline: 0; }
+.sr-title { font-weight: 600; }
+.sr-meta { font-size: .8rem; color: var(--muted); }
+.search-hint { padding: 14px 12px; color: var(--muted); font-size: .9rem; }
+
+// Inline search box (Notes page)
+.search-field {
+  display: flex; align-items: center; gap: 8px; padding: 0 14px; min-width: 260px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px; color: var(--muted);
+}
+.search-field:focus-within { border-color: var(--primary); }
+.search-field input { flex: 1; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: .9rem; padding: 10px 0; }
+
+@media (max-width: $bp-sm) { .search-field { min-width: 0; width: 100%; } }

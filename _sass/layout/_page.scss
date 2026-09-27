@@ -1,0 +1,23 @@
+// Page heading (_includes/page-head.html) and sidebar layout (CV, Publications, Notes)
+.page-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 12px 0 28px; }
+.page-head h1 { font-size: 2rem; font-weight: 700; letter-spacing: -.02em; }
+.page-head .subtitle { margin: 6px 0 0; color: var(--muted); }
+.page-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.side-layout { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: start; }
+.side-nav { position: sticky; top: 88px; padding: 8px; display: flex; flex-direction: column; gap: 2px; }
+.side-link {
+  display: flex; justify-content: space-between; align-items: center; width: 100%;
+  padding: 10px 14px; border: 0; border-left: 3px solid transparent; border-radius: 6px;
+  background: transparent; color: var(--text); font: 500 .9rem var(--font); text-align: left; cursor: pointer;
+}
+.side-link:hover { background: var(--chip); color: var(--text); }
+.side-link.active { background: var(--primary-soft); color: var(--primary); border-left-color: var(--primary); }
+
+@media (max-width: $bp-sm) {
+  .page-actions { width: 100%; }
+  .side-layout { grid-template-columns: 1fr; }
+  .side-nav { position: static; flex-direction: row; overflow-x: auto; }
+  .side-link { width: auto; white-space: nowrap; gap: 6px; border-left: 0; border-bottom: 3px solid transparent; border-radius: 6px 6px 0 0; }
+  .side-link.active { border-bottom-color: var(--primary); }
+}

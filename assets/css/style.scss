@@ -1,0 +1,34 @@
+---
+# Front matter above tells Jekyll to compile this file to assets/css/style.css.
+# Do not put styles here: each part of the site has its own file in _sass/.
+---
+@import "base/tokens";
+@import "base/fonts";
+@import "base/base";
+
+// Shared components first, so layouts and pages can refine them
+@import "components/card";
+@import "components/buttons";
+@import "components/chips";
+@import "components/timeline";
+@import "components/project-card";
+@import "components/note-card";
+@import "components/pub-item";
+
+@import "layout/header";
+@import "layout/search";
+@import "layout/footer";
+@import "layout/page";
+@import "layout/prose";
+@import "layout/content-blocks";
+
+@import "pages/home";
+@import "pages/about";
+@import "pages/cv";
+@import "pages/projects";
+@import "pages/post";
+
+// Colour themes for icons: after the pages so they win over generic icon colours
+@import "components/brand-icons";
+
+@import "base/typography";   // last: text alignment switches override everything above

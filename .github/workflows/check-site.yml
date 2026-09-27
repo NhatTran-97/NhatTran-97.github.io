@@ -1,0 +1,37 @@
+# Checks the website on every push: data files, detail pages, posts, then builds the
+# site exactly like GitHub Pages and checks every internal link and image.
+# A red X in the Actions tab means something is broken - open the run to see which file.
+name: Check site
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check content (YAML, images, detail pages, posts)
+        run: |
+          pip install --quiet pyyaml
+          python3 _scripts/check_site.py
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build like GitHub Pages
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check links and images in the built site
+        run: python3 _scripts/check_site.py _site

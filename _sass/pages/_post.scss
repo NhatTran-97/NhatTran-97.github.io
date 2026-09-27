@@ -1,0 +1,22 @@
+// Note / blog post (_layouts/post.html) and 404 page
+.post { max-width: 820px; margin: 0 auto; }
+.post-header { margin: 18px 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.post-header h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; letter-spacing: -.02em; }
+.post-meta { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: .88rem; }
+.post-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.post-cover { width: 100%; border-radius: var(--radius); margin-bottom: 24px; }
+.post-content { padding: 36px 44px; }
+.post-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.post-nav a { display: flex; flex-direction: column; gap: 2px; padding: 16px 20px; color: var(--text); font-weight: 600; }
+.post-nav a:hover { border-color: var(--primary); }
+.post-nav .next { text-align: right; grid-column: 2; }
+
+.not-found { max-width: 520px; margin: 40px auto; padding: 48px; text-align: center; }
+.not-found h1 { font-size: 4rem; color: var(--primary); }
+.not-found p { text-align: center; }
+
+@media (max-width: $bp-sm) { .post-content { padding: 22px 20px; } }
+@media (max-width: $bp-xs) {
+  .post-nav { grid-template-columns: 1fr; }
+  .post-nav .next { grid-column: 1; }
+}

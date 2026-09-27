@@ -1,0 +1,5 @@
+.site-footer { border-top: 1px solid var(--border); background: var(--card); color: var(--muted); font-size: .85rem; }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 22px; padding-bottom: 22px; }
+.footer-social { display: flex; gap: 14px; }
+.footer-social a { color: var(--muted); font-size: 1.1rem; }
+.footer-social a:hover { color: var(--primary); }

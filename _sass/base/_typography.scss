@@ -1,0 +1,26 @@
+// Typography rules applied everywhere.
+// Switches (no CSS editing needed):
+//   _config.yml  typography.text_align      : left | justify  (whole site  -> body.text-justify)
+//   _config.yml  typography.post_text_align : left | justify  (posts, project pages)
+//   _data/cv.yml pdf_text_align             : justify | left  (CV PDF)
+
+h1, h2, h3, .pub-title, .tl-title, .sr-title { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+// Justified mode: only inside an element with class "text-justify"
+.text-justify {
+  p, li {
+    text-align: justify;
+    text-align-last: left;
+    -webkit-hyphens: auto; hyphens: auto;
+    hyphenate-limit-chars: 7 3 3;
+  }
+  // Exceptions: short labels, contact lists, narrow boxes, containers
+  .hl-item p, .mini-projects p, .page-head .subtitle, .contact-grid li,
+  .info-list li, .pub-item, .tl-item, .search-results li { text-align: left; }
+  .tl-item .tl-details li { text-align: justify; }
+
+  @media (max-width: 420px) {
+    p, li { text-align: left; }   // narrow phones: justified text gets gappy
+  }
+}

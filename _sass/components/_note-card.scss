@@ -1,0 +1,28 @@
+// Note card (_includes/note-card.html) + note grid
+.note-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.note-card { display: flex; flex-direction: column; overflow: hidden; }
+.note-thumb { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--chip); }
+.note-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.note-card:hover .note-thumb img { transform: scale(1.03); }
+.note-card:nth-child(3n+2) .thumb-fallback { background: linear-gradient(135deg, #0f4c5c, #1b8a8f 60%, #5cc8c0); }
+.note-card:nth-child(3n+3) .thumb-fallback { background: linear-gradient(135deg, #3b2a6b, #5b47b8 60%, #9a86ff); }
+.note-body { display: flex; flex-direction: column; gap: 6px; padding: 14px 18px 18px; flex: 1; }
+.note-meta { font-size: .78rem; color: var(--muted); }
+.note-body h3 { font-size: 1rem; font-weight: 600; }
+.note-body h3 a { color: var(--text); }
+.note-body h3 a:hover { color: var(--primary); }
+.note-body p { font-size: .86rem; color: var(--muted); margin: 0; }
+.read-more { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 6px; font-size: .85rem; font-weight: 600; }
+
+// Titles use 2 lines, excerpts 3 lines, so cards in a row line up
+.note-grid .note-body h3 {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  min-height: calc(2 * 1.3em);
+}
+.note-grid .note-body p {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+  min-height: calc(3 * 1.65em);
+}
+
+@media (max-width: $bp-md) { .note-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: $bp-xs) { .note-grid { grid-template-columns: 1fr; } }

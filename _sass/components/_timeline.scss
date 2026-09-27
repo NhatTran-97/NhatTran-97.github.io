@@ -1,0 +1,23 @@
+// CV timeline (_includes/timeline.html)
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before {
+  content: ""; position: absolute; left: 6px; top: 10px; bottom: 10px; width: 2px; background: var(--border);
+}
+.tl-item { position: relative; display: grid; grid-template-columns: 14px 1fr auto; gap: 18px; padding-bottom: 22px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot {
+  width: 14px; height: 14px; margin-top: 5px; border-radius: 50%; background: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft); z-index: 1;
+}
+.tl-item + .tl-item .tl-dot { background: color-mix(in srgb, var(--primary) 45%, var(--card)); }
+.tl-title { font-size: 1rem; font-weight: 600; }
+.tl-org { color: var(--muted); font-size: .9rem; }
+.tl-period { color: var(--muted); font-size: .83rem; }
+.tl-details { margin: 8px 0 0; padding-left: 18px; font-size: .9rem; }
+.tl-details li { margin-bottom: 2px; }
+.tl-icon { color: var(--muted); font-size: 1.4rem; opacity: .75; }
+
+@media (max-width: $bp-xs) {
+  .tl-item { grid-template-columns: 14px 1fr; }
+  .tl-icon { display: none; }
+}

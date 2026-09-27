@@ -1,0 +1,25 @@
+// Publication item (_includes/pub-item.html)
+.pub-list { list-style: none; margin: 0; padding: 4px 24px; }
+.pub-item { display: grid; grid-template-columns: 56px 1fr auto; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.pub-item:last-child { border-bottom: 0; }
+.pub-year { font-weight: 600; color: var(--muted); font-size: .92rem; padding-top: 1px; }
+.pub-main { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.pub-title { font-size: 1rem; font-weight: 600; }
+.pub-authors { font-size: .9rem; }
+.pub-authors .me { color: var(--text); font-weight: 700; }
+.pub-venue { font-size: .87rem; color: var(--muted); font-style: italic; }
+.pub-main .chips { margin-top: 4px; }
+.pub-main .card-links { font-size: .8rem; margin-top: 2px; }
+details.bibtex { font-size: .82rem; }
+details.bibtex summary { cursor: pointer; color: var(--primary); font-weight: 600; width: fit-content; }
+
+// Compact list on the Home page
+.pub-list.compact { padding: 0; }
+.pub-list.compact .pub-item { padding: 14px 0; grid-template-columns: 44px 1fr auto; }
+.pub-list.compact .pub-title { font-size: .92rem; }
+.pub-list.compact .pub-authors, .pub-list.compact .pub-venue { font-size: .82rem; }
+
+@media (max-width: $bp-xs) {
+  .pub-list { padding: 4px 18px; }
+  .pub-item, .pub-list.compact .pub-item { grid-template-columns: 1fr; gap: 6px; }
+}

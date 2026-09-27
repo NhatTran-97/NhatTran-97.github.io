@@ -1,0 +1,46 @@
+// Design tokens. Change the site colours here (light + dark palettes).
+
+@mixin dark-palette {
+  --primary: #5b8def; --primary-hover: #7aa3f3; --primary-soft: #1a2944; --navy: #2d4f96;
+  --bg: #0d121c; --card: #151c29; --text: #e6eaf2; --muted: #98a2b3; --border: #243044;
+  --chip: #1c2638; --code-bg: #0f1522;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.25);
+  color-scheme: dark;
+}
+
+// Applies rules only in dark mode (manual toggle or system setting).
+@mixin when-dark {
+  :root[data-theme="dark"] & { @content; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) & { @content; }
+  }
+}
+
+:root {
+  --primary: #1f5fd6;
+  --primary-hover: #194fb4;
+  --primary-soft: #eaf1fd;
+  --navy: #13295b;
+  --bg: #f4f6fa;
+  --card: #ffffff;
+  --text: #1b2433;
+  --muted: #5d6778;
+  --border: #e4e8ef;
+  --chip: #eef2f8;
+  --code-bg: #f3f5f9;
+  --shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 6px 20px rgba(16, 24, 40, .05);
+  --radius: 14px;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+:root[data-theme="dark"] { @include dark-palette; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-palette; }
+}
+
+// Breakpoints used across the partials
+$bp-lg: 1080px;   // highlights 2 columns, About 2 columns
+$bp-md: 960px;    // home grid 1 column, card grids 2 columns
+$bp-sm: 760px;    // phones / small tablets
+$bp-xs: 560px;    // phones

@@ -19,6 +19,10 @@ typography:
   post_text_align: left     # nội dung bài viết trong Notes
 
 # ----- Không cần sửa phần dưới -----
+sass:
+  sass_dir: _sass
+  style: compressed
+
 markdown: kramdown
 kramdown:
   input: GFM

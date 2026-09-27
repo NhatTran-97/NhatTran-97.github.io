@@ -1,0 +1,24 @@
+// Colours for contact icons (About info list, Home contact grid, footer on hover).
+// Add a line here when you add a new contact icon.
+$icon-colors: (
+  linkedin: #0a66c2,
+  youtube: #ff0000,
+  scholar: #4285f4,
+  researchgate: #00ccbb,
+  orcid: #a6ce39,
+  mail: #ea4335,
+  user: #2563eb,
+  briefcase: #d97706,
+  map-pin: #16a34a,
+  phone: #0d9488,
+  globe: #7c3aed,
+  link: #7c3aed
+);
+@each $name, $color in $icon-colors {
+  .info-icon .icon-#{$name}, .contact-grid .icon-#{$name} { color: $color; }
+}
+.info-icon .icon-github, .contact-grid .icon-github { color: var(--text); }
+@each $name in linkedin, youtube, scholar, researchgate, orcid, mail {
+  .footer-social a:hover .icon-#{$name} { color: map-get($icon-colors, $name); }
+}
+.footer-social a:hover .icon-github { color: var(--text); }

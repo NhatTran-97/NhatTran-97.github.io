@@ -1,0 +1,39 @@
+// Project card (_includes/project-card.html) + project grid
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.project-card { display: flex; flex-direction: column; overflow: hidden; scroll-margin-top: 90px; }
+
+.project-thumb { position: relative; aspect-ratio: 16 / 9; background: var(--chip); overflow: hidden; }
+.project-thumb > a { display: block; width: 100%; height: 100%; }
+.project-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.project-card:hover .project-thumb img { transform: scale(1.03); }
+.thumb-badge {
+  position: absolute; top: 10px; left: 10px; z-index: 1;
+  font-size: .7rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 6px; background: rgba(255,255,255,.92); color: var(--navy);
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+  &.badge-professional { background: var(--navy); color: #fff; }
+}
+.thumb-fallback {
+  width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, #1f3b73, #2f6ad9 60%, #6aa2ff); color: rgba(255,255,255,.9); font-size: 2.2rem;
+  span { font-size: .8rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+}
+
+.project-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px; flex: 1; }
+.project-body h3 { font-size: 1.02rem; font-weight: 600; }
+.project-card h3 a { color: inherit; }
+.project-card h3 a:hover { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+// Titles reserve 2 lines so the cards in a row line up
+.project-grid .project-body h3 {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  min-height: calc(2 * 1.3em);
+}
+.project-org { display: flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--muted); font-weight: 500; }
+.project-desc { color: var(--muted); font-size: .88rem; }
+.project-desc p { margin: 0; }
+
+.card-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: auto; padding-top: 4px; font-size: .85rem; font-weight: 600; }
+.card-links a { display: inline-flex; align-items: center; gap: 5px; }
+
+@media (max-width: $bp-md) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: $bp-xs) { .project-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,22 @@
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  display: inline-block; font-size: .74rem; font-weight: 500; line-height: 1.4;
+  padding: 3px 10px; border-radius: 6px; background: var(--chip); color: var(--muted);
+}
+.chip-primary { background: var(--primary-soft); color: var(--primary); }
+.chips-lg .chip {
+  font-size: .82rem; padding: 6px 14px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text);
+}
+.badge {
+  font-size: .68rem; font-weight: 700; color: #b45309; background: #fef3c7;
+  padding: 2px 7px; border-radius: 4px; vertical-align: 2px;
+  @include when-dark { background: #3a2a10; color: #fbbf24; }
+}
+.count { font-size: .75rem; color: var(--muted); }
+
+.icon-circle {
+  display: grid; place-items: center; width: 48px; height: 48px; flex-shrink: 0;
+  border-radius: 50%; background: var(--primary-soft); color: var(--primary); font-size: 1.35rem;
+  &.sm { width: 36px; height: 36px; font-size: 1.05rem; }
+}

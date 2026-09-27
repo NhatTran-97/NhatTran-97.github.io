@@ -39,7 +39,7 @@ Làm ngay trên trình duyệt, không cần cài gì:
 | Upload ảnh / PDF | Vào thư mục → **Add file → Upload files** → kéo thả → **Commit changes** |
 | Thay ảnh cũ | Upload file **trùng tên** để ghi đè |
 | Xoá file | Mở file → menu **…** → **Delete file** |
-| Theo dõi cập nhật | Tab **Actions**: *pages build and deployment* (website) và *Build CV PDF* (CV). ✅ xanh = xong, ❌ đỏ = lỗi → [mục 13](#13-xử-lý-sự-cố) |
+| Theo dõi cập nhật | Tab **Actions**: *pages build and deployment* (website), *Build CV PDF* (CV), *Check site* (kiểm tra lỗi). ✅ xanh = xong, ❌ đỏ = lỗi → [mục 13](#13-xử-lý-sự-cố) |
 
 ---
 
@@ -455,7 +455,7 @@ Sửa `hero.background` trong `profile.yml`. Có sẵn trong `assets/img/hero/`:
 Ảnh mới: ngang ~2400×900, **chủ thể bên phải**, bên trái tối/đơn giản để chữ dễ đọc, < 300 KB.
 
 ### 10.5. Màu chủ đạo
-`assets/css/style.css` → dòng `--primary: #1f5fd6;` ở đầu file (vd. `#0f766e` xanh ngọc, `#7c3aed` tím).
+`_sass/base/_tokens.scss` → dòng `--primary: #1f5fd6;` (bảng màu sáng) và `--primary` trong `dark-palette` (bảng màu tối). Ví dụ `#0f766e` xanh ngọc, `#7c3aed` tím.
 
 ---
 
@@ -486,7 +486,7 @@ Sửa `hero.background` trong `profile.yml`. Có sẵn trong `assets/img/hero/`:
 | Hiện tượng | Cách xử lý |
 |---|---|
 | Sửa xong web không đổi | Đợi 2 phút → **Ctrl + Shift + R** hoặc tab ẩn danh (trình duyệt lưu trang cũ tới ~10 phút). Vẫn không đổi → tab **Actions**. |
-| Actions báo ❌ đỏ | Mở lần chạy lỗi, đọc dòng báo lỗi (tên file + số dòng). Hay gặp: sai thụt lề, thiếu ngoặc kép khi có dấu `:`. |
+| Actions báo ❌ đỏ | Mở lần chạy lỗi. Với **Check site**, bấm bước bị đỏ: mỗi dòng `ERROR` ghi rõ file + lỗi (vd. `image not found`, `unknown icon`, `YAML syntax error (line 96)`, `detail page file … does not exist`). Sửa đúng chỗ đó rồi commit lại. |
 | CV PDF không cập nhật | Tab **Actions** → *Build CV PDF*: xem lỗi hoặc bấm **Run workflow**. Kiểm tra `pdf_auto: true`. |
 | Ảnh không hiện | Đường dẫn bắt đầu bằng `/assets/...`, đúng tên file và chữ hoa/thường. |
 | Bài viết không hiện | Tên file dạng `YYYY-MM-DD-ten.md` trong `_posts/`, có `---` ở đầu, ngày không ở tương lai. |
@@ -494,6 +494,14 @@ Sửa `hero.background` trong `profile.yml`. Có sẵn trong `assets/img/hero/`:
 | Công thức toán không hiện | Thêm `math: true` vào phần đầu bài. |
 | Tên mình không in đậm | Tên trong `authors` phải khớp chính xác `publication_names`. |
 | Máy tính không vào được web nhưng 4G vào được | Do mạng/DNS: đổi DNS sang `8.8.8.8` / `1.1.1.1`, khởi động lại router. |
+
+---
+
+### Kiểm tra tự động (Check site)
+Mỗi lần commit, GitHub chạy **Check site** (`_scripts/check_site.py`):
+- **ERROR** (phải sửa): lỗi cú pháp YAML (kèm số dòng), ảnh / PDF không tồn tại, icon sai tên, project thiếu `title` / `group` / `description`, `group` không có trong `groups`, `detail` trỏ tới trang không tồn tại, tên file bài viết sai dạng, trùng tên project, link hỏng sau khi build.
+- **WARNING** (nên xem): link liên hệ còn là mẫu, ô giới thiệu quá dài, lĩnh vực viết khác danh sách chuẩn, tên bạn không có trong danh sách tác giả, trang project còn *Details coming soon*.
+- Chạy trên máy: `python3 _scripts/check_site.py` (cần `pip install pyyaml`).
 
 ---
 
@@ -513,12 +521,34 @@ Sửa `hero.background` trong `profile.yml`. Có sẵn trong `assets/img/hero/`:
 │   ├── img/                 # ★ ẢNH (avatar, hero/, projects/, notes/)
 │   ├── files/               # ★ cv.pdf, papers/
 │   ├── icons/               #   favicon
-│   └── css/ js/ fonts/      #   giao diện (không cần sửa)
+│   ├── css/style.scss       #   chỉ danh sách @import (không viết style ở đây)
+│   ├── js/main.js           #   sáng/tối, menu, bộ lọc, tab CV, tìm kiếm
+│   └── fonts/               #   font Inter
+├── _sass/                   #   GIAO DIỆN — mỗi phần 1 file (xem bên dưới)
+├── _layouts/                #   khung trang: default, post, project
+├── _includes/               #   thành phần dùng lại: header, footer, thẻ project/bài viết/bài báo, icon…
 ├── _cv/                     #   template LaTeX + script tạo CV PDF
-├── .github/workflows/       #   tự động tạo CV PDF
-├── _layouts/ _includes/     #   khung giao diện (không cần sửa)
+├── _scripts/check_site.py   #   kiểm tra lỗi nội dung + link
+├── .github/workflows/       #   Build CV PDF, Check site
 └── *.html                   #   các trang (không cần sửa)
 ```
+
+### Giao diện (dành cho khi cần sửa CSS)
+CSS được chia theo thành phần trong `_sass/`, **mỗi file chứa toàn bộ style của một phần kể cả bản điện thoại** — muốn sửa phần nào thì mở đúng file đó, không sửa chỗ khác:
+
+| File | Phụ trách |
+|---|---|
+| `base/_tokens.scss` | **Màu sắc** (sáng + tối), font, bo góc, các mốc màn hình (`$bp-lg/md/sm/xs`) |
+| `base/_base.scss`, `_fonts.scss` | Nền tảng trang, font Inter |
+| `base/_typography.scss` | Căn chữ, công tắc `justify` (nạp cuối cùng) |
+| `components/*` | Nút, nhãn, thẻ card, timeline CV, thẻ project, thẻ bài viết, bài báo, màu icon liên hệ |
+| `layout/*` | Header + menu, tìm kiếm, footer, tiêu đề trang + cột trái, nội dung Markdown, khối trình bày (arch, gallery…) |
+| `pages/*` | Riêng từng trang: Home, About, CV, Projects + trang chi tiết, bài viết + 404 |
+
+Thứ tự nạp nằm trong `assets/css/style.scss`: tokens → base → components → layout → pages → màu icon → typography. File nạp sau được ưu tiên.
+- **Đổi màu:** chỉ sửa `base/_tokens.scss`. **Thêm màu cho icon liên hệ mới:** thêm 1 dòng trong `components/_brand-icons.scss`.
+- **Thêm thành phần mới:** tạo `_sass/components/_ten.scss` rồi thêm `@import "components/ten";` vào `style.scss`.
+- Chế độ tối cho 1 thành phần: dùng `@include when-dark { ... }` (xem `_chips.scss`).
 
 ---
 

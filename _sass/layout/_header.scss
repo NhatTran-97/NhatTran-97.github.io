@@ -1,0 +1,39 @@
+// Site header, navigation, theme toggle (_includes/header.html)
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
+.logo { font-weight: 700; font-size: 1.2rem; color: var(--text); letter-spacing: -.01em; }
+.logo:hover { color: var(--text); }
+.site-nav { display: flex; gap: 6px; margin: 0 auto; }
+.site-nav a { position: relative; padding: 8px 14px; color: var(--text); font-size: .93rem; font-weight: 500; opacity: .8; }
+.site-nav a:hover { opacity: 1; color: var(--primary); }
+.site-nav a.active { color: var(--primary); opacity: 1; }
+.site-nav a.active::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: -13px; height: 2px;
+  background: var(--primary); border-radius: 2px;
+}
+.header-actions { display: flex; gap: 4px; }
+.menu-btn { display: none; }
+
+// Sun icon in light mode, moon icon in dark mode
+.show-dark { display: none; }
+.show-light { @include when-dark { display: none; } }
+.show-dark { @include when-dark { display: inline; } }
+
+@media (max-width: 900px) {
+  .menu-btn { display: inline-grid; }
+  .header-actions { margin-left: auto; }
+  .site-nav {
+    display: none; position: absolute; top: 64px; left: 0; right: 0; margin: 0;
+    flex-direction: column; gap: 0; padding: 8px 16px 16px;
+    background: var(--card); border-bottom: 1px solid var(--border); box-shadow: var(--shadow);
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 12px 8px; border-radius: 8px; }
+  .site-nav a.active { background: var(--primary-soft); }
+  .site-nav a.active::after { display: none; }
+}

@@ -1,0 +1,36 @@
+// Markdown content: notes, project detail pages, About intro
+.prose { font-size: 1rem; line-height: 1.75; }
+.prose > :first-child { margin-top: 0; }
+.prose h2 { font-size: 1.35rem; margin: 1.8em 0 .6em; padding-bottom: .3em; border-bottom: 1px solid var(--border); }
+.prose h3 { font-size: 1.1rem; margin: 1.5em 0 .5em; }
+.prose ul, .prose ol { padding-left: 1.4em; }
+.prose li { margin: .25em 0; }
+.prose img { border-radius: 10px; margin: 1.2em auto; }
+.prose blockquote { margin: 1.4em 0; padding: 12px 18px; border-left: 3px solid var(--primary); background: var(--primary-soft); border-radius: 0 8px 8px 0; }
+.prose blockquote p { margin: 0; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: .92rem; display: block; overflow-x: auto; }
+.prose th, .prose td { padding: 9px 12px; border: 1px solid var(--border); text-align: left; }
+.prose th { background: var(--chip); }
+.prose hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
+.prose code { font-family: var(--mono); font-size: .86em; background: var(--chip); padding: .15em .4em; border-radius: 5px; }
+.prose pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; overflow-x: auto; line-height: 1.55; }
+.prose pre code { background: none; padding: 0; font-size: .85rem; }
+.prose figure { margin: 1.4em 0; }
+.prose figure img { margin: 0 auto; border: 1px solid var(--border); }
+.prose figcaption { font-size: .8rem; color: var(--muted); margin-top: 6px; text-align: center; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; }
+
+// Syntax highlighting (rouge)
+.highlight {
+  .c, .c1, .cm, .cs { color: #6a737d; font-style: italic; }
+  .k, .kd, .kn, .kc, .kr, .ow { color: #cf222e; }
+  .s, .s1, .s2, .sb { color: #0a7f3f; }
+  .m, .mi, .mf { color: #0550ae; }
+  .nf, .nc, .nb { color: #8250df; }
+  @include when-dark {
+    .k, .kd, .kn, .kc, .kr, .ow { color: #ff7b72; }
+    .s, .s1, .s2, .sb { color: #7ee787; }
+    .m, .mi, .mf { color: #79c0ff; }
+    .nf, .nc, .nb { color: #d2a8ff; }
+  }
+}
