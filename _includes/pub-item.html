@@ -16,6 +16,7 @@
       {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}">{% include icon.html name="link" %} DOI</a>{% endif %}
       {% if pub.code %}<a href="{{ pub.code }}">{% include icon.html name="github" %} Code</a>{% endif %}
       {% if pub.slides %}<a href="{{ pub.slides }}">{% include icon.html name="file-text" %} Slides</a>{% endif %}
+      {% if pub.video %}<a href="{{ pub.video }}">{% include icon.html name="youtube" %} Video</a>{% endif %}
       {% if pub.project %}<a href="{{ pub.project | relative_url }}">{% include icon.html name="external-link" %} Project</a>{% endif %}
     </div>
     {%- if pub.bibtex %}

@@ -39,6 +39,7 @@ sections:
           - "**Embedded:** low-level robot firmware on RTOS — SPI, I2C, UART, CAN bus, Ethernet and Modbus."
           - Organize and teach a weekly workshop series for students on robotics, ROS 2, drones and embedded systems.
           - "Mentor student teams in annual robotics competitions — **2nd and 3rd Prize at AUTO RACE 2025** with two teams."
+          - "Supervise student research papers — **Best Paper Award** (student session) at the EIUSC International Conference 2025."
 
   - id: skills
     title: Skills
@@ -61,12 +62,18 @@ sections:
     title: Achievements
     icon: award
     items:
+      - title: Best Paper Award (Student Session) — EIUSC International Conference 2025
+        org: As research mentor and co-author
+        period: Dec 2025
+        details:
+          - Oral presentation at EIUSC 2025, Ho Chi Minh City, 3 December 2025.
+          - "[Experiment video on YouTube](https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s)"
       - title: 2nd Prize & 3rd Prize — AUTO RACE 2025
         org: As mentor of two EIU student teams
         period: "2025"
         details:
           - Southern Vietnam autonomous vehicle competition, hosted by FPT University Can Tho.
-          - "[Read the story on EIU news](https://eiu.edu.vn/tin-tuc/hanh-trinh-co-xat-va-hoc-hoi-cua-sinh-vien-eiu-tai-auto-race-2025/)"
+          - "[Read the story on EIU News](https://eiu.edu.vn/en/news/eiu-students-journey-of-hang-on-experience-and-learning-at-auto-race-2025/)"
 
   - id: activities
     title: Activities
@@ -83,8 +90,13 @@ sections:
         period: Jan 2025 – Present
         details:
           - Hands-on sessions for students on robotics, ROS 2, drones and embedded systems.
+      - title: Student Research Mentor
+        org: EIU FabLab
+        details:
+          - Guide student teams in writing and presenting scientific research papers.
+          - "EIUSC International Conference 2025: our student paper received the **Best Paper Award** (student session) — [experiment video](https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s)."
       - title: Student Competition Mentor
         org: EIU FabLab
         details:
           - Mentor student teams for annual robotics competitions.
-          - "AUTO RACE 2025 (Southern Vietnam autonomous vehicle competition, FPT University Can Tho): two teams won **2nd Prize** and **3rd Prize** — [news](https://eiu.edu.vn/tin-tuc/hanh-trinh-co-xat-va-hoc-hoi-cua-sinh-vien-eiu-tai-auto-race-2025/)."
+          - "AUTO RACE 2025 (Southern Vietnam autonomous vehicle competition, FPT University Can Tho): two teams won **2nd Prize** and **3rd Prize** — [news](https://eiu.edu.vn/en/news/eiu-students-journey-of-hang-on-experience-and-learning-at-auto-race-2025/)."

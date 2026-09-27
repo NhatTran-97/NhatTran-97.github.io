@@ -111,7 +111,23 @@ items:
     featured: true
     links:
       - name: News
-        url: https://eiu.edu.vn/tin-tuc/hanh-trinh-co-xat-va-hoc-hoi-cua-sinh-vien-eiu-tai-auto-race-2025/
+        url: https://eiu.edu.vn/en/news/eiu-students-journey-of-hang-on-experience-and-learning-at-auto-race-2025/
+
+  - title: Student Research — Best Paper Award, EIUSC 2025
+    group: professional
+    org: EIU FabLab — research mentor & co-author
+    category: Teaching & Mentoring
+    period: Dec 2025
+    image: /assets/img/projects/eiusc-2025-best-paper.jpg
+    tags: [Research, Mentoring, Conference Paper]
+    description: >-
+      Mentored an EIU student team in writing and presenting a research paper at the
+      EIUSC International Conference 2025 (Ho Chi Minh City, 3 December 2025) — the
+      paper received the **Best Paper Award** in the student session.
+    links:
+      - name: Experiment video
+        url: https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s
+        icon: youtube
 
   - title: Weekly Robotics Workshop Series
     group: professional
