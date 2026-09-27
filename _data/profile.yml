@@ -25,8 +25,9 @@ hero:
   tagline: Robotics software engineer — learning by building.
   intro: >-
     I work on the software side of robots and drones, mainly localization, sensor
-    fusion and Visual SLAM, along with embedded programming. I'm still learning with
-    every project, and I enjoy sharing what I learn with students at the EIU FabLab.
+    fusion and Visual SLAM, along with navigation in ROS 2 and embedded programming.
+    I'm still learning with every project, and I enjoy sharing what I learn with
+    students at the EIU FabLab.
   background: /assets/img/hero.svg     # Ảnh nền banner (ảnh ngang, ≥ 1600px)
   quote: "Passion builds robots; persistence makes them work."
   buttons:
