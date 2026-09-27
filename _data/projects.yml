@@ -51,6 +51,25 @@ groups:
 
 items:
   # ---------- Professional ----------
+  - title: VDA5050 Support for Open-RMF
+    group: professional
+    org: EIU × ARTC Singapore (joint project)
+    category: Autonomy
+    period: 2026 — ongoing
+    image: /assets/img/projects/vda5050-open-rmf.jpg
+    tags: [ROS 2, Open-RMF, VDA5050, MQTT, Nav2, Docker]
+    description: >-
+      A ROS 2 Jazzy implementation of the VDA5050 v2.1.0 protocol that connects
+      Open-RMF to a TurtleBot3 fleet and a custom FabLab AMR over MQTT — fleet
+      adapters, a robot-side client adapter with a Nav2 bridge, and a PySide6/QML
+      fleet dashboard. Tested on real robots and in Gazebo.
+    featured: true
+    github: https://github.com/NhatTran-97/eiu-vda5050-support-open-rmf
+    links:
+      - name: Demo videos
+        url: https://www.youtube.com/playlist?list=PL7WgDt1mGvJZdPyar7xpHH4HDRZpteAp4
+        icon: youtube
+
   - title: Autonomous Mobile Robot
     group: professional
     org: EIU FabLab
@@ -71,7 +90,6 @@ items:
     description: >-
       Autonomous drone platform integrating onboard computer vision and ROS 2
       with the embedded flight hardware.
-    featured: true
 
   - title: Robot Low-Level Firmware
     group: professional

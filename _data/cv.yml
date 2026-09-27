@@ -39,6 +39,7 @@ sections:
         period: Oct 2018 – Present
         details:
           - Develop autonomous robot and autonomous drone platforms, working across the full stack from low-level firmware to high-level autonomy.
+          - "Joint EIU–ARTC (Singapore) project [VDA5050 Support for Open-RMF](https://github.com/NhatTran-97/eiu-vda5050-support-open-rmf): ROS 2 fleet adapters, an MQTT client adapter with a Nav2 bridge, and a fleet dashboard for a mixed AMR / TurtleBot3 fleet."
           - "**Autonomy & perception:** Visual SLAM, computer vision, ROS 2 and autonomous navigation (Nav2)."
           - "**Embedded:** low-level robot firmware on RTOS — SPI, I2C, UART, CAN bus, Ethernet and Modbus."
           - Organize and teach a weekly workshop series for students on robotics, ROS 2, drones and embedded systems.
@@ -54,7 +55,7 @@ sections:
       - group: Perception & AI
         items: [PyTorch, OpenCV, TensorRT, ONNX, YOLO, PCL]
       - group: Autonomy
-        items: [ROS 2, Nav2, Visual SLAM, Autonomous Robots, Autonomous Drones]
+        items: [ROS 2, Nav2, Visual SLAM, Open-RMF, VDA5050, MQTT, Autonomous Robots, Autonomous Drones]
       - group: Programming
         items: [C / C++, Python, CUDA, Bash]
       - group: Tools
