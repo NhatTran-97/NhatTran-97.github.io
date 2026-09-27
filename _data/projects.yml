@@ -33,7 +33,7 @@ groups:
     title: Professional Projects
     label: Professional
     icon: briefcase
-    description: Projects I built and shipped as part of my work in industry.
+    description: Projects from my work at the EIU FabLab.
   - id: personal
     title: Personal Projects
     label: Personal
@@ -47,40 +47,48 @@ groups:
 
 items:
   # ---------- Professional ----------
-  - title: Autonomous Warehouse Robot
+  - title: Autonomous Mobile Robot
     group: professional
-    org: Company Name
+    org: EIU FabLab
     category: Autonomy
-    period: 2024 – Present
     image: /assets/img/projects/robot-nav.svg
-    tags: [ROS 2, Nav2, SLAM, C++]
+    tags: [ROS 2, Nav2, Visual SLAM, Computer Vision]
     description: >-
-      End-to-end navigation system for a warehouse AMR: LiDAR SLAM, AMCL
-      localization, Nav2 planning and a custom MPC controller. Deployed on 20+ robots.
+      Autonomous ground robot running ROS 2 with Visual SLAM, computer-vision
+      perception and autonomous navigation (Nav2), on top of custom low-level firmware.
     featured: true
-    demo: "#"
 
-  - title: Motor Control & Sensor Hub Firmware
+  - title: Autonomous Drone
     group: professional
-    org: Company Name
+    org: EIU FabLab
+    category: Autonomy
+    image: /assets/img/projects/drone.svg
+    tags: [ROS 2, Computer Vision, Embedded]
+    description: >-
+      Autonomous drone platform integrating onboard computer vision and ROS 2
+      with the embedded flight hardware.
+    featured: true
+
+  - title: Robot Low-Level Firmware
+    group: professional
+    org: EIU FabLab
     category: Embedded & Hardware
-    period: 2024
     image: /assets/img/projects/embedded.svg
-    tags: [STM32, FreeRTOS, CAN, C]
+    tags: [RTOS, CAN bus, Modbus, Ethernet, SPI / I2C / UART]
     description: >-
-      Real-time firmware for the robot's low-level board: 1 kHz motor current/velocity
-      control, IMU & encoder acquisition, and a CAN bridge to the ROS 2 computer.
+      Firmware for robot controller boards on RTOS: peripheral drivers (SPI, I2C, UART)
+      and CAN bus, Ethernet and Modbus communication, bridging sensors and actuators
+      to the ROS 2 system.
     featured: true
 
-  - title: LiDAR–Camera Calibration Toolkit
+  - title: Weekly Robotics Workshop Series
     group: professional
-    org: Company Name
-    category: Perception & AI
-    period: 2024
-    tags: [C++, OpenCV, PCL, ROS 2]
+    org: EIU FabLab
+    category: Teaching
+    tags: [ROS 2, Drones, Embedded, Robotics]
     description: >-
-      Target-based extrinsic calibration between 3D LiDAR and cameras, cutting
-      sensor setup time per robot from hours to minutes.
+      Organize and teach weekly hands-on workshops for students on robotics,
+      ROS 2, drones and embedded systems.
 
   # ---------- Personal ----------
   - title: Terrain Segmentation on Jetson
@@ -92,7 +100,6 @@ items:
     description: >-
       Lightweight segmentation network for terrain classification, optimized with
       TensorRT for real-time on-board inference on NVIDIA Jetson.
-    featured: true
     github: https://github.com/NhatTran-97
     video: "#"
 

@@ -47,9 +47,9 @@ highlights:
   - icon: bot
     title: Autonomy
     text: SLAM, localization, motion planning and control with ROS 2.
-  - icon: file-text
-    title: Research & Publication
-    text: Explore and share knowledge through academic work.
+  - icon: users
+    title: Teaching & Workshops
+    text: Weekly workshops on robotics, ROS 2, drones and embedded systems.
 
 # ----- Thông tin liên hệ (trang About, Home và footer) -----
 # Xoá mục nào không dùng. "url" là link khi bấm vào.
@@ -87,21 +87,23 @@ about:
   subtitle: A little bit about who I am, my background, and what I'm passionate about.
   # Đoạn ngắn hiện trên trang Home
   summary: >-
-    I am a robotics engineer working across the full robot stack — from embedded
-    firmware and sensor integration, through computer vision and AI perception,
-    to SLAM, planning and control. I enjoy building reliable systems that run on real robots.
+    I work on autonomous robots and drones across the full stack — from low-level
+    firmware (SPI, I2C, CAN bus, Ethernet, Modbus on RTOS) to Visual SLAM, computer
+    vision and ROS 2 navigation. I also run weekly workshops on robotics and embedded systems.
   # Phần giới thiệu đầy đủ trên trang About (viết Markdown, có thể nhiều đoạn)
   intro: |
-    I am a **robotics engineer** at *Company Name*, where I work across the whole
-    robot pipeline: firmware for sensor and motor-control boards, perception models
-    running on NVIDIA Jetson, and the navigation stack for a fleet of autonomous mobile robots.
+    I am a **FabLab Technician** at *Eastern International University (EIU)*, where
+    since 2018 I have been building autonomous robots and autonomous drones across
+    the whole robot pipeline.
 
-    I like connecting the layers — understanding how a timing issue in the firmware
-    shows up as drift in SLAM, or how a faster model changes what the planner can do.
-    Before joining industry, I was a research assistant at *Lab Name*, working on
-    visual-inertial SLAM.
+    On the **low level**, I write firmware for robot controllers on RTOS — drivers and
+    communication over SPI, I2C, UART, CAN bus, Ethernet and Modbus. On the **high level**,
+    I work on autonomous systems with ROS 2: Visual SLAM, computer vision and navigation.
+    I enjoy connecting these layers — understanding how a timing issue in the firmware
+    shows up as drift in SLAM, or how perception changes what the robot can do.
 
-    Outside of work, I like hiking, photography and writing technical notes on this site.
+    I also organize a **weekly workshop series** at the FabLab, teaching students
+    robotics, ROS 2, drones and embedded systems.
   interests:
     - Embedded Systems
     - Edge AI
