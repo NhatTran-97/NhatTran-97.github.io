@@ -47,7 +47,7 @@ title: Home
       <div>
         <p>{{ p.about.summary }}</p>
         <ul class="contact-grid">
-          {%- for c in p.contacts limit: 6 %}
+          {%- for c in p.contacts limit: 8 %}
           <li>{% include icon.html name=c.icon %}{% if c.url %}<a href="{{ c.url }}">{{ c.value }}</a>{% else %}<span>{{ c.value }}</span>{% endif %}</li>
           {%- endfor %}
         </ul>

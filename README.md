@@ -166,7 +166,7 @@ contacts:
     url: mailto:your.email@example.com        # link khi bấm (bỏ dòng này nếu không cần link)
 ```
 - Mục có `url` sẽ hiện thêm icon ở **footer**.
-- Trang **Home** hiện tối đa 6 mục đầu tiên → đặt mục quan trọng lên trước.
+- Trang **Home** hiện tối đa 8 mục đầu tiên → đặt mục quan trọng lên trước.
 - Không có số điện thoại / địa chỉ riêng tư trên web công khai.
 
 ### 3.5. Trang About — `about`
@@ -199,7 +199,7 @@ Dùng cho mọi trường `icon:` trong các file dữ liệu:
 | Lĩnh vực | `bot` `brain` `cpu` `code` `file-text` `book-open` `lightbulb` `globe` `users` `user` |
 | CV | `graduation-cap` `briefcase` `award` `star` `calendar` `clock` `folder` |
 | Liên hệ | `mail` `phone` `map-pin` `link` |
-| Mạng xã hội | `github` `linkedin` `scholar` `researchgate` `orcid` `x-twitter` |
+| Mạng xã hội (logo thật, tự tô màu thương hiệu) | `github` `linkedin` `youtube` `scholar` `researchgate` `orcid` `x-twitter` |
 | Khác | `arrow-right` `external-link` `download` `play` |
 
 ---

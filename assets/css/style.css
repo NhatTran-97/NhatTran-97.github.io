@@ -474,3 +474,12 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; a
 }
 .thumb-badge.badge-professional { background: var(--navy); color: #fff; }
 .project-org { display: flex; align-items: center; gap: 6px; font-size: .85rem; color: var(--muted); font-weight: 500; }
+
+/* Brand colours for social logos (About info list, Home contacts, footer hover) */
+.info-icon .icon-linkedin, .contact-grid .icon-linkedin, .footer-social a:hover .icon-linkedin { color: #0a66c2; }
+.info-icon .icon-youtube, .contact-grid .icon-youtube, .footer-social a:hover .icon-youtube { color: #ff0000; }
+.info-icon .icon-scholar, .contact-grid .icon-scholar, .footer-social a:hover .icon-scholar { color: #4285f4; }
+.info-icon .icon-researchgate, .contact-grid .icon-researchgate, .footer-social a:hover .icon-researchgate { color: #00ccbb; }
+.info-icon .icon-orcid, .contact-grid .icon-orcid, .footer-social a:hover .icon-orcid { color: #a6ce39; }
+.info-icon .icon-mail, .contact-grid .icon-mail, .footer-social a:hover .icon-mail { color: #ea4335; }
+.info-icon .icon-github, .contact-grid .icon-github, .footer-social a:hover .icon-github { color: var(--text); }

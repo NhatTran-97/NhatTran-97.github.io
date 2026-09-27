@@ -3,7 +3,7 @@
 #  Các trường "icon" nhận một trong các tên sau:
 #    brain, bot, cpu, code, file-text, users, book-open, lightbulb, globe,
 #    graduation-cap, briefcase, award, star, map-pin, mail, phone, user,
-#    github, linkedin, researchgate, scholar, orcid, x-twitter, link,
+#    github, linkedin, youtube, researchgate, scholar, orcid, x-twitter, link,
 #    arrow-right, external-link, download, play, calendar, folder
 # =====================================================================
 
@@ -69,6 +69,10 @@ contacts:
     label: GitHub
     value: github.com/NhatTran-97
     url: https://github.com/NhatTran-97
+  - icon: youtube
+    label: YouTube
+    value: youtube.com/@NhatTran-b8g
+    url: https://www.youtube.com/@NhatTran-b8g
   - icon: scholar
     label: Google Scholar
     value: scholar.google.com/citations?user=XXXX
