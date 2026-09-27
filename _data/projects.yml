@@ -137,11 +137,11 @@ items:
     group: professional
     org: EIU FabLab — research mentor & co-author
     category: Embedded & Hardware
-    period: 2026 — under review
+    period: 2026 — under review at EIUSC 2026
     image: /assets/img/projects/dc-motor.svg
     tags: [Motor Control, PI Control, Feedforward, Embedded]
     description: >-
-      Student research paper (co-authored, under review 2026): *"Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors"*.
+      Student research paper (co-authored, under review at the EIUSC International Conference 2026): *"Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors"*.
     links:
       - name: Paper
         url: /publications/
@@ -154,11 +154,11 @@ items:
     group: professional
     org: EIU FabLab — research mentor (supervising author)
     category: Perception & AI
-    period: 2026 — under review
+    period: 2026 — under review at EIUSC 2026
     image: /assets/img/projects/sim2real-racing.svg
     tags: [Imitation Learning, Sim-to-Real, Control Barrier Functions, Autonomous Racing]
     description: >-
-      Supervised a student team on the paper *"Sim-to-Real Transfer for End-to-End Autonomous Racing via Imitation Learning and Control Barrier Function Safety Filtering"* (under review, 2026).
+      Supervised a student team on the paper *"Sim-to-Real Transfer for End-to-End Autonomous Racing via Imitation Learning and Control Barrier Function Safety Filtering"* (under review at the EIUSC International Conference 2026).
     links:
       - name: Paper
         url: /publications/
