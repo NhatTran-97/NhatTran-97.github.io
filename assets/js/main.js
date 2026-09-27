@@ -85,6 +85,67 @@
     if (location.hash) show(location.hash.slice(1), false);
   });
 
+  /* ---------- Workshop cards (project pages) ----------
+     Builds one card per <section class="workshop-panel"> (cover, label, title,
+     module count). Clicking a card opens its panel below; without JS every
+     panel simply stays visible. */
+  document.querySelectorAll('[data-workshop-cards]').forEach(function (grid) {
+    var panels = grid.parentNode.querySelectorAll('.workshop-panel[id]');
+    if (!panels.length) return;
+    var cards = [];
+
+    function open(id, scroll) {
+      panels.forEach(function (p) { p.hidden = p.id !== id; });
+      cards.forEach(function (c) {
+        var on = c.dataset.target === id;
+        c.classList.toggle('active', on);
+        c.setAttribute('aria-expanded', on);
+      });
+      if (id) history.replaceState(null, '', '#' + id);
+      else history.replaceState(null, '', location.pathname + location.search);
+      var target = id && document.getElementById(id);
+      if (target && scroll) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    panels.forEach(function (panel) {
+      var h = panel.querySelector('h3');
+      var cover = panel.querySelector('.workshop-cover');
+      var label = panel.querySelector('.workshop-no');
+      var modules = panel.querySelectorAll('.module-list > li:not(.module-goal)').length;
+      var videos = panel.querySelector('.workshop-info a[href*="youtube.com"]');
+
+      var card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'workshop-card';
+      card.dataset.target = panel.id;
+      card.setAttribute('aria-controls', panel.id);
+      card.setAttribute('aria-expanded', 'false');
+      if (cover) card.appendChild(cover.cloneNode(true));
+      var body = document.createElement('span');
+      body.className = 'workshop-card-body';
+      if (label) body.insertAdjacentHTML('beforeend', '<span class="workshop-no">' + label.innerHTML + '</span>');
+      var title = h ? h.textContent.replace(/^\s*Workshop\s*\d+\s*[—–:-]\s*/i, '') : panel.id;
+      body.insertAdjacentHTML('beforeend', '<strong class="workshop-card-title"></strong>');
+      body.lastChild.textContent = title;
+      var meta = [];
+      if (modules) meta.push(modules + ' modules');
+      if (videos) meta.push('Lecture videos');
+      body.insertAdjacentHTML('beforeend', '<span class="workshop-card-meta">' + meta.join(' · ') +
+        '<span class="workshop-card-toggle" aria-hidden="true"></span></span>');
+      card.appendChild(body);
+      card.addEventListener('click', function () {
+        open(card.classList.contains('active') ? '' : panel.id, true);
+      });
+      grid.appendChild(card);
+      cards.push(card);
+    });
+
+    grid.parentNode.classList.add('workshops-ready');
+    var initial = decodeURIComponent(location.hash.slice(1));
+    var exists = Array.prototype.some.call(panels, function (p) { return p.id === initial; });
+    open(exists ? initial : '', exists);
+  });
+
   /* ---------- Site search ---------- */
   var modal = document.getElementById('search-modal');
   var input = document.getElementById('search-input');

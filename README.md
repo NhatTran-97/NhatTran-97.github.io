@@ -339,6 +339,7 @@ links:                          # nút đầu tiên màu xanh đậm
 | `<figure><img …><figcaption>…</figcaption></figure>` | Ảnh có chú thích |
 | `<div class="gallery">…</div>` | Nhiều ảnh dạng lưới |
 | `<ul class="video-list">…</ul>` | Danh sách video YouTube |
+| `<section class="workshop-panel">` + `<div class="workshop-cards" data-workshop-cards>` | Nhiều khoá học/workshop dạng thẻ nhỏ, bấm để mở (xem bên dưới) |
 | `<div class="workshop">…</div>` | Thẻ "bìa" cho một khoá học / workshop: ảnh bìa + mục tiêu + chip + nút playlist |
 | `<ol class="module-list">…</ol>` | Lộ trình học đánh số 1, 2, 3…; `<li class="module-goal">` = bước đích (ngôi sao) |
 | Bảng Markdown | So sánh thông số, danh sách package |
@@ -346,12 +347,19 @@ links:                          # nút đầu tiên màu xanh đậm
 Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`** (project kỹ thuật) và
 **`_projects/weekly-robotics-workshop-series.md`** (chuỗi workshop / khoá học).
 
-**Thêm một workshop mới** vào trang Weekly Robotics Workshop Series: mở file trên, copy nguyên khối
-từ `### Workshop 1 — …` đến hết ảnh `<figure>` bên dưới lộ trình, dán vào trước `### More workshops`
-rồi sửa tên, ảnh bìa (để trong `assets/img/projects/workshops/`, ảnh PNG nền trong suốt đẹp nhất),
-mục tiêu, các chip, link playlist và các bước học (mỗi bước là một `<li>`).
+**Dạng thẻ bấm mở (trang Weekly Robotics Workshop Series):** mỗi workshop nằm trong một khối
+`<section class="workshop-panel" id="..." markdown="1"> … </section>`. Ở đầu mục Workshops có
+`<div class="workshop-cards" data-workshop-cards></div>` — website **tự tạo một thẻ nhỏ** cho mỗi khối
+(ảnh bìa, dòng "Workshop 0x · …", tên sau dấu "—" của tiêu đề `###`, số bài học, "Lecture videos" nếu có
+link YouTube). Bấm thẻ → nội dung workshop đó mở ra bên dưới; bấm lại → đóng. Link mở thẳng một workshop:
+`/projects/weekly-robotics-workshop-series/#<id>`.
+
+**Thêm một workshop mới:** mở `_projects/weekly-robotics-workshop-series.md`, copy nguyên một khối
+`<section class="workshop-panel" …>` … `</section>`, dán vào trước `### More workshops` rồi sửa `id`
+(không dấu, không trùng), tên, ảnh bìa (để trong `assets/img/projects/workshops/`), mục tiêu, chip,
+link playlist và các bước học (mỗi bước là một `<li>`). Không cần sửa gì khác — thẻ tự xuất hiện.
 Ảnh bìa là ảnh PNG nền trong suốt (vd. ảnh sản phẩm) thì dùng `<figure class="workshop-cover">`; là ảnh
-chụp thường thì thêm `is-photo`: `<figure class="workshop-cover is-photo">` để ảnh lấp đầy khung vuông.
+chụp thường thì thêm `is-photo`: `<figure class="workshop-cover is-photo">` để ảnh lấp đầy khung.
 
 ---
 

@@ -38,6 +38,12 @@ the sessions, and help students debug their code and robots during the labs.
 
 ## Workshops
 
+Select a workshop to see its goal, learning path and lecture recordings.
+
+<div class="workshop-cards" data-workshop-cards></div>
+
+<section class="workshop-panel" id="stm32-self-balancing-robot" markdown="1">
+
 ### Workshop 1 — STM32 And Two-Wheeled Self-Balancing Robot
 
 <div class="workshop">
@@ -120,6 +126,10 @@ the sessions, and help students debug their code and robots during the labs.
   <img src="/assets/img/projects/workshops/teaching.jpg" alt="Demonstrating the self-balancing robot to students">
   <figcaption>Demonstrating the self-balancing robot to students during a session.</figcaption>
 </figure>
+
+</section>
+
+<section class="workshop-panel" id="f1tenth-autonomous-racing" markdown="1">
 
 ### Workshop 2 — F1TENTH Autonomous Racing
 
@@ -228,11 +238,16 @@ the sessions, and help students debug their code and robots during the labs.
   <figure><img src="/assets/img/projects/workshops/f1tenth-session-2.jpg" alt="Students working with ROS 2 topics on their laptops"><figcaption>F1TENTH class: working with ROS 2 topics and messages (odometry).</figcaption></figure>
 </div>
 
+</section>
+
 <!-- ================================================================
-  THÊM WORKSHOP MỚI: copy nguyên khối từ "### Workshop 2 — ..." đến hết ảnh (gallery) ở trên,
+  THÊM WORKSHOP MỚI (thẻ nhỏ ở đầu mục Workshops được tạo TỰ ĐỘNG từ các khối này):
+  copy nguyên khối từ <section class="workshop-panel" ...> của Workshop 2 đến hết </section> ở trên,
   dán vào ngay dưới đây (trước "### More workshops") rồi sửa:
-    - "### Workshop 3 — Tên workshop"
-    - ảnh bìa trong assets/img/projects/workshops/:
+    - id="..." của <section>: mã không dấu, không trùng (vd. drone-basics) — dùng làm link
+      mở thẳng workshop đó: /projects/weekly-robotics-workshop-series/#drone-basics
+    - "### Workshop 3 — Tên workshop"  (tên sau dấu "—" là tên hiện trên thẻ)
+    - ảnh bìa trong assets/img/projects/workshops/ (ảnh này cũng là ảnh của thẻ):
         ảnh PNG nền trong suốt → <figure class="workshop-cover">            (như Workshop 1)
         ảnh chụp thường        → <figure class="workshop-cover is-photo">   (như Workshop 2)
     - dòng "Workshop 02 · Chủ đề", mục tiêu (Goal), các chip, link playlist
