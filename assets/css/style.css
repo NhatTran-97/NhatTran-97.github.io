@@ -490,3 +490,16 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; a
 .info-icon .icon-map-pin, .contact-grid .icon-map-pin { color: #16a34a; }
 .info-icon .icon-phone, .contact-grid .icon-phone { color: #0d9488; }
 .info-icon .icon-globe, .contact-grid .icon-globe, .info-icon .icon-link, .contact-grid .icon-link { color: #7c3aed; }
+
+/* Skills (CV page): one-line group names, evenly sized chips, text centred */
+.skills { grid-template-columns: 190px 1fr; align-items: center; row-gap: 12px; }
+.skills dt { white-space: nowrap; padding-top: 0; }
+.skills dd.chips { align-items: center; align-content: center; gap: 6px; }
+.skills dd .chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 28px; padding: 0 12px; line-height: 1; font-size: .78rem;
+}
+@media (max-width: 560px) {
+  .skills { grid-template-columns: 1fr; row-gap: 4px; }
+  .skills dt { white-space: normal; margin-top: 8px; }
+}
