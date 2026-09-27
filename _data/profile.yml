@@ -27,7 +27,7 @@ hero:
     From embedded firmware and sensors, through computer vision and AI perception,
     to SLAM, planning and control — I build every layer of the robot pipeline.
   background: /assets/img/hero.svg     # Ảnh nền banner (ảnh ngang, ≥ 1600px)
-  quote: "Curiosity drives better questions, which lead to meaningful work."
+  quote: "Passion builds robots; persistence makes them work."
   buttons:
     - text: View My CV
       url: /cv/
