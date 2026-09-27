@@ -133,6 +133,40 @@ items:
         url: https://www.youtube.com/watch?v=ciiAT0cPrqc&t=63s
         icon: youtube
 
+  - title: Feedforward-Assisted PI Speed Control for Geared DC Motors
+    group: professional
+    org: EIU FabLab — research mentor & co-author
+    category: Embedded & Hardware
+    period: 2026 — under review
+    image: /assets/img/projects/dc-motor.svg
+    tags: [Motor Control, PI Control, Feedforward, Embedded]
+    description: >-
+      Student research paper (co-authored, under review 2026): *"Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors"*.
+    links:
+      - name: Paper
+        url: /publications/
+        icon: file-text
+      - name: Demo video
+        url: https://www.youtube.com/watch?v=8gYRO59CVcA&t=220s
+        icon: youtube
+
+  - title: Sim-to-Real End-to-End Autonomous Racing
+    group: professional
+    org: EIU FabLab — research mentor (supervising author)
+    category: Perception & AI
+    period: 2026 — under review
+    image: /assets/img/projects/sim2real-racing.svg
+    tags: [Imitation Learning, Sim-to-Real, Control Barrier Functions, Autonomous Racing]
+    description: >-
+      Supervised a student team on the paper *"Sim-to-Real Transfer for End-to-End Autonomous Racing via Imitation Learning and Control Barrier Function Safety Filtering"* (under review, 2026).
+    links:
+      - name: Paper
+        url: /publications/
+        icon: file-text
+      - name: Demo video
+        url: https://www.youtube.com/watch?v=yUCWBFdo0DQ&t=15s
+        icon: youtube
+
   - title: Weekly Robotics Workshop Series
     group: professional
     org: EIU FabLab

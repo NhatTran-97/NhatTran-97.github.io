@@ -2,10 +2,30 @@
 #  PUBLICATIONS — tự sắp xếp theo năm (mới nhất lên đầu).
 #    type    : nhóm để lọc, ví dụ Conference / Journal / Preprint / Workshop / Thesis
 #    authors : tên bạn (khai báo ở profile.yml → publication_names) sẽ tự in đậm
-#    note    : nhãn nhỏ, ví dụ "Oral", "Best Paper"
+#    note    : nhãn nhỏ, ví dụ "Oral", "Best Paper", "Under Review"
+#    Bài đã nộp, đang được phản biện: type: Under Review, note: Under Review
+#    → khi được nhận thì đổi type (Conference/Journal), venue và note cho đúng
 #    pdf / doi / code / slides / video / project : link (bỏ trống nếu không có)
 #    bibtex  : trích dẫn BibTeX (tuỳ chọn)
 # =====================================================================
+
+- title: Data-Driven Feedforward-Assisted PI Speed Control with Automatic Position Holding for Geared DC Motors
+  authors: EIU student authors, Duy Nhat Tran
+  venue: Under review, 2026
+  year: 2026
+  type: Under Review
+  note: Under Review
+  tags: [Motor Control, PI Control, Feedforward, Embedded]
+  video: https://www.youtube.com/watch?v=8gYRO59CVcA&t=220s
+
+- title: Sim-to-Real Transfer for End-to-End Autonomous Racing via Imitation Learning and Control Barrier Function Safety Filtering
+  authors: EIU student authors, Duy Nhat Tran
+  venue: Under review, 2026
+  year: 2026
+  type: Under Review
+  note: Under Review
+  tags: [Imitation Learning, Sim-to-Real, Control Barrier Functions, Autonomous Racing]
+  video: https://www.youtube.com/watch?v=yUCWBFdo0DQ&t=15s
 
 - title: Developing An Autonomous Emergency Braking System-Based Kalman Filtering For An Autonomous Racing Car
   authors: Cong Danh Huynh, Nhu Y Pham, Hoang Dung Bui, Duong Tai Vu, Duy Nhat Tran

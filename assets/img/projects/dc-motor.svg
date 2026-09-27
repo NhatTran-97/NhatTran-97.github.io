@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a1d0b"/><stop offset="1" stop-color="#b45309"/></linearGradient>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".07"/></pattern></defs>
+  <rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#grid)"/>
+  <g fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round">
+    <rect x="80" y="120" width="170" height="110" rx="14"/><path d="M250 150h40v50h-40"/><path d="M290 175h40"/>
+    <circle cx="380" cy="175" r="48"/><circle cx="380" cy="175" r="10" fill="#fff"/>
+  </g>
+  <g stroke="#fff" stroke-width="6"><path d="M380 121v-10M380 239v-10M326 175h-10M444 175h-10M342 137l-7-7M425 220l-7-7M342 213l-7 7M425 130l-7 7"/></g>
+  <path d="M470 250 C500 250 505 110 540 110 S580 180 600 175" fill="none" stroke="#fde68a" stroke-width="4"/>
+  <path d="M470 175h130" stroke="#fff" stroke-opacity=".5" stroke-dasharray="6 8" stroke-width="2"/>
+  <text x="165" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">PI + FF</text>
+</svg>
