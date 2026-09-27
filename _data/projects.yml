@@ -202,11 +202,16 @@ items:
     org: EIU FabLab
     category: Teaching & Mentoring
     period: Jan 2025 – Present
-    image: /assets/img/projects/workshop.svg
-    tags: [ROS 2, Drones, Embedded, Robotics]
+    image: /assets/img/projects/workshops/card.jpg
+    tags: [STM32, Embedded, ROS 2, Drones, Robotics]
     description: >-
       Organize and teach weekly hands-on workshops for students on robotics,
-      ROS 2, drones and embedded systems.
+      ROS 2, drones and embedded systems — e.g. *STM32 And Two-Wheeled
+      Self-Balancing Robot* (STM32 peripherals, IMU, EKF, LQR).
+    links:
+      - name: Lectures
+        url: https://www.youtube.com/playlist?list=PL7WgDt1mGvJbiDx9pCaR9wdrvd8Q96xws
+        icon: youtube
 
   # ---------- Personal ----------
   - title: Terrain Segmentation on Jetson

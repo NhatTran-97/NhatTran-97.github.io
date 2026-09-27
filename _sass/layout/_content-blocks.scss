@@ -23,8 +23,32 @@
 .video-list .icon { color: #ff0000; font-size: 1.3rem; margin-top: 2px; }
 .video-list small { display: block; color: var(--muted); font-size: .8rem; }
 
+// Workshop / course block: cover image + summary, then a numbered learning path
+.workshop { display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: center; margin: 1.2em 0; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--bg); }
+.workshop-cover { margin: 0; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: radial-gradient(circle at 50% 45%, var(--card) 0%, var(--primary-soft) 100%); }
+.prose .workshop-cover img { width: 86%; height: auto; margin: 0; border: 0; border-radius: 0; }
+.workshop-info > :first-child { margin-top: 0; }
+.workshop-info > :last-child { margin-bottom: 0; }
+.workshop-info p { margin: .4em 0 .7em; }
+.workshop-no { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--primary); }
+.workshop-info .btn { text-decoration: none; margin-top: 4px; }
+
+.module-list { list-style: none; counter-reset: module; padding-left: 0 !important; display: grid; gap: 10px; margin: 1em 0; }
+.module-list > li { counter-increment: module; display: grid; grid-template-columns: 32px 1fr; gap: 12px; margin: 0; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; }
+.module-list > li::before { content: counter(module); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .9rem; background: var(--primary-soft); color: var(--primary); }
+.module-list strong { display: block; line-height: 1.4; }
+.module-list p { margin: 2px 0 0; font-size: .9rem; color: var(--muted); line-height: 1.6; }
+.module-list .chips { margin-top: 8px; }
+.module-list > li.module-goal { border-color: var(--primary); background: var(--primary-soft); }
+.module-list > li.module-goal::before { content: "\2605"; background: var(--primary); color: #fff; }
+
 @media (max-width: 860px) {
   .arch { grid-template-columns: 1fr; }
   .arch-link { flex-direction: row; min-width: 0; }
   .arch-link span { transform: rotate(90deg); }
+}
+
+@media (max-width: $bp-sm) {
+  .workshop { grid-template-columns: 1fr; }
+  .workshop-cover { max-width: 240px; width: 100%; margin: 0 auto; }
 }

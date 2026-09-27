@@ -77,6 +77,26 @@ Bạn phụ trách gì, làm những phần nào.
 |---|---|---|
 | Hàng 1 | ... | ... |
 
+## Workshop / course (tuỳ chọn — dùng cho project dạng khoá học)
+
+<div class="workshop">
+  <figure class="workshop-cover"><img src="/assets/img/projects/ten-project/cover.png" alt="Ảnh bìa"></figure>
+  <div class="workshop-info">
+    <span class="workshop-no">Workshop 01 · Chủ đề</span>
+    <p><strong>Goal:</strong> Mục tiêu cuối cùng của workshop.</p>
+    <div class="chips"><span class="chip">Kỹ năng 1</span><span class="chip">Kỹ năng 2</span></div>
+    <p><a class="btn btn-primary" href="https://www.youtube.com/playlist?list=...">Watch the lectures</a></p>
+  </div>
+</div>
+
+<!-- Lộ trình học: mỗi bước là một <li>; bước cuối có class="module-goal" hiện ngôi sao -->
+<ol class="module-list">
+  <li><div><strong>Bước 1</strong><p>Mô tả ngắn.</p></div></li>
+  <li><div><strong>Bước 2</strong><p>Mô tả ngắn.</p>
+    <div class="chips"><span class="chip">Chủ đề con</span></div></div></li>
+  <li class="module-goal"><div><strong>Final goal</strong><p>Kết quả cuối cùng.</p></div></li>
+</ol>
+
 ## Demo videos
 
 - [Tên video](https://www.youtube.com/...)

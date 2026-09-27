@@ -339,9 +339,17 @@ links:                          # nút đầu tiên màu xanh đậm
 | `<figure><img …><figcaption>…</figcaption></figure>` | Ảnh có chú thích |
 | `<div class="gallery">…</div>` | Nhiều ảnh dạng lưới |
 | `<ul class="video-list">…</ul>` | Danh sách video YouTube |
+| `<div class="workshop">…</div>` | Thẻ "bìa" cho một khoá học / workshop: ảnh bìa + mục tiêu + chip + nút playlist |
+| `<ol class="module-list">…</ol>` | Lộ trình học đánh số 1, 2, 3…; `<li class="module-goal">` = bước đích (ngôi sao) |
 | Bảng Markdown | So sánh thông số, danh sách package |
 
-Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`**.
+Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`** (project kỹ thuật) và
+**`_projects/weekly-robotics-workshop-series.md`** (chuỗi workshop / khoá học).
+
+**Thêm một workshop mới** vào trang Weekly Robotics Workshop Series: mở file trên, copy nguyên khối
+từ `### Workshop 1 — …` đến hết ảnh `<figure>` bên dưới lộ trình, dán vào trước `### More workshops`
+rồi sửa tên, ảnh bìa (để trong `assets/img/projects/workshops/`, ảnh PNG nền trong suốt đẹp nhất),
+mục tiêu, các chip, link playlist và các bước học (mỗi bước là một `<li>`).
 
 ---
 
