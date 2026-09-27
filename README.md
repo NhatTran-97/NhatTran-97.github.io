@@ -334,6 +334,10 @@ items:
     demo: https://...
     paper: /publications/
     video: https://youtube.com/...
+    links:                           # link khác tuỳ ý (bài báo, bài đăng, slide...)
+      - name: News
+        url: https://eiu.edu.vn/...
+        icon: link                   # tuỳ chọn, mặc định là icon mũi tên ra ngoài
 ```
 
 **Mẹo:**

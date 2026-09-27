@@ -64,6 +64,9 @@ sections:
       - title: 2nd Prize & 3rd Prize — AUTO RACE 2025
         org: As mentor of two EIU student teams
         period: "2025"
+        details:
+          - Southern Vietnam autonomous vehicle competition, hosted by FPT University Can Tho.
+          - "[Read the story on EIU news](https://eiu.edu.vn/tin-tuc/hanh-trinh-co-xat-va-hoc-hoi-cua-sinh-vien-eiu-tai-auto-race-2025/)"
 
   - id: activities
     title: Activities
@@ -77,4 +80,4 @@ sections:
         org: EIU FabLab
         details:
           - Mentor student teams for annual robotics competitions.
-          - "AUTO RACE 2025: two teams won **2nd Prize** and **3rd Prize**."
+          - "AUTO RACE 2025 (Southern Vietnam autonomous vehicle competition, FPT University Can Tho): two teams won **2nd Prize** and **3rd Prize** — [news](https://eiu.edu.vn/tin-tuc/hanh-trinh-co-xat-va-hoc-hoi-cua-sinh-vien-eiu-tai-auto-race-2025/)."

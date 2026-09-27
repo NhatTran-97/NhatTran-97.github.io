@@ -23,6 +23,10 @@
       {% if prj.demo %}<a href="{{ prj.demo }}">{% include icon.html name="external-link" %} Demo</a>{% endif %}
       {% if prj.paper %}<a href="{{ prj.paper | relative_url }}">{% include icon.html name="file-text" %} Paper</a>{% endif %}
       {% if prj.video %}<a href="{{ prj.video }}">{% include icon.html name="play" %} Video</a>{% endif %}
+      {%- for l in prj.links %}
+      {%- assign link_icon = l.icon | default: "external-link" %}
+      <a href="{{ l.url | relative_url }}">{% include icon.html name=link_icon %} {{ l.name }}</a>
+      {%- endfor %}
     </div>
   </div>
 </article>
