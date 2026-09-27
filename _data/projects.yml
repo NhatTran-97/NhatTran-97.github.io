@@ -8,12 +8,17 @@
 #       label       : nhãn ngắn hiện ở góc ảnh project
 #       description : một câu mô tả (tuỳ chọn)
 #
-#  2) items: danh sách project, mỗi project bắt đầu bằng dấu "-"
+#  2) categories (TUỲ CHỌN): bật thanh nút lọc theo lĩnh vực ở đầu trang Projects.
+#     Mặc định đang TẮT (các dòng có dấu #). Khi có nhiều project, xoá dấu "# "
+#     ở các dòng categories bên dưới để bật lại.
+#
+#  3) items: danh sách project, mỗi project bắt đầu bằng dấu "-"
 #       title        : tên project
 #       group        : id của nhóm ở trên (professional / personal ...)
 #       org          : công ty / tổ chức (tuỳ chọn, hợp với project công ty)
-#       category     : lĩnh vực để lọc (nút lọc được tạo tự động),
-#                      vd. "Robotics & Vision", "Machine Learning"
+#       category     : 1 lĩnh vực chính (hiện thành nhãn xanh trên thẻ),
+#                      vd. Embedded & Hardware / Perception & AI / Autonomy
+#                      — các mảng phụ ghi vào tags
 #       period       : thời gian
 #       image        : ảnh minh hoạ 16:9 (bỏ trống sẽ dùng ảnh mặc định)
 #       tags         : công nghệ sử dụng
@@ -35,25 +40,42 @@ groups:
     icon: user
     description: Research, side projects and open-source work done in my own time.
 
+# categories:
+#   - Embedded & Hardware
+#   - Perception & AI
+#   - Autonomy
+
 items:
   # ---------- Professional ----------
   - title: Autonomous Warehouse Robot
     group: professional
     org: Company Name
-    category: Robotics & Vision
+    category: Autonomy
     period: 2024 – Present
     image: /assets/img/projects/robot-nav.svg
-    tags: [ROS 2, C++, Nav2]
+    tags: [ROS 2, Nav2, SLAM, C++]
     description: >-
       End-to-end navigation system for a warehouse AMR: LiDAR SLAM, AMCL
       localization, Nav2 planning and a custom MPC controller. Deployed on 20+ robots.
     featured: true
     demo: "#"
 
+  - title: Motor Control & Sensor Hub Firmware
+    group: professional
+    org: Company Name
+    category: Embedded & Hardware
+    period: 2024
+    image: /assets/img/projects/embedded.svg
+    tags: [STM32, FreeRTOS, CAN, C]
+    description: >-
+      Real-time firmware for the robot's low-level board: 1 kHz motor current/velocity
+      control, IMU & encoder acquisition, and a CAN bridge to the ROS 2 computer.
+    featured: true
+
   - title: LiDAR–Camera Calibration Toolkit
     group: professional
     org: Company Name
-    category: Robotics & Vision
+    category: Perception & AI
     period: 2024
     tags: [C++, OpenCV, PCL, ROS 2]
     description: >-
@@ -61,28 +83,27 @@ items:
       sensor setup time per robot from hours to minutes.
 
   # ---------- Personal ----------
-  - title: Visual-Inertial Odometry on Jetson
+  - title: Terrain Segmentation on Jetson
     group: personal
-    category: Robotics & Vision
-    period: 2023
-    image: /assets/img/projects/vio.svg
-    tags: [C++, CUDA, VIO]
-    description: >-
-      Real-time visual-inertial odometry at 30 Hz on NVIDIA Jetson Orin with a
-      sliding-window optimizer. Part of my M.Sc. thesis.
-    featured: true
-    github: https://github.com/NhatTran-97
-    paper: /publications/
-
-  - title: Terrain Segmentation for Field Robots
-    group: personal
-    category: Machine Learning
+    category: Perception & AI
     period: 2021 – 2022
     image: /assets/img/projects/segmentation.svg
-    tags: [PyTorch, TensorRT, Segmentation]
+    tags: [PyTorch, TensorRT, Jetson, Segmentation]
     description: >-
-      Lightweight segmentation network for terrain classification, exported to
-      TensorRT for on-board inference.
+      Lightweight segmentation network for terrain classification, optimized with
+      TensorRT for real-time on-board inference on NVIDIA Jetson.
     featured: true
     github: https://github.com/NhatTran-97
     video: "#"
+
+  - title: Visual-Inertial Odometry
+    group: personal
+    category: Autonomy
+    period: 2023
+    image: /assets/img/projects/vio.svg
+    tags: [C++, CUDA, VIO, SLAM]
+    description: >-
+      Real-time visual-inertial odometry at 30 Hz on Jetson Orin with a
+      sliding-window optimizer. Part of my M.Sc. thesis.
+    github: https://github.com/NhatTran-97
+    paper: /publications/

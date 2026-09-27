@@ -5,14 +5,16 @@ permalink: /projects/
 {% include page-head.html title="Projects" subtitle="Selected projects from my professional work and personal research." %}
 
 {%- assign all = site.data.projects.items -%}
-{%- assign cats = all | map: "category" | compact | uniq -%}
+{%- assign cats = site.data.projects.categories -%}
 <div data-filter>
+  {%- if cats and cats.size > 0 %}
   <div class="pills">
     <button type="button" class="pill active" data-filter-value="">All</button>
     {%- for c in cats %}
     <button type="button" class="pill" data-filter-value="{{ c }}">{{ c }}</button>
     {%- endfor %}
   </div>
+  {%- endif %}
 
   {%- for g in site.data.projects.groups %}
   {%- assign items = all | where: "group", g.id %}

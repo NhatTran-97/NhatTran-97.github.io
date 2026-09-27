@@ -9,7 +9,7 @@
 
 name: Nhat Tran                 # Tên đầy đủ
 short_name: N. Tran             # Tên ngắn hiện ở góc trái menu
-role: Robotics & AI Engineer    # Chức danh ngắn
+role: Robotics Engineer — Embedded, Perception & Autonomy    # Chức danh ngắn
 avatar: /assets/img/avatar.svg  # Ảnh đại diện (nên dùng ảnh dọc, tỉ lệ 4:5)
 
 # Tên của bạn trong danh sách tác giả bài báo → sẽ được in đậm tự động
@@ -20,10 +20,10 @@ publication_names:
 # ----- Banner lớn ở trang Home -----
 hero:
   greeting: Hello, I'm
-  tagline: A robotics engineer and researcher.
+  tagline: Building intelligent robots across the full stack.
   intro: >-
-    I am interested in autonomous mobile robots, SLAM and robot perception —
-    turning ideas from research papers into systems that run on real hardware.
+    From embedded firmware and sensors, through computer vision and AI perception,
+    to SLAM, planning and control — I build every layer of the robot pipeline.
   background: /assets/img/hero.svg     # Ảnh nền banner (ảnh ngang, ≥ 1600px)
   quote: "Curiosity drives better questions, which lead to meaningful work."
   buttons:
@@ -38,18 +38,18 @@ hero:
 
 # ----- 4 ô giới thiệu ngắn dưới banner -----
 highlights:
-  - icon: bot
-    title: Robotics & Autonomy
-    text: SLAM, navigation and control for mobile robots.
+  - icon: cpu
+    title: Embedded & Hardware
+    text: Firmware, sensor drivers, motor control and real-time systems.
   - icon: brain
-    title: AI & Machine Learning
-    text: Deep learning for perception on real-world data.
+    title: Perception & AI
+    text: Computer vision and deep learning, optimized for edge devices.
+  - icon: bot
+    title: Autonomy
+    text: SLAM, localization, motion planning and control with ROS 2.
   - icon: file-text
     title: Research & Publication
     text: Explore and share knowledge through academic work.
-  - icon: users
-    title: Open to Collaboration
-    text: Always excited to connect and work on new ideas.
 
 # ----- Thông tin liên hệ (trang About, Home và footer) -----
 # Xoá mục nào không dùng. "url" là link khi bấm vào.
@@ -83,28 +83,29 @@ about:
   subtitle: A little bit about who I am, my background, and what I'm passionate about.
   # Đoạn ngắn hiện trên trang Home
   summary: >-
-    I am a robotics engineer working on autonomous mobile robots. My interests
-    include SLAM, motion planning and learning-based perception. I enjoy building
-    reliable systems, collaborating with others, and continuously learning new things.
+    I am a robotics engineer working across the full robot stack — from embedded
+    firmware and sensor integration, through computer vision and AI perception,
+    to SLAM, planning and control. I enjoy building reliable systems that run on real robots.
   # Phần giới thiệu đầy đủ trên trang About (viết Markdown, có thể nhiều đoạn)
   intro: |
-    I am a **robotics engineer** at *Company Name*, where I develop the navigation
-    stack for a fleet of autonomous mobile robots. Before that, I was a research
-    assistant at *Lab Name*, working on visual-inertial SLAM.
+    I am a **robotics engineer** at *Company Name*, where I work across the whole
+    robot pipeline: firmware for sensor and motor-control boards, perception models
+    running on NVIDIA Jetson, and the navigation stack for a fleet of autonomous mobile robots.
 
-    My research interests include state estimation, motion planning and robot
-    perception. I enjoy building useful tools, collaborating with others, and
-    continuously learning new things.
+    I like connecting the layers — understanding how a timing issue in the firmware
+    shows up as drift in SLAM, or how a faster model changes what the planner can do.
+    Before joining industry, I was a research assistant at *Lab Name*, working on
+    visual-inertial SLAM.
 
     Outside of work, I like hiking, photography and writing technical notes on this site.
   interests:
-    - SLAM
-    - Motion Planning
-    - Robot Perception
+    - Embedded Systems
+    - Edge AI
     - Computer Vision
-    - Deep Learning
+    - Robot Perception
+    - SLAM
+    - Motion Planning & Control
     - ROS 2
-    - Open Source
 
 # ----- Số mục hiển thị trên trang Home (đặt 0 để ẩn phần đó) -----
 home:

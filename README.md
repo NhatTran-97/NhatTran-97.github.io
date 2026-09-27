@@ -233,13 +233,25 @@ groups:
   ```
 - Nhóm nào chưa có project sẽ **tự ẩn**.
 
+### 5.1b. Lĩnh vực & thanh lọc (tuỳ chọn)
+Mỗi project có 1 `category` = lĩnh vực chính, hiện thành nhãn xanh trên thẻ. Nên dùng các tầng của robot pipeline:
+`Embedded & Hardware` · `Perception & AI` · `Autonomy`. Mảng phụ ghi vào `tags`.
+
+Thanh **nút lọc theo lĩnh vực** đang tắt cho gọn. Khi có nhiều project (> 10), bật lại bằng cách xoá dấu `# ` ở khối này trong `projects.yml`:
+```yaml
+categories:
+  - Embedded & Hardware
+  - Perception & AI
+  - Autonomy
+```
+
 ### 5.2. Một project — `items`
 ```yaml
 items:
   - title: Autonomous Warehouse Robot
     group: professional              # id nhóm ở trên
     org: Company Name                # công ty / tổ chức (tuỳ chọn)
-    category: Robotics & Vision      # lĩnh vực → tự tạo nút lọc
+    category: Autonomy               # lĩnh vực chính → nhãn xanh trên thẻ
     period: 2024 – Present
     image: /assets/img/projects/warehouse.jpg   # ảnh 16:9; bỏ dòng này → ảnh mặc định
     tags: [ROS 2, C++, Nav2]
@@ -399,7 +411,7 @@ Bài mới tự xuất hiện ở trang **Notes**, trên **Home** (3 bài mới 
 ## 12. Tính năng có sẵn
 - 🌗 Giao diện sáng / tối (nút ☀/🌙), tự nhớ lựa chọn.
 - 🔍 Tìm kiếm toàn trang (nút kính lúp hoặc phím `/`): tìm trong bài viết, project, bài báo.
-- 🗂 Lọc: project theo lĩnh vực, bài báo theo loại, bài viết theo chủ đề + ô tìm kiếm.
+- 🗂 Project chia nhóm Professional / Personal (có thể bật lọc theo lĩnh vực); lọc bài báo theo loại; lọc bài viết theo chủ đề + ô tìm kiếm.
 - 📱 Hiển thị tốt trên điện thoại (menu thu gọn).
 - 🔗 Link thẳng tới từng mục: `/cv/#experience`, `/projects/#personal`.
 - 📰 RSS feed tự động: `/feed.xml`.

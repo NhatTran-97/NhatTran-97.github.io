@@ -50,14 +50,16 @@ sections:
     title: Skills
     type: skills
     items:
+      - group: Embedded & Hardware
+        items: [STM32, ESP32, FreeRTOS, CAN, UART / SPI / I2C, KiCad]
+      - group: Perception & AI
+        items: [PyTorch, OpenCV, TensorRT, ONNX, YOLO, PCL]
+      - group: Autonomy
+        items: [ROS 2, Nav2, SLAM, MPC / PID, Gazebo, Isaac Sim]
       - group: Programming
-        items: [C++, Python, MATLAB, Bash]
-      - group: Robotics
-        items: [ROS / ROS 2, Nav2, MoveIt, Gazebo, Isaac Sim]
-      - group: ML / Vision
-        items: [PyTorch, OpenCV, PCL, TensorRT]
+        items: [C / C++, Python, CUDA, Bash]
       - group: Tools
-        items: [Git, Docker, Linux, LaTeX]
+        items: [Git, Docker, Linux, NVIDIA Jetson]
       - group: Languages
         items: [Vietnamese (native), English (professional)]
 

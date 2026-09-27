@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b3d2e"/><stop offset="1" stop-color="#157a55"/></linearGradient>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".07"/></pattern></defs>
+  <rect width="640" height="360" fill="url(#g)"/><rect width="640" height="360" fill="url(#grid)"/>
+  <g fill="none" stroke="#9ff0c9" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 90h120v40h60"/><path d="M60 270h140v-50h40"/><path d="M400 150h80v-60h100"/><path d="M400 210h120v70h60"/>
+    <path d="M280 110V50h-60"/><path d="M360 250v60h90"/>
+  </g>
+  <g fill="#9ff0c9"><circle cx="60" cy="90" r="7"/><circle cx="60" cy="270" r="7"/><circle cx="580" cy="90" r="7"/><circle cx="580" cy="280" r="7"/><circle cx="220" cy="50" r="7"/><circle cx="450" cy="310" r="7"/></g>
+  <rect x="240" y="110" width="160" height="140" rx="10" fill="#0a2a20" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
+  <g stroke="#fff" stroke-opacity=".85" stroke-width="3">
+    <path d="M270 110V94M300 110V94M330 110V94M360 110V94M270 250v16M300 250v16M330 250v16M360 250v16M240 140h-16M240 180h-16M240 220h-16M400 140h16M400 180h16M400 220h16"/>
+  </g>
+  <text x="320" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff" fill-opacity=".9">MCU</text>
+</svg>
