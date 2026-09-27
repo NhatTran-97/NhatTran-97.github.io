@@ -203,14 +203,18 @@ items:
     category: Teaching & Mentoring
     period: Jan 2025 – Present
     image: /assets/img/projects/workshops/card.jpg
-    tags: [STM32, Embedded, ROS 2, Drones, Robotics]
+    tags: [STM32, F1TENTH, ROS 2, Drones, Embedded]
     description: >-
       Organize and teach weekly hands-on workshops for students on robotics,
       ROS 2, drones and embedded systems — e.g. *STM32 And Two-Wheeled
-      Self-Balancing Robot* (STM32 peripherals, IMU, EKF, LQR).
+      Self-Balancing Robot* (STM32 peripherals, IMU, EKF, LQR) and *F1TENTH
+      Autonomous Racing* (ROS 2, SLAM, AMCL, Pure Pursuit, RRT*).
     links:
-      - name: Lectures
+      - name: STM32 lectures
         url: https://www.youtube.com/playlist?list=PL7WgDt1mGvJbiDx9pCaR9wdrvd8Q96xws
+        icon: youtube
+      - name: F1TENTH lectures
+        url: https://www.youtube.com/playlist?list=PL7WgDt1mGvJZLL-rJHcqOzMGDUf34dQ-F
         icon: youtube
 
   # ---------- Personal ----------

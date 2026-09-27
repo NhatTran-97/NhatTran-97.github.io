@@ -97,6 +97,7 @@ sections:
         details:
           - Hands-on sessions for students on robotics, ROS 2, drones and embedded systems.
           - "Workshop *STM32 And Two-Wheeled Self-Balancing Robot*: C, STM32 peripherals, IMU calibration, attitude estimation (EKF) and LQR balancing control — [lecture recordings](https://www.youtube.com/playlist?list=PL7WgDt1mGvJbiDx9pCaR9wdrvd8Q96xws)."
+          - "Workshop *F1TENTH Autonomous Racing*: Ubuntu, Python, ROS 2, AEB, PID wall following, SLAM Toolbox mapping, AMCL localization, Pure Pursuit and RRT / RRT* obstacle avoidance — [lecture recordings](https://www.youtube.com/playlist?list=PL7WgDt1mGvJZLL-rJHcqOzMGDUf34dQ-F)."
       - title: Student Research Mentor
         org: EIU FabLab
         details:

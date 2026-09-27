@@ -25,8 +25,11 @@
 
 // Workshop / course block: cover image + summary, then a numbered learning path
 .workshop { display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: center; margin: 1.2em 0; padding: 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--bg); }
-.workshop-cover { margin: 0; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: radial-gradient(circle at 50% 45%, var(--card) 0%, var(--primary-soft) 100%); }
+.prose .workshop-cover, .workshop-cover { margin: 0; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: radial-gradient(circle at 50% 45%, var(--card) 0%, var(--primary-soft) 100%); }
 .prose .workshop-cover img { width: 86%; height: auto; margin: 0; border: 0; border-radius: 0; }
+// Photo cover (instead of a transparent product PNG): fills the square
+.workshop-cover.is-photo { overflow: hidden; background: none; }
+.prose .workshop-cover.is-photo img { width: 100%; height: 100%; object-fit: cover; }
 .workshop-info > :first-child { margin-top: 0; }
 .workshop-info > :last-child { margin-bottom: 0; }
 .workshop-info p { margin: .4em 0 .7em; }
@@ -50,5 +53,5 @@
 
 @media (max-width: $bp-sm) {
   .workshop { grid-template-columns: 1fr; }
-  .workshop-cover { max-width: 240px; width: 100%; margin: 0 auto; }
+  .prose .workshop-cover, .workshop-cover { max-width: 240px; width: 100%; margin: 0 auto; }
 }

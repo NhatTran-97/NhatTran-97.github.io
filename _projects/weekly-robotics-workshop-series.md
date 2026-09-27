@@ -10,10 +10,13 @@ partners: "EIU FabLab"
 status: "Ongoing"
 image: /assets/img/projects/workshops/group.jpg
 image_caption: Students and robots after a workshop session at the EIU FabLab.
-tags: [STM32, Embedded, ROS 2, Drones, Robotics]
+tags: [STM32, Embedded, ROS 2, F1TENTH, Drones, Robotics]
 links:
-  - name: Lecture recordings
+  - name: STM32 lectures
     url: https://www.youtube.com/playlist?list=PL7WgDt1mGvJbiDx9pCaR9wdrvd8Q96xws
+    icon: youtube
+  - name: F1TENTH lectures
+    url: https://www.youtube.com/playlist?list=PL7WgDt1mGvJZLL-rJHcqOzMGDUf34dQ-F
     icon: youtube
 ---
 
@@ -118,11 +121,120 @@ the sessions, and help students debug their code and robots during the labs.
   <figcaption>Demonstrating the self-balancing robot to students during a session.</figcaption>
 </figure>
 
+### Workshop 2 — F1TENTH Autonomous Racing
+
+<div class="workshop">
+  <figure class="workshop-cover is-photo">
+    <img src="/assets/img/projects/workshops/f1tenth-cover.jpg" alt="F1TENTH session on Ackermann control of the vehicle">
+  </figure>
+  <div class="workshop-info">
+    <span class="workshop-no">Workshop 02 · ROS 2 & autonomous driving</span>
+    <p><strong>Goal:</strong> build the autonomy stack of a 1/10-scale F1TENTH car step by
+    step — from Linux, Python and ROS 2 basics to mapping, localization, path tracking
+    and obstacle avoidance.</p>
+    <div class="chips">
+      <span class="chip">Ubuntu</span><span class="chip">Python</span><span class="chip">ROS 2</span>
+      <span class="chip">SLAM Toolbox</span><span class="chip">AMCL</span>
+      <span class="chip">Pure Pursuit</span><span class="chip">RRT*</span>
+    </div>
+    <p><a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PL7WgDt1mGvJZLL-rJHcqOzMGDUf34dQ-F">{% include icon.html name="youtube" %} Watch the lectures</a></p>
+  </div>
+</div>
+
+#### Learning path
+
+<ol class="module-list">
+  <li>
+    <div>
+      <strong>Ubuntu basics</strong>
+      <p>Working with Linux and the terminal — the environment used for the rest of the workshop.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Python & OOP</strong>
+      <p>Python and object-oriented programming for writing ROS 2 nodes.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Math review</strong>
+      <p>The math behind the algorithms in the later modules.</p>
+      <div class="chips">
+        <span class="chip">Calculus</span><span class="chip">Linear Algebra</span>
+        <span class="chip">Statistics & Probability</span>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>ROS 2 basics</strong>
+      <p>Core ROS 2 concepts and tools.</p>
+      <div class="chips">
+        <span class="chip">Workspace</span><span class="chip">Package</span>
+        <span class="chip">Node</span><span class="chip">Topic</span>
+        <span class="chip">Service</span><span class="chip">Launch file</span>
+        <span class="chip">Parameters</span><span class="chip">Multithreading</span>
+        <span class="chip">Debugging tools</span><span class="chip">Transforms (TF2)</span>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Automatic Emergency Braking (AEB)</strong>
+      <p>Stop the car before it hits an obstacle.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Wall following with PID</strong>
+      <p>Keep the car at a set distance from the wall with a PID controller.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>2D mapping with SLAM Toolbox</strong>
+      <p>Build a 2D map of the track.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Localization with AMCL</strong>
+      <p>Localize the car in the 2D map.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Waypoints & Pure Pursuit</strong>
+      <p>Create waypoints and track them with the Pure Pursuit algorithm.</p>
+    </div>
+  </li>
+  <li>
+    <div>
+      <strong>Obstacle avoidance with RRT & RRT*</strong>
+      <p>Plan paths around obstacles with sampling-based planners.</p>
+    </div>
+  </li>
+  <li class="module-goal">
+    <div>
+      <strong>Final goal: an autonomous F1TENTH car</strong>
+      <p>Put mapping, localization, path tracking and obstacle avoidance together on the car.</p>
+    </div>
+  </li>
+</ol>
+
+<div class="gallery">
+  <figure><img src="/assets/img/projects/workshops/f1tenth-session-1.jpg" alt="Students working with the F1TENTH car during a session"><figcaption>F1TENTH class: Ackermann control on the vehicle.</figcaption></figure>
+  <figure><img src="/assets/img/projects/workshops/f1tenth-session-2.jpg" alt="Students working with ROS 2 topics on their laptops"><figcaption>F1TENTH class: working with ROS 2 topics and messages (odometry).</figcaption></figure>
+</div>
+
 <!-- ================================================================
-  THÊM WORKSHOP MỚI: copy nguyên khối từ "### Workshop 1 — ..." đến hết <figure> ở trên,
-  dán vào đây rồi sửa:
-    - "### Workshop 2 — Tên workshop"
-    - ảnh bìa (ảnh PNG nền trong suốt hoặc ảnh vuông) trong assets/img/projects/workshops/
+  THÊM WORKSHOP MỚI: copy nguyên khối từ "### Workshop 2 — ..." đến hết ảnh (gallery) ở trên,
+  dán vào ngay dưới đây (trước "### More workshops") rồi sửa:
+    - "### Workshop 3 — Tên workshop"
+    - ảnh bìa trong assets/img/projects/workshops/:
+        ảnh PNG nền trong suốt → <figure class="workshop-cover">            (như Workshop 1)
+        ảnh chụp thường        → <figure class="workshop-cover is-photo">   (như Workshop 2)
     - dòng "Workshop 02 · Chủ đề", mục tiêu (Goal), các chip, link playlist
     - các bước trong <ol class="module-list"> (mỗi bước là một <li>;
       bước cuối có class="module-goal" sẽ hiện ngôi sao)
@@ -130,4 +242,4 @@ the sessions, and help students debug their code and robots during the labs.
 
 ### More workshops
 
-*Write-ups for the other topics (ROS 2, F1TENTH, drones) are coming soon.*
+*Write-ups for the other topics (e.g. drones) are coming soon.*

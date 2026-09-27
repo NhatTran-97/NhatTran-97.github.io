@@ -350,6 +350,8 @@ Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`** (project kỹ thuật) 
 từ `### Workshop 1 — …` đến hết ảnh `<figure>` bên dưới lộ trình, dán vào trước `### More workshops`
 rồi sửa tên, ảnh bìa (để trong `assets/img/projects/workshops/`, ảnh PNG nền trong suốt đẹp nhất),
 mục tiêu, các chip, link playlist và các bước học (mỗi bước là một `<li>`).
+Ảnh bìa là ảnh PNG nền trong suốt (vd. ảnh sản phẩm) thì dùng `<figure class="workshop-cover">`; là ảnh
+chụp thường thì thêm `is-photo`: `<figure class="workshop-cover is-photo">` để ảnh lấp đầy khung vuông.
 
 ---
 
