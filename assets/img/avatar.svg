@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6ebf2"/><stop offset="1" stop-color="#cfd8e4"/></linearGradient></defs>
-  <rect width="400" height="500" fill="url(#bg)"/>
-  <circle cx="200" cy="190" r="78" fill="#94a6bd"/>
-  <path d="M60 500c10-110 70-170 140-170s130 60 140 170Z" fill="#94a6bd"/>
-  <text x="200" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#6b7d95">Replace with your photo</text>
-</svg>

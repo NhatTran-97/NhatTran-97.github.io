@@ -9,8 +9,8 @@
 
 name: Nhat Tran                 # Tên đầy đủ
 short_name: N. Tran             # Tên ngắn hiện ở góc trái menu
-role: Robotics Engineer — Embedded, Perception & Autonomy    # Chức danh ngắn
-avatar: /assets/img/avatar.svg  # Ảnh đại diện (nên dùng ảnh dọc, tỉ lệ 4:5)
+role: FabLab Technician, Eastern International University    # Chức danh ngắn
+avatar: /assets/img/avatar.jpg  # Ảnh đại diện (nên dùng ảnh dọc, tỉ lệ 4:5)
 
 # Tên của bạn trong danh sách tác giả bài báo → sẽ được in đậm tự động
 publication_names:
@@ -59,12 +59,12 @@ contacts:
     value: Ho Chi Minh City, Vietnam
   - icon: mail
     label: Email
-    value: your.email@example.com
-    url: mailto:your.email@example.com
+    value: nhat.tranduy1997@gmail.com
+    url: mailto:nhat.tranduy1997@gmail.com
   - icon: linkedin
     label: LinkedIn
-    value: linkedin.com/in/your-id
-    url: https://www.linkedin.com/in/your-id
+    value: linkedin.com/in/nhất-duy-475028131
+    url: https://www.linkedin.com/in/nh%E1%BA%A5t-duy-475028131/
   - icon: github
     label: GitHub
     value: github.com/NhatTran-97
