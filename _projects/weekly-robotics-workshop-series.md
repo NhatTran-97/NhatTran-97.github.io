@@ -147,7 +147,7 @@ STM32 controller board, so every module can be tried directly on real hardware.
 
 <div class="workshop">
   <figure class="workshop-cover is-photo">
-    <img src="/assets/img/projects/workshops/f1tenth-cover.jpg" alt="Students working on ROS 2 and the F1TENTH simulator during a workshop session">
+    <img src="/assets/img/projects/workshops/f1tenth-classroom.jpg" alt="Students working on ROS 2 and the F1TENTH simulator during a workshop session">
   </figure>
   <div class="workshop-info">
     <span class="workshop-no">Workshop 02 · ROS 2 & autonomous driving</span>
