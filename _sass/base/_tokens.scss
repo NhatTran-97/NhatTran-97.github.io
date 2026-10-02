@@ -45,7 +45,7 @@
 $container-min: 1320px;  $container-fluid: 82vw;  $container-max: 1840px;  // header, footer, all pages
 $detail-min: 1200px;     $detail-fluid: 72vw;     $detail-max: 1560px;     // project detail pages
 $reading-min: 820px;     $reading-fluid: 50vw;    $reading-max: 1000px;    // notes / blog posts (keep lines readable)
-$hero-text-width: 640px;    // text column in the Home hero banner
+$hero-text-width: 760px;    // text column in the Home hero banner
 
 // max-width that grows with the screen: min(max, max(min, fluid)); older browsers use "min"
 @mixin fluid-width($min, $fluid, $max) {

@@ -4,16 +4,16 @@
 .hero {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 32px;
   // height and side padding grow a little on wide screens
-  min-height: clamp(290px, 18vw, 400px); padding: 36px clamp(40px, 4vw, 72px); border-radius: 18px; overflow: hidden; color: #fff;
+  min-height: clamp(260px, 14vw, 320px); padding: 28px clamp(40px, 4vw, 72px); border-radius: 18px; overflow: hidden; color: #fff;
   background:
     linear-gradient(90deg, rgba(9, 16, 30, .82) 0%, rgba(9, 16, 30, .55) 45%, rgba(9, 16, 30, .15) 100%),
     var(--hero-bg) center 15% / cover no-repeat, #1e2b40;  // 15%: keep the top of the photo (face) in view
 }
 .hero-content { max-width: $hero-text-width; }
-.hero-greeting { text-transform: uppercase; letter-spacing: .22em; font-size: .78rem; font-weight: 600; opacity: .85; margin: 0 0 6px; }
-.hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -.02em; }
-.hero-tagline { font-size: 1.15rem; font-weight: 600; margin: 6px 0 12px; }
-.hero-intro { opacity: .88; margin-bottom: 26px; }
+.hero-greeting { text-transform: uppercase; letter-spacing: .22em; font-size: .78rem; font-weight: 600; opacity: .85; margin: 0 0 2px; }
+.hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 2.8rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
+.hero-tagline { font-size: 1.15rem; font-weight: 600; margin: 4px 0 8px; }
+.hero-intro { opacity: .88; margin-bottom: 18px; line-height: 1.6; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-quote {
   align-self: flex-end; max-width: 360px; margin: 0; padding-left: 18px;
