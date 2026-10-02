@@ -379,7 +379,7 @@ thành **một thẻ nhỏ**; bấm thẻ → nội dung workshop mở ra bên d
 ### Workshop 2 — F1TENTH Autonomous Racing              <!-- phần sau "—" = tên trên thẻ -->
 
 <div class="workshop">
-  <figure class="workshop-cover is-photo"><img src="/assets/img/projects/workshops/f1tenth-classroom.jpg" alt="..."></figure>
+  <figure class="workshop-cover is-photo"><img src="/assets/img/projects/workshops/f1tenth-car.jpg" alt="..."></figure>
   <div class="workshop-info">
     <span class="workshop-no">Workshop 02 · ROS 2 & autonomous driving</span>   <!-- nhãn trên thẻ -->
     <p><strong>Goal:</strong> ...</p>

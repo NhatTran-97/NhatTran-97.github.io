@@ -147,7 +147,7 @@ STM32 controller board, so every module can be tried directly on real hardware.
 
 <div class="workshop">
   <figure class="workshop-cover is-photo">
-    <img src="/assets/img/projects/workshops/f1tenth-classroom.jpg" alt="Students working on ROS 2 and the F1TENTH simulator during a workshop session">
+    <img src="/assets/img/projects/workshops/f1tenth-car.jpg" alt="The 1/10-scale F1TENTH car used in the workshop">
   </figure>
   <div class="workshop-info">
     <span class="workshop-no">Workshop 02 · ROS 2 & autonomous driving</span>
@@ -162,6 +162,16 @@ STM32 controller board, so every module can be tried directly on real hardware.
     <p><a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PL7WgDt1mGvJZLL-rJHcqOzMGDUf34dQ-F">{% include icon.html name="youtube" %} Watch the lectures</a></p>
   </div>
 </div>
+
+#### Robot platform
+
+The workshop uses a 1/10-scale F1TENTH car with a 2D LiDAR, a depth camera and an IMU,
+an NVIDIA Jetson Xavier NX for onboard compute, and a VESC motor controller — all running ROS 2.
+
+<figure class="figure-narrow figure-large">
+  <img src="/assets/img/projects/workshops/f1tenth-platform.jpg" alt="Overview of the F1TENTH platform: chassis, sensors, Jetson Xavier NX, ROS 2 software architecture and research topics">
+  <figcaption>The F1TENTH platform: chassis and power board, sensors (Hokuyo UST-10LX, RealSense D435i, BNO055), Jetson Xavier NX, and the ROS 2 perception–planning–control stack.</figcaption>
+</figure>
 
 #### Learning path
 
@@ -245,7 +255,10 @@ STM32 controller board, so every module can be tried directly on real hardware.
   </li>
 </ol>
 
+#### In class
+
 <div class="gallery">
+  <figure><img src="/assets/img/projects/workshops/f1tenth-classroom.jpg" alt="Students working on ROS 2 and the F1TENTH simulator during a workshop session"><figcaption>F1TENTH class: working in the simulator with ROS 2.</figcaption></figure>
   <figure><img src="/assets/img/projects/workshops/f1tenth-session-1.jpg" alt="Students working with the F1TENTH car during a session"><figcaption>F1TENTH class: Ackermann control on the vehicle.</figcaption></figure>
   <figure><img src="/assets/img/projects/workshops/f1tenth-session-2.jpg" alt="Students working with ROS 2 topics on their laptops"><figcaption>F1TENTH class: working with ROS 2 topics and messages (odometry).</figcaption></figure>
 </div>
