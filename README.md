@@ -300,7 +300,7 @@ items:
     org: EIU × ARTC Singapore — Technical Lead
     category: Autonomy                      # lĩnh vực chính → nhãn xanh
     period: Jun 2026 – Nov 2026
-    image: /assets/img/projects/vda5050/card.jpg   # 16:9
+    image: /assets/img/projects/vda5050/card-2.jpg   # 16:9
     tags: [ROS 2, Open-RMF, VDA5050, MQTT]
     description: >-
       1–3 câu: làm gì, dùng gì, kết quả ra sao.

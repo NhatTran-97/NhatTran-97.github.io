@@ -64,6 +64,7 @@
 .mini-projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .mini-projects .project-card { box-shadow: none; }
 .mini-projects .project-body { padding: 12px 14px 14px; }
+.mini-projects .thumb-badge { top: 6px; left: 6px; font-size: .58rem; padding: 2px 6px; border-radius: 4px; }   // small cards: small badge
 .mini-projects .project-desc { font-size: .8rem; }
 .mini-projects .project-desc p, .home-card .note-body p {
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
