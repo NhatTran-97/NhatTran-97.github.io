@@ -4,7 +4,7 @@
 .hero {
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 32px;
   // height and side padding grow a little on wide screens
-  min-height: clamp(260px, 14vw, 320px); padding: 28px clamp(40px, 4vw, 72px); border-radius: 18px; overflow: hidden; color: #fff;
+  min-height: clamp(240px, 11vw, 280px); padding: 20px clamp(40px, 4vw, 72px); border-radius: 18px; overflow: hidden; color: #fff;
   background:
     linear-gradient(90deg, rgba(9, 16, 30, .82) 0%, rgba(9, 16, 30, .55) 45%, rgba(9, 16, 30, .15) 100%),
     var(--hero-bg) center 15% / cover no-repeat, #1e2b40;  // 15%: keep the top of the photo (face) in view
