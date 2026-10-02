@@ -37,7 +37,7 @@ Làm ngay trên trình duyệt, không cần cài gì:
 |---|---|
 | Tạo file mới | Vào thư mục → **Add file → Create new file** |
 | Upload ảnh / PDF | Vào thư mục → **Add file → Upload files** → kéo thả → **Commit changes** |
-| Thay ảnh cũ | Upload file **trùng tên** để ghi đè |
+| Thay ảnh cũ | Nên upload ảnh với **tên file mới** (vd. `cover-2.jpg`) rồi sửa đường dẫn trong file `.md` / `.yml` — trình duyệt và GitHub giữ ảnh cũ theo tên file nên upload đè **trùng tên** có thể vẫn hiện ảnh cũ một thời gian. Xoá file ảnh cũ sau khi đổi. |
 | Xoá file | Mở file → menu **…** → **Delete file** |
 | Theo dõi cập nhật | Tab **Actions**: *pages build and deployment* (website), *Build CV PDF* (CV), *Check site* (kiểm tra lỗi). ✅ xanh = xong, ❌ đỏ = lỗi → [mục 13](#13-xử-lý-sự-cố--kiểm-tra-tự-động) |
 
@@ -133,7 +133,8 @@ hero:
   greeting: Hello, I'm
   tagline: Robotics enthusiast — learning by building.   # 1 câu định vị bản thân
   intro: >-                                              # 2–3 câu: làm gì, mảng nào
-    I work on the software side of robots and drones, mainly localization, ...
+    I work on robots and drones — localization, sensor fusion and Visual SLAM, the ROS 2
+    navigation stack (custom planners, controllers and ros2_control), and embedded ...
   background: /assets/img/hero/hero-photo-mountain.jpg   # xem mục 10.4
   quote: "Passion builds robots; persistence makes them work."   # "" để ẩn; mỗi vế tách bằng "; " nằm trên 1 dòng
   buttons:
@@ -362,7 +363,8 @@ links:                          # nút đầu tiên màu xanh đậm
 | `<ol class="module-list">…</ol>` | Lộ trình học đánh số 1, 2, 3…; `<li class="module-goal">` = bước đích (ngôi sao) |
 | Bảng Markdown | So sánh thông số, danh sách package |
 
-Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`** (project kỹ thuật) và
+Mẫu hoàn chỉnh: **`_projects/vda5050-open-rmf.md`** (project kỹ thuật),
+**`_projects/feedforward-pi-dc-motor.md`** (bài báo nghiên cứu: ảnh bìa banner `image_ratio: "16 / 9"`, lưới `cols-3`, ảnh `figure-large`) và
 **`_projects/weekly-robotics-workshop-series.md`** (chuỗi workshop / khoá học).
 
 ### 6.4. Trang workshop / khoá học dạng thẻ bấm mở
@@ -408,6 +410,7 @@ thành **một thẻ nhỏ**; bấm thẻ → nội dung workshop mở ra bên d
 - `id` của `<section>`: không dấu, không trùng — dùng làm link mở thẳng workshop: `/projects/weekly-robotics-workshop-series/#<id>` (gửi cho sinh viên được).
 - Phải giữ `markdown="1"` và **dòng trống** sau `<section …>` / trước `</section>` để tiêu đề `###` hoạt động.
 - Nếu trình duyệt tắt JavaScript, tất cả workshop hiện đầy đủ (không mất nội dung).
+- Trong mỗi workshop có thể thêm các mục phụ (xem Workshop 1): `#### Robot platform` với ảnh tổng quan `<figure class="figure-narrow figure-large">`, và `#### In class` với ảnh lớp học dạng `<div class="gallery">` (2 ảnh cạnh nhau).
 - Dùng được cho project khác (vd. một chuỗi khoá học): copy cả thẻ `<div class="workshop-cards" …>` và các khối `<section>`.
 
 ---
@@ -582,6 +585,7 @@ cùng một dòng (phần đó sẽ bị bỏ qua). `check_site.py` sẽ báo l�
 | Hiện tượng | Cách xử lý |
 |---|---|
 | Sửa xong web không đổi | Đợi 2 phút → **Ctrl + Shift + R** hoặc tab ẩn danh (trình duyệt lưu trang cũ tới ~10 phút). Vẫn không đổi → tab **Actions**. |
+| Đã thay ảnh nhưng web vẫn hiện ảnh cũ | Ảnh được upload đè **trùng tên** → trình duyệt dùng bản cũ đã lưu. Đổi sang **tên file mới** và sửa đường dẫn (xem [mục 1](#1-cách-sửa-file-trên-github)), hoặc đợi ~10 phút rồi Ctrl + Shift + R. |
 | Actions báo ❌ đỏ | Mở lần chạy lỗi. Với **Check site**, bấm bước bị đỏ: mỗi dòng `ERROR` ghi rõ file + lỗi (vd. `image not found`, `unknown icon`, `YAML syntax error (line 96)`, `detail page file … does not exist`). Sửa đúng chỗ đó rồi commit lại. |
 | CV PDF không cập nhật | Tab **Actions** → *Build CV PDF*: xem lỗi hoặc bấm **Run workflow**. Kiểm tra `pdf_auto: true`. |
 | Ảnh không hiện | Đường dẫn bắt đầu bằng `/assets/...`, đúng tên file và chữ hoa/thường. |
